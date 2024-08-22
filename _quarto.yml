@@ -7,19 +7,18 @@ website:
     site-url: https://www.bolaponte.com
     repo-url: https://github.com/jibarozzo/bolaponte_website
 navbar:
-  pinned: true
-    left:
-      - href: index.qmd
-        text: "Home"
-      - href: about.qmd
-        text: "About"
-    right:
-      - icon: github
-        aria-label: GitHub
-        href: https://github.com/jibarozzo
-      - icon: linkedin
-        aria-label: LinkedIn
-        href: https://www.linkedin.com/in/jibarozzo/
+  left:
+    - href: index.qmd
+      text: "Home"
+    - href: about.qmd
+      text: "About"
+  right:
+    - icon: github
+      aria-label: GitHub
+      href: https://github.com/jibarozzo
+    - icon: linkedin
+      aria-label: LinkedIn
+      href: https://www.linkedin.com/in/jibarozzo/
 
 
   page-footer:
