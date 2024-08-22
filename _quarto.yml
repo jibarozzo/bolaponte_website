@@ -3,13 +3,45 @@ project:
 
 website:
     title: "today"
+    description: "R code, environmental data science, and cats."
+    site-url: https://www.bolaponte.com
+    repo-url: https://github.com/jibarozzo/bolaponte_website
 navbar:
+  pinned: true
     left:
     - href: index.qmd
-      text: Home
+      text: "Home"
     - href: about.qmd
-      text: About
+      text: "About"
+    right:
+      - icon: github
+        aria-label: GitHub
+        href: https://github.com/jibarozzo
+      - icon: linkedin
+        aria-label: LinkedIn
+        href: https://www.linkedin.com/in/jibarozzo/
+
+
+  page-footer:
+    border: true
+    left: "&#169; 2024 Bolívar Aponte Rolón"
+    center:
+      - text: Code of conduct
+        href: coc.qmd
+    #   - text: Accessibility
+    #     href: accessibility.qmd
+    #   - text: License
+    #     href: license.qmd
+    # right: "made with ︎♥️ & [Quarto](https://quarto.org)"
 
 format:
   html:
-    theme: cosmo
+    theme: [flatly, darkly]
+    toc: true
+    toc-depth: 4
+    pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"
+    page-layout: article
+    smooth-scroll: true
+    link-external-newwindow: true
+    code-link: true
+    highlight-style: a11y
