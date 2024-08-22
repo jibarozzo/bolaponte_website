@@ -1,0 +1,33 @@
+---
+pagetitle: "Bolívar Aponte Rolón | About"
+title: "Bolívar Aponte Rolónn"
+subtitle: "Test 🌱"
+image: docs/images/Boli_en_lodo.jpeg
+# ·image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+
+about:
+  id: hero-heading
+  template: jolla
+  image: docs/images/Boli_en_lodo.jpeg
+  image-width: 10em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/jibarozzo
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jibarozzo/
+
+toc: false
+anchor-sections: false
+execute: 
+  freeze: true
+---
+
+::: {#hero-heading}
+:::
+
+## Hi there! 
+<!-- ![](assets/img/JR-logo.webp){.img-va-bottom fig-alt="cat with tail shaped as the letter J next to last name initial R" width="100"} -->
+
+Thanks for visiting my website -- I'm happy you're here!
