@@ -21,6 +21,13 @@
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "I value kindness and inclusivity. This means I will:\n\n-   be friendly, courteous, and respectful\n\ntake great care to not make statements that could cause offence, personal hurt, or discourage participation/conversation\n\nI am putting putting myself in a vulnerable position by posting content to the very public wild web. I hope others, no matter their experience level, feel comfortable enough to participate in discussions in the spirit of learning out loud.\nI will not post unacceptable content, and I will delete any references or comments that contain it.\nI define unacceptable content as anything included or linked to that:\n- is being used to abuse, harass, stalk, or threaten others\n- is libelous, knowingly false, ad-hominem, or misrepresents another person\n- infringes upon a copyright or trademark\n- violates an obligation of confidentiality\n- violates the privacy of others\nI define and determine what is “unacceptable content” on a case-by-case basis, and my definitions are not limited to this list. If I delete a comment or link, I will say so and explain why. I reserve the right to change these standards at any time with no notice.\nModified from Jadey Ryan, modified it from Cédric Scherer, who modified from Tim O’Reilly."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Bolívar Aponte Rolónn",
