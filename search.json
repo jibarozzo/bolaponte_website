@@ -1,44 +1,65 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "about",
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "CC BY-NC-SA 4.0 license",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "© 2024 Bolívar Aponte Rolón\nOpinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.\nMy content is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes."
   },
   {
-    "objectID": "about.html#quarto",
-    "href": "about.html#quarto",
-    "title": "about",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bolívar Aponte Rolón",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "Thanks for visiting my website – I’m happy you’re here!"
   },
   {
-    "objectID": "about.html#running-code",
-    "href": "about.html#running-code",
-    "title": "about",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "index.html#hi-there",
+    "href": "index.html#hi-there",
+    "title": "Bolívar Aponte Rolón",
+    "section": "",
+    "text": "Thanks for visiting my website – I’m happy you’re here!"
   },
   {
     "objectID": "coc.html",
     "href": "coc.html",
     "title": "Code of Conduct",
     "section": "",
-    "text": "I value kindness and inclusivity. This means I will:\n\n-   be friendly, courteous, and respectful\n\ntake great care to not make statements that could cause offence, personal hurt, or discourage participation/conversation\n\nI am putting putting myself in a vulnerable position by posting content to the very public wild web. I hope others, no matter their experience level, feel comfortable enough to participate in discussions in the spirit of learning out loud.\nI will not post unacceptable content, and I will delete any references or comments that contain it.\nI define unacceptable content as anything included or linked to that:\n- is being used to abuse, harass, stalk, or threaten others\n- is libelous, knowingly false, ad-hominem, or misrepresents another person\n- infringes upon a copyright or trademark\n- violates an obligation of confidentiality\n- violates the privacy of others\nI define and determine what is “unacceptable content” on a case-by-case basis, and my definitions are not limited to this list. If I delete a comment or link, I will say so and explain why. I reserve the right to change these standards at any time with no notice.\nModified from Jadey Ryan, modified it from Cédric Scherer, who modified from Tim O’Reilly."
+    "text": "I value kindness and inclusivity. This means I will:\n- be friendly, courteous, and respectful\n- take great care to not make statements that could cause offence, personal hurt, or discourage participation/conversation\nI am putting putting myself in a vulnerable position by posting content to the very public wild web. I hope others, no matter their experience level, feel comfortable enough to participate in discussions in the spirit of learning out loud.\nI will not post unacceptable content, and I will delete any references or comments that contain it.\nI define unacceptable content as anything included or linked to that:\n- is being used to abuse, harass, stalk, or threaten others\n- is libelous, knowingly false, ad-hominem, or misrepresents another person\n- infringes upon a copyright or trademark\n- violates an obligation of confidentiality\n- violates the privacy of others\nI define and determine what is “unacceptable content” on a case-by-case basis, and my definitions are not limited to this list. If I delete a comment or link, I will say so and explain why. I reserve the right to change these standards at any time with no notice.\nModified from Jadey Ryan, modified it from Cédric Scherer, who modified from Tim O’Reilly."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bolívar Aponte Rolónn",
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "Accessibility commitment",
     "section": "",
-    "text": "GitHub\n  \n  \n    \n     LinkedIn"
+    "text": "I am fairly new to web design and development, but I am committed to making my website as accessible as possible.\nThis accessibility commitment was adapted from Jadey Ryan which modified it from Silvia Canelón’s commitment."
   },
   {
-    "objectID": "index.html#hi-there",
-    "href": "index.html#hi-there",
-    "title": "Bolívar Aponte Rolónn",
-    "section": "Hi there!",
-    "text": "Hi there!\n\nThanks for visiting my website – I’m happy you’re here!"
+    "objectID": "accessibility.html#feedback",
+    "href": "accessibility.html#feedback",
+    "title": "Accessibility commitment",
+    "section": "Feedback",
+    "text": "Feedback\nI welcome any feedback on the accessibility and inclusivity of my site and content. Please let me know if you encounter any accessibility barriers or areas for improvement and I’ll do my best to incorporate them."
+  },
+  {
+    "objectID": "accessibility.html#accessibility-practices",
+    "href": "accessibility.html#accessibility-practices",
+    "title": "Accessibility commitment",
+    "section": "Accessibility practices",
+    "text": "Accessibility practices\nThis site has been designed with the following features in mind:\n\nA color palette that meets WCAG 2.1 AA standards for contrast.\nAlternative text for all informative images.\nReadable font faces, specifically to avoid impostor letter shapes and mirroring.\n\nEach character in [iIl], [ceo], and [db qp] should all be distinct from one another.1\nThis site primarily uses Domine for headings, Atkinson Hyperlegible for body text (developed by the Braille Institute), and Fira Code for code.\n\nA table of contents in the sidebars for easier navigation."
+  },
+  {
+    "objectID": "accessibility.html#accessibility-tools",
+    "href": "accessibility.html#accessibility-tools",
+    "title": "Accessibility commitment",
+    "section": "Accessibility tools",
+    "text": "Accessibility tools\nI use the following to best inform my accessibility practices:\n\nGoogle Lighthouse Tool\nGoogle Chrome Accessibility Features Reference\nColour Contrast Checker\nViz Palette\nWAVE Web Accessibility Evaluation Tool\nMicrosoft Edge Accessibility Guide"
+  },
+  {
+    "objectID": "accessibility.html#footnotes",
+    "href": "accessibility.html#footnotes",
+    "title": "Accessibility commitment",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAdded the [ceo] and [db qp] tests from Cara Thompson’s amazing data viz design system talk, specifically slide 22: Font inspiration.↩︎"
   }
 ]

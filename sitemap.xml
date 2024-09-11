@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bolaponte.com/about.html</loc>
-    <lastmod>2024-08-22T21:34:14.953Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/coc.html</loc>
-    <lastmod>2024-08-22T22:03:52.610Z</lastmod>
+    <loc>https://www.bolaponte.com/license.html</loc>
+    <lastmod>2024-09-11T20:19:18.172Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/index.html</loc>
-    <lastmod>2024-08-22T21:34:28.363Z</lastmod>
+    <lastmod>2024-09-11T20:36:04.197Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/coc.html</loc>
+    <lastmod>2024-09-11T19:38:01.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/accessibility.html</loc>
+    <lastmod>2024-09-11T20:44:05.852Z</lastmod>
   </url>
 </urlset>
