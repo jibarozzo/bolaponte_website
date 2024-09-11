@@ -1,25 +1,59 @@
 project:
     type: website
-
+execute:
+    eval: true
+    echo: false
+    
 website:
-    title: "Bolívar Aponte Rolón"
-    description: "Testing the description"
-    site-url: https://www.bolaponte.com
-    repo-url: https://github.com/jibarozzo/bolaponte_website
-navbar:
-  left:
-    - href: index.qmd
-      text: "Home"
-    - href: about.qmd
-      text: "About"
-  right:
-    - icon: github
-      aria-label: GitHub
-      href: https://github.com/jibarozzo
-    - icon: linkedin
-      aria-label: LinkedIn
-      href: https://www.linkedin.com/in/jibarozzo/
 
+  title: "Bolívar Aponte Rolón"
+  description: "Testing the description"
+  site-url: https://www.bolaponte.com
+  repo-url: https://github.com/jibarozzo/bolaponte_website
+  twitter-card:
+    creator: "@bolaponte"
+    # commented out images so I could specify them individually for various pages
+    # image: assets/img/JR-logo-circle.webp
+    # image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+  open-graph:
+    locale: en_EN
+    # image: assets/img/JR-logo-circle.webp
+    # image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+  page-navigation: true
+  google-analytics:
+    tracking-id: "G-LEVV3VZT0E"
+    anonymize-ip: true
+  cookie-consent:
+    type: express
+    prefs-text: "Change cookies 🍪"
+  navbar:
+    pinned: true
+    # logo: assets/img/JR-logo-circle.webp
+    # logo-alt: "Cat with tail shaped as the letter J next to last name initial R"
+    left:
+      - text: About
+        icon: person-circle
+        href: index.qmd
+      - text: CV
+        icon: file-earmark-text-fill
+        href: cv.qmd
+      - text: Blog
+        icon: pen-fill
+        href: blog.qmd
+      - text: Talks
+        icon: mic-fill
+        href: talks.qmd
+      - text: Projects
+        icon: puzzle-fill
+        href: projects.qmd
+
+    right:
+      - icon: github
+        aria-label: GitHub
+        href: https://github.com/jibarozzo
+      - icon: linkedin
+        aria-label: LinkedIn
+        href: https://www.linkedin.com/in/jibarozzo/
 
   page-footer:
     border: true
@@ -27,15 +61,16 @@ navbar:
     center:
       - text: Code of conduct
         href: coc.qmd
-    #   - text: Accessibility
-    #     href: accessibility.qmd
-    #   - text: License
-    #     href: license.qmd
-    # right: "made with ︎♥️ & [Quarto](https://quarto.org)"
+      - text: Accessibility
+        href: accessibility.qmd
+      - text: License
+        href: license.qmd
+    right: "made with ︎♥️ & [Quarto](https://quarto.org)"
 
 format:
-  html:
-    theme: [flatly]
+   html:
+    theme: [flatly, lightly]
+    css: styles.css
     toc: true
     toc-depth: 4
     pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"
@@ -44,5 +79,4 @@ format:
     link-external-newwindow: true
     code-link: true
     highlight-style: a11y
-css: 
-  - docs/styling/styles.css
+    lightbox: true
