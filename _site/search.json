@@ -39,21 +39,21 @@
     "href": "accessibility.html#feedback",
     "title": "Accessibility commitment",
     "section": "Feedback",
-    "text": "Feedback\nI welcome any feedback on the accessibility and inclusivity of my site and content. Please let me know if you encounter any accessibility barriers or areas for improvement and I’ll do my best to remedy them."
+    "text": "Feedback\nI welcome any feedback on the accessibility and inclusivity of my site and content. Please let me know if you encounter any accessibility barriers or areas for improvement and I’ll do my best to incorporate them."
   },
   {
     "objectID": "accessibility.html#accessibility-practices",
     "href": "accessibility.html#accessibility-practices",
     "title": "Accessibility commitment",
     "section": "Accessibility practices",
-    "text": "Accessibility practices\nThis site has been designed with the following features in mind:\n\nA color palette that meets WCAG 2.1 AA standards for contrast.\nAlternative text for all informative images.\nReadable font faces, specifically to avoid impostor letter shapes and mirroring.\n\nEach character in [iIl], [ceo], and [db qp] should all be distinct from one another.1\nThis site primarily uses Domine for headings, Atkinson Hyperlegible for body text (developed by the Braille Institute), and Fira Code for code.\n\nA table of contents in the sidebars for easier navigation.\n\nI use Google’s Lighthouse accessibility tests to check the accessibility of my website at each deployment. While I would love a perfect score of 100, I commit to a score of at least 80. The Quarto GitHub has quite a few open GitHub issues with accessibility tags that I have no control over."
+    "text": "Accessibility practices\nThis site has been designed with the following features in mind:\n\nA color palette that meets WCAG 2.1 AA standards for contrast.\nAlternative text for all informative images.\nReadable font faces, specifically to avoid impostor letter shapes and mirroring.\n\nEach character in [iIl], [ceo], and [db qp] should all be distinct from one another.1\nThis site primarily uses Domine for headings, Atkinson Hyperlegible for body text (developed by the Braille Institute), and Fira Code for code.\n\nA table of contents in the sidebars for easier navigation."
   },
   {
     "objectID": "accessibility.html#accessibility-tools",
     "href": "accessibility.html#accessibility-tools",
     "title": "Accessibility commitment",
     "section": "Accessibility tools",
-    "text": "Accessibility tools\n\nGoogle Lighthouse Tool\nGoogle Chrome Accessibility Features Reference\nColour Contrast Checker\nViz Palette\nWAVE Web Accessibility Evaluation Tool\nMicrosoft Edge Accessibility Guide"
+    "text": "Accessibility tools\nI use the following to best inform my accessibility practices:\n\nGoogle Lighthouse Tool\nGoogle Chrome Accessibility Features Reference\nColour Contrast Checker\nViz Palette\nWAVE Web Accessibility Evaluation Tool\nMicrosoft Edge Accessibility Guide"
   },
   {
     "objectID": "accessibility.html#footnotes",

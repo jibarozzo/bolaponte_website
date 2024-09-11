@@ -22,28 +22,33 @@ $gray-9: #334240;
 $black:  #000;
 
 // colors
-$teal:        #0b7366;
-$teal-light:  #f6fafa;
-$teal-dark:   #07483f;
-$orange:      #a98069;
-$orange-light:#e9dfd9;
-$orange-dark: #6a2d0a;
+$orange:      #E8B86D;
+$sand-light:  #FFF5E4;
+$teal-flat:   #A1D6B2;
+$brown-light: #a98069;
+$mint-light:  #CEDF9F;
+$brown-dark:  #8D493A;
 
-$primary:       $teal;
-$secondary:     $orange-dark;
-$light:         $teal-light;
-$light-accent:  $gray-3;
-$dark:          $gray-9;
+
+$primary:         $orange;
+$secondary:       $brown-dark;
+$accent:          $teal-flat;
+$light:           $sand-light;
+$secondary-light: $mint-light;
+$primary-dark:    $brown-dark;
+$secondary-dark:  $brown-light;
+$light-accent:    $gray-3;
+$dark:            $gray-9;
 
 // Base document colors
 $navbar-bg: $primary; // navbar
-$navbar-fg: $teal-light; // navbar foreground elements
-$navbar-hl: $white; // highlight color when hovering over navbar links
-$link-color: $orange-dark; // hyperlinks
+$navbar-fg: $white; // navbar foreground elements
+$navbar-hl: $accent; // highlight color when hovering over navbar links
+$link-color: $primary-dark; // hyperlinks
 
-// Inline code
-$code-bg: $orange-light; // inline code background color
-$code-color: $orange-dark; // inline code text color
+// Inline code colors
+$code-bg: $secondary-light; // inline code background color
+$code-color: $primary-dark; // inline code text color
 
 // Contrast
 $min-contrast-ratio:   7;
@@ -59,7 +64,7 @@ h1, h2 {
   font-size: 1.3em;
   font-weight: 900;
   font-family: Domine, serif;
-  color: $teal-dark;
+  color: $secondary-dark;
 }
 
 h2 {
@@ -69,7 +74,7 @@ h2 {
 h3, h4 {
   font-weight: 700;
   font-family: Domine, serif;
-  color: $teal;
+  color: $accent;
 }
 
 h3 {
@@ -209,7 +214,7 @@ div.cookie-consent-footer {
 
 .termsfeed-com---nb .cc-nb-main-container {
     padding: 1rem;
-    background: $orange-light;
+    background: $mint-light;
     border-radius: 6px;
 }
 
@@ -222,21 +227,21 @@ div.cookie-consent-footer {
 }
 
 .termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
-  background-color: $teal;
+  background-color: $accent;
   border-radius: 6px;
 }
 
 .termsfeed-com---palette-light .cc-nb-changep {
-  background-color: $teal-light;
+  background-color: $light;
   border-radius: 6px;
 }
 
 .cc-cp-body .cc-cp-body-tabs-item-link, .cc-cp-body .cc-cp-body-tabs {
-  background-color: $orange-light;
+  background-color: $secondary-light;
 }
 
 .termsfeed-com---palette-light .cc-cp-body-tabs-item[active=true] button {
-  background-color: $orange-dark;
+  background-color: $primary-dark;
   color: white;
 }
 
@@ -328,7 +333,7 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
 // page buttons
 
 .page-link {
-  background-color: $orange-light;
+  background-color: $secondary-light;
   color: $secondary;
 }
 
