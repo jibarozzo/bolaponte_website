@@ -1,35 +1,38 @@
 ---
-#pagetitle: "Bolívar Aponte Rolón | About"
-title: "Bolívar Aponte Rolón"
-# subtitle: "Test 🌱"
-# image: docs/images/Boli_en_lodo.jpeg
-# ·image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+title: "Bolívar Aponte Rolón, Ph.D."
+subtitle: "Data scientist"
+image: ../assets/img/boli_mimulus.jpg
+image-alt: "Smilling man with light-tan complexion and dark beard, holding a Mimulus flower the mountainous outdoors"
 
 about:
   id: hero-heading
-  template: jolla
-  image: assets/img/boli_mimulus.jpg
+  template: solana
   image-width: 20em
   links:
     - icon: github
-      text: GitHub
+      # text: GitHub
       href: https://github.com/jibarozzo
     - icon: linkedin
-      text: LinkedIn
+      # text: LinkedIn
       href: https://www.linkedin.com/in/jibarozzo/
 
 toc: false
 anchor-sections: false
+
+header-includes: >
+  <link rel="stylesheet" href="assets/styling/index.css">
+resources:
+  - assets/styling/index.css
+
 execute: 
   freeze: true
 ---
 
-<!-- ::: {#hero-heading} -->
-<!-- ::: -->
+::: {#hero-heading}
+I am researcher and data scientist with 8+ years of experience in data
+mining and statistical analyses in R and Python. My research focuses fascinating microbial fungi that live inside leaves called *endophytes*, how they interact with plant hosts, and their distributions along environmental gradients. I am also passionate about reproducible science, open-source software, and data literacy.
 
-## Hi there! 
-<!-- ![](assets/img/JR-logo.webp){.img-va-bottom fig-alt="cat with tail shaped as the letter J next to last name initial R" width="100"} -->
+[Learn more about me &rarr;](/about){.about-links .subtitle}
 
-Thanks for visiting my website -- I'm happy you're here!
-
+:::
 

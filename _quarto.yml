@@ -7,9 +7,12 @@ execute:
 website:
 
   title: "Bolívar Aponte Rolón"
-  description: "Testing the description"
+  description: "Data scientist at the intersection of ecology, evolution, and data literacy." 
   site-url: https://www.bolaponte.com
   repo-url: https://github.com/jibarozzo/bolaponte_website
+  repo-actions:
+    - source
+    - issue
   twitter-card:
     creator: "@bolaponte"
     # commented out images so I could specify them individually for various pages
@@ -20,6 +23,7 @@ website:
     # image: assets/img/JR-logo-circle.webp
     # image-alt: "Cat with tail shaped as the letter J next to last name initial R"
   page-navigation: true
+  back-to-top-navigation: true
   google-analytics:
     tracking-id: "G-LEVV3VZT0E"
     anonymize-ip: true
@@ -33,19 +37,22 @@ website:
     left:
       - text: About
         icon: person-circle
-        href: index.qmd
+        href: about/index.qmd
       - text: CV
         icon: file-earmark-text-fill
-        href: cv.qmd
+        href: cv/index.qmd
+      - text: Publications
+        icon: book-fill
+        href: publications/index.qmd
       - text: Blog
         icon: pen-fill
-        href: blog.qmd
+        href: blog/index.qmd
       - text: Talks
         icon: mic-fill
-        href: talks.qmd
+        href: talks/index.qmd
       - text: Projects
         icon: puzzle-fill
-        href: projects.qmd
+        href: projects/index.qmd
 
     right:
       - icon: github

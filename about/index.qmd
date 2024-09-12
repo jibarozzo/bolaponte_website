@@ -1,0 +1,35 @@
+---
+#pagetitle: "Bolívar Aponte Rolón | About"
+title: "Bolívar Aponte Rolón"
+subtitle: "Data Scientist | Bioinformatician | Educator"
+image: ../assets/img/boli_mimulus.jpg
+image-alt: "Smilling man with light-tan complexion and dark beard, holding a Mimulus flower the mountainous outdoors"
+
+about:
+  id: hero-heading
+  template: jolla
+  image: assets/img/boli_mimulus.jpg
+  image-width: 20em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/jibarozzo
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jibarozzo/
+
+toc: false
+anchor-sections: false
+execute: 
+  freeze: true
+---
+
+<!-- ::: {#hero-heading} -->
+<!-- ::: -->
+
+## Hi there! 
+<!-- ![](assets/img/JR-logo.webp){.img-va-bottom fig-alt="cat with tail shaped as the letter J next to last name initial R" width="100"} -->
+
+Thanks for visiting my website -- I'm happy you're here!
+
+
