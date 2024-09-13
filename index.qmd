@@ -8,6 +8,7 @@ about:
   id: hero-heading
   template: solana
   image-width: 20em
+  image-shape: rounded
   links:
     - icon: github
       # text: GitHub
@@ -29,8 +30,8 @@ execute:
 ---
 
 ::: {#hero-heading}
-I am researcher and data scientist with 8+ years of experience in data
-mining and statistical analyses in R and Python. My research focuses fascinating microbial fungi that live inside leaves called *endophytes*, how they interact with plant hosts, and their distributions along environmental gradients. I am also passionate about reproducible science, open-source software, and data literacy.
+I am researcher and data scientist with experience in statistical analyses and data visualizations in **R** and **Python**. 
+My research focuses fascinating microbial fungi that live inside (*endophytes*), how they interact with plant hosts, and their distribution along environmental gradients. I am also passionate about reproducible science, open-source software, and data literacy.
 
 [Learn more about me &rarr;](/about){.about-links .subtitle}
 
