@@ -7,7 +7,7 @@ title: "Curriculum Vitae"
 
 format: 
   html: default
-  pdf: default
+  #pdf: default
 format-links:
     text: CV
     icon: file-pdf
@@ -41,7 +41,7 @@ University of Puerto Rico – Rio Piedras
 
 ## {{< fa brain >}} Skills
 
-## {{< fa cogs >}} Technical
+<!-- ## {{< fa cogs >}} Technical -->
 
 `r knitr::knit_child(file.path(path, "docs/technical_skills.md"))`
 

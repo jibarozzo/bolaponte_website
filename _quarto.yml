@@ -4,11 +4,6 @@ execute:
     eval: true
     echo: false
     
-# Metadata
-pagetitle: "{{< meta title >}} | Bolívar Aponte Rolón"
-author-meta: "Bolívar Aponte Rolón"
-
-    
 website:
   title: "Bolívar Aponte Rolón"
   description: "Data scientist at the intersection of ecology, evolution, and data literacy." 
@@ -90,6 +85,7 @@ format:
     toc: true
     toc-depth: 4
     pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"
+    author-meta: "Bolívar Aponte Rolón"
     page-layout: article
     smooth-scroll: true
     link-external-newwindow: true
