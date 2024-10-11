@@ -4,8 +4,12 @@ execute:
     eval: true
     echo: false
     
-website:
+# Metadata
+pagetitle: "{{< meta title >}} | Bolívar Aponte Rolón"
+author-meta: "Bolívar Aponte Rolón"
 
+    
+website:
   title: "Bolívar Aponte Rolón"
   description: "Data scientist at the intersection of ecology, evolution, and data literacy." 
   site-url: https://www.bolaponte.com
