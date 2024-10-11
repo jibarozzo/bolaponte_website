@@ -1,17 +1,17 @@
 ---
 title: "Curriculum Vitae"
 
-# project:
-#   type: default
-#   output-dir: cv
+project:
+  type: default
+  output-dir: cv
 
 format: 
   html: default
-  #pdf: default
-format-links:
-    text: CV
-    icon: file-pdf
-    href: aponte_bolivar_cv.pdf
+#  pdf: default
+# format-links:
+#     text: CV
+#     icon: file-pdf
+#     href: aponte_bolivar_cv.pdf
 ---
 
 ```{r}
