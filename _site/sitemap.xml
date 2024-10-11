@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bolaponte.com/cv/index.html</loc>
-    <lastmod>2024-10-11T19:18:28.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/accessibility.html</loc>
-    <lastmod>2024-09-11T20:44:05.852Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/index.html</loc>
-    <lastmod>2024-09-13T21:00:05.206Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/coc.html</loc>
-    <lastmod>2024-09-11T19:38:01.870Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/about/index.html</loc>
-    <lastmod>2024-09-13T21:34:39.943Z</lastmod>
+    <loc>https://www.bolaponte.com/research/index.html</loc>
+    <lastmod>2024-10-11T21:10:42.937Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/license.html</loc>
     <lastmod>2024-09-11T20:19:18.172Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/publications/index.html</loc>
-    <lastmod>2024-10-11T20:52:45.335Z</lastmod>
+    <loc>https://www.bolaponte.com/about/index.html</loc>
+    <lastmod>2024-09-13T21:34:39.943Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/research/index.html</loc>
-    <lastmod>2024-10-11T21:10:42.937Z</lastmod>
+    <loc>https://www.bolaponte.com/coc.html</loc>
+    <lastmod>2024-09-11T19:38:01.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/index.html</loc>
+    <lastmod>2024-09-13T21:00:05.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/accessibility.html</loc>
+    <lastmod>2024-09-11T20:44:05.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/cv/index.html</loc>
+    <lastmod>2024-10-11T19:18:28.351Z</lastmod>
   </url>
 </urlset>
