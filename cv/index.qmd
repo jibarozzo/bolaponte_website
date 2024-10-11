@@ -1,0 +1,116 @@
+---
+title: "Curriculum Vitae"
+
+# project:
+#   type: default
+#   output-dir: cv
+
+format: 
+  html: default
+format-links:
+    text: PDF
+    icon: file-pdf
+    href: aponte_bolivar_cv.pdf
+---
+
+```{r}
+#| label: setup
+#| echo: false
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+path <- "/home/baponte/Boxx/CV_Resume/CVR_BAR"
+```
+
+## {{< fa graduation-cap >}} Education
+
+### Tulane University, Department of Ecology and Biology
+
+**Doctor of Philosophy**\
+New Orleans, LA \| 2018 – 2024
+
+-   Committee members: Sunshine Van Bael, Ph.D. (advisor; dissertation chair), Kathleen Ferris, Ph.D. (co-advisor), Keith Clay, Ph.D., & P. Camilo Zalamea, Ph.D.
+
+### University of Michigan – Ann Arbor, School for the Environment and Sustainability
+
+**Master of Science**\
+Ann Arbor, MI
+
+-   Major: Conservation Ecology
+
+### University of Puerto Rico – Rio Piedras
+
+**Bachelor of Arts**\
+San Juan, Puerto Rico
+
+-   Major: Political Science (Magna Cum Laude)
+
+## {{< fa brain >}} Skills
+
+## {{< fa cogs >}}  Technical
+
+`r knitr::knit_child(file.path(path, "docs/technical_skills.md"))`
+
+
+## {{< fa file >}}  Peer-Reviewed Publications and Pre-prints
+
+- Dong, C. M., **Aponte Rolón, B.**, Sullivan, J. K., Tataru, D., Deleon, M., Dennis, R., Dutton, S., Machado Perez, F. J., Montano, L., & Ferris, K. G. (2024, June 29). Short-term fluctuating and long-term divergent selection on sympatric Monkeyflowers: Insights from decade-spanning reciprocal transplants. [https://doi.org/10.1101/2024.06.26.600870](https://doi.org/10.1101/2024.06.26.600870)
+
+- **Aponte Rolón, B.**, Arnold, A. E., Sánchez Juliá, M., & Van Bael, S. A. (2024, April 19). *Evaluating the Role of Endophyte-Rich Leaves in Protecting Tropical Trees Against a Generalist Herbivore and a Pathogen.* [https://doi.org/10.1101/2024.04.18.589827](https://doi.org/10.1101/2024.04.18.589827)
+
+- **Aponte Rolón, Bolívar**, & Perfecto, I. (2023). Between two trees: Environmental effects of *I. micheliana* and *A. latifolia* on leaf litter ants in a coffee agroecosystem. *Ecosphere, 14(2)*, e4442. [https://doi.org/10.1002/ecs2.4442](https://doi.org/10.1002/ecs2.4442)
+
+- Schmitt, L., **Aponte-Rolón, B.**, & Perfecto, I. (2020). Evaluating community effects of a Keystone Ant, *Azteca sericeasur*, on *Inga micheliana* leaf litter decomposition in a shaded coffee agro-ecosystem. *Biotropica, 52(6)*, 1253–1261. [https://doi.org/10.1111/btp.12833](https://doi.org/10.1111/btp.12833)
+
+
+## {{< fa file >}} Other Publications
+
+- **Aponte Rolón, B.** (2023). *High-Molecular-Weight SPRI-aided DNA extraction from Mimulus (Phrymaceae) leaf tissue.* [dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2](dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2)
+
+- Dáttilo, W., Vásquez‐Bolaños, M., Ahuatzin, D. A., Antoniazzi, R., Chávez‐González, E., Corro, E., Luna, P., Guevara, R., Villalobos, F., Madrigal‐Chavero, R., De Faria Falcão, J. C., Bonilla‐Ramírez, A., Romero, A. R. G., De La Mora, A., Ramírez‐Hernández, A., Escalante‐Jiménez, A. L., Martínez‐Falcón, A. P., Villarreal, A. I., Sandoval, A. G. C., … MacGregor‐Fors, I. (2020). Mexico’s Ants: Who are They and Where do They Live? *The Bulletin of the Ecological Society of America, 101(2)*, e01666. [https://doi.org/10.1002/bes2.1666](https://doi.org/10.1002/bes2.1666)
+
+- Dáttilo, W., Vásquez‐Bolaños, M., Ahuatzin, D. A., Antoniazzi, R., Chávez‐González, E., Corro, E., Luna, P., Guevara, R., Villalobos, F., Madrigal‐Chavero, R., Falcão, J. C. D. F., Bonilla‐Ramírez, A., Romero, A. R. G., De La Mora, A., Ramírez‐Hernández, A., Escalante‐Jiménez, A. L., Martínez‐Falcón, A. P., Villarreal, A. I., Sandoval, A. G. C., … MacGregor‐Fors, I. (2020). Mexico ants: Incidence and abundance along the Nearctic–Neotropical interface. *Ecology, 101(4)*, e02944. [https://doi.org/10.1002/ecy.2944](https://doi.org/10.1002/ecy.2944)
+
+- Pérez-Figueroa, O., & Aponte Rolón, B. (2020). Clashing Resilience: Competing Agendas for Recovery after the Puerto Rican Hurricanes • SftP Magazine. *Science for the People Magazine*, 23(1). [https://magazine.scienceforthepeople.org/vol23-1/clashing-resilience-competing-agendas-for-recovery-after-the-puerto-rican-hurricanes/](https://magazine.scienceforthepeople.org/vol23-1/clashing-resilience-competing-agendas-for-recovery-after-the-puerto-rican-hurricanes/)
+
+
+
+## {{< fa briefcase >}} Professional Experience
+
+`r knitr::knit_child(file.path(path, "docs/html_cv_work_experience.md"))`
+
+## {{< fa chalkboard >}} Teaching Experience
+
+`r knitr::knit_child(file.path(path, "docs/teaching.md"))`
+
+## {{< fa chalkboard-teacher >}} Conference Presentations and Posters
+
+`r knitr::knit_child(file.path(path, "docs/conferences.md"))`
+
+## {{< fa comments >}} Seminars & Workshops
+
+`r knitr::knit_child(file.path(path, "docs/seminars.md"))`
+
+## {{< fa users-cog >}} Offices and Other Experience
+
+|                                        |                                               |                 |
+| -------------------------------------- | --------------------------------------------- | --------------- |
+| Data Lab Manager/Product Developer     | Connolly Alexander Institute for Data Science | Jan. – May 2024 |
+| Instructor                             | Howard-Tilton Memorial Library                | Sept. – Dec. 2023 |
+| Coordinator                            | Tulanians Who Enjoy R Coding (TWERC)          | 2023-2024       |
+| Urban Agriculture Instructor           | AmeriCorps STATE                              | 2014-2015       |
+| Liason                                 | CEAAL                                         | 2013-2015       |
+
+## {{< fa medal >}} Grants and Fellowships
+
+`r knitr::knit_child(file.path(path, "docs/grants.md"))`
+
+## {{< fa award >}} Awards & Honors
+
+`r knitr::knit_child(file.path(path, "docs/awards.md"))`
+
+## {{< fa user-group >}} Communities and Organizations
+
+![](../assets/img/dsh.webp){width="60px" fig-alt="Data Science Hangout logo" style="padding-right:1em"} [Posit Data Science Hangout](https://posit.co/data-science-hangout/)
+
+![](../assets/img/r4ds.webp){width="60px" fig-alt="R4DS logo" style="padding-right:1em"} [R4DS Learning Community](https://rfordatasci.com/)
+
