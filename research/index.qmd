@@ -1,0 +1,113 @@
+---
+title: "Research"
+format: 
+  html: 
+    page-layout: full
+    code-overflow: wrap
+---
+
+## [Fungal endophytes and natural enemies](https://doi.org/10.1101/2024.04.18.589827)
+:::: {layout="[40, 60]"}
+
+::: {#first-column}
+![*Theobroma cacao* leaves consumed by leaf cutter ants](../assets/img/cacao_herbivory.jpg)
+
+![Graphical abstract of ecological interactions](../assets/img/graphical_abstract.png)
+:::
+
+::: {#second-column}
+### *Endophytes help tropical trees defend against natural enemies during early growth stages*
+
+Flowering plants are adept at developing strategies to ward of enemies, including establishing important symbioses with other organisms, such as fungi that live within their tissues (endophytes), to tackle challenges like warding off enemies. In the tropics, insect herbivores and fungal pathogens are plentiful. Yet, with all these enemies around, woody plants are highly diverse and thrive. In combination with plant’s leaf functional traits, could diverse endophytes that naturally infect seedlings provide benefits against natural enemies?
+
+We developed an experiment where we reared 7 tropical tree species in a greenhouse and then inoculated them naturally with fungal spores from a nearby forest. Having tree seedlings with low and high levels of endophytes, we presented leaves to leaf-cutter ants (insect herbivore) and tested how much of the leaf they harvested in a determined period. We also exposed tree seedling to a generalist pathogen and measured how much damage the pathogen caused.
+
+Our findings highlight the complex dynamics of plant-herbivore-pathogen relationships and underscore the importance of endophytes as a potentially low-cost, preemptive defense strategy for plants, especially during early growth stages. These insights not shed light on the nuanced role of endophytes in plant ecology.
+
+**Collaborators:**
+
+- A. Elizabeth Arnold
+- Mareli Sánchez Juliá
+- Sunshine A. Van Bael
+:::
+
+::::
+
+## Fungal Endophytes and Yellow Monkeyflowers
+
+:::: {layout="[60, 40]"}
+
+::: {#third-column}
+### Foliar Endophytes in yellow monkeyflowers along elevation gradients in the Sierra Nevada [(*in-process*)]{.cv-date}
+
+Microbes play crucial roles in plant health and adaptation, but their distribution is influenced by environmental conditions, geographic distance, and plant species. Fungi have helped plants colonize various climates, but little is known about how plant microbiomes affect local adaptation.
+
+This study focused on foliar endophytic fungi (FEF), which can help plants survive stressful conditions like drought. We explored how FEF communities in *Mimulus* species (monkeyflowers) vary with elevation and interact with leaf traits. *Mimulus* species, found in diverse habitats from dry outcrops to alpine meadows, offer an ideal system to study plant-microbe interactions.
+
+Using genetic sequencing, we examined how FEF communities change across three *Mimulus* species in the Sierra Nevada mountains, revealing insights into how these fungi respond to environmental conditions and host leaf traits.
+
+**Collaborators:**
+
+- Caroline M. Dong
+- Kathleen G. Ferris
+- Sunshine A. Van Bael
+:::
+
+::: {#fourth-column}
+![*Mimulus guttatus* field in Stanislaus National Forest](../assets/img/yellow_field.jpg)
+
+:::
+::::
+
+---
+:::: {layout="[40, 60]"}
+
+::: {#fifth-column}
+
+![Common garden experiment in granite outcrop at Yosemite National PArk](../assets/img/ycn_site.jpg)
+
+
+:::
+
+::: {#sixth-column}
+
+### Genotype and phenotype interactions with foliar fungal symbionts in common gardens [(*in-process*)]{.cv-date}
+
+In the face of climate change, to survive, plants rely on both genetic changes and their ability to adapt to changing environments. We know that plants form beneficial partnerships with fungi and bacteria, however the role of these microbes in helping plants adapt to their environments is less understood. Building on previous findings, this research tests how foliar endophytic fungi (FEF) respond to host leaf traits in a reciprocal transplant experiment. By crossing *M. guttatus* and *M. laciniatus* and obtaining F<sub>2</sub> hybrids we aim to understand the contributions of host plant genetics and phenotype, and the environment to FEF community composition.
+
+Our results may shed light on how plants and their microbial partners work together to adapt to diverse and challenging environments. By exploring how fungi help plants respond to different environmental stresses (planted in the other species environment: meadows and granite outcrops), we can better predict how plant species might cope with the rapid changes in climate, offering insights into plant survival and biodiversity conservation.
+
+**Collaborators:**
+
+- Caroline M. Dong
+- Kathleen G. Ferris
+- Sunshine A. Van Bael
+:::
+::::
+
+#### Lab innovation
+
+The process of capturing fungal endophytes from yellow monkeyflower tissue led to innovations in DNA extraction and PCR setup. See below:
+
+-   **Aponte Rolón, B.** (2023). *High-Molecular-Weight SPRI-aided DNA extraction from Mimulus (Phrymaceae) leaf tissue.* [dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2](dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2)
+
+
+<!-- ## Monkey flowers and local adaptation -->
+
+<!-- ### [Short-term fluctuating and long-term divergent selection on sympatric Monkeyflowers](https://doi.org/10.1101/2024.06.26.600870) [(*in-review*)]{.cv-date} -->
+
+
+
+
+
+<!-- ## {{< fa plant >}} Coffee Agroecosystems and Ants -->
+
+<!-- -   **Aponte Rolón, Bolívar**, & Perfecto, I. (2023). Between two trees: Environmental effects of *I. micheliana* and *A. latifolia* on leaf litter ants in a coffee agroecosystem. *Ecosphere, 14(2)*, e4442. <https://doi.org/10.1002/ecs2.4442> -->
+
+<!-- -   Schmitt, L., **Aponte-Rolón, B.**, & Perfecto, I. (2020). Evaluating community effects of a Keystone Ant, *Azteca sericeasur*, on *Inga micheliana* leaf litter decomposition in a shaded coffee agro-ecosystem. *Biotropica, 52(6)*, 1253–1261. <https://doi.org/10.1111/btp.12833> -->
+
+
+
+<!-- ## {{< fa file >}} Other Publications -->
+
+<!-- -   Pérez-Figueroa, O., & Aponte Rolón, B. (2020). Clashing Resilience: Competing Agendas for Recovery after the Puerto Rican Hurricanes • SftP Magazine. *Science for the People Magazine*, 23(1). <https://magazine.scienceforthepeople.org/vol23-1/clashing-resilience-competing-agendas-for-recovery-after-the-puerto-rican-hurricanes/> -->

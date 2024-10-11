@@ -40,9 +40,9 @@ website:
       - text: CV
         icon: file-earmark-text-fill
         href: cv/index.qmd
-      - text: Publications
+      - text: Research
         icon: book-fill
-        href: publications/index.qmd
+        href: research/index.qmd
       - text: Blog
         icon: pen-fill
         href: blog/index.qmd
