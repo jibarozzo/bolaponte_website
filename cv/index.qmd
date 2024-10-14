@@ -58,7 +58,7 @@ University of Puerto Rico – Rio Piedras
 
 -   Dáttilo, W., Vásquez‐Bolaños, M., Ahuatzin, D. A., Antoniazzi, R., Chávez‐González, E., Corro, E., Luna, P., Guevara, R., Villalobos, F., Madrigal‐Chavero, R., Falcão, J. C. D. F., Bonilla‐Ramírez, A., Romero, A. R. G., De La Mora, A., Ramírez‐Hernández, A., Escalante‐Jiménez, A. L., Martínez‐Falcón, A. P., Villarreal, A. I., Sandoval, A. G. C., … MacGregor‐Fors, I. (2020). Mexico ants: Incidence and abundance along the Nearctic–Neotropical interface. *Ecology, 101(4)*, e02944. <https://doi.org/10.1002/ecy.2944>
 
--   Pérez-Figueroa, O., & Aponte Rolón, B. (2020). Clashing Resilience: Competing Agendas for Recovery after the Puerto Rican Hurricanes • SftP Magazine. *Science for the People Magazine*, 23(1). <https://magazine.scienceforthepeople.org/vol23-1/clashing-resilience-competing-agendas-for-recovery-after-the-puerto-rican-hurricanes/>
+-   Pérez-Figueroa, O., & **Aponte Rolón, B.** (2020). Clashing Resilience: Competing Agendas for Recovery after the Puerto Rican Hurricanes • SftP Magazine. *Science for the People Magazine*, 23(1). <https://magazine.scienceforthepeople.org/vol23-1/clashing-resilience-competing-agendas-for-recovery-after-the-puerto-rican-hurricanes/>
 
 ## {{< fa briefcase >}} Professional Experience
 
