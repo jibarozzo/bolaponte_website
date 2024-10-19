@@ -1,0 +1,238 @@
+---
+title: "Automating plots with purrr"
+subtitle: "Exploring iteration with `purrr` to automate list and plot generation"
+author: "Bolívar Aponte Rolón"
+date: today
+description: ""
+#image: 
+#image-alt: 
+categories:
+  - R
+  - Quarto
+  - tidyverse
+  - purrr
+#bibliography: references.bib
+number-sections: false
+number-depth: 2
+execute: 
+  eval: true
+  echo: true
+  
+
+---
+
+For the past couple of years, I've been deepening my understanding of R—its ecosystem and the many tools it offers for supporting open and reproducible science. Lately, I've been participating in the *Programming in R* course by [Posit Academy](https://posit.co/products/enterprise/academy/) and learning functional programming concepts, which I highly recommend even if your a seasoned useR.  This has prompted me to refactor much of the code I've produce to be more maintainable and human. My main focus has been plot reproduction. Some of my code has hundreds of lines producing *ggplots* that can easily be turned into a function(s).  This is where the `purrr` package comes in.
+
+## What have I learned? 
+
+Let's see some example of how to use `purr::map()` to automate plot generation. 
+
+### Setup
+
+```{r}
+#| label: setup
+#| eval: true
+#| echo: true
+#| message: false
+
+library(tidyverse)
+library(gapminder)
+```
+
+The `tidyverse` meta package includes `ggplot` (plots generation), `purrr` (iteration), and `dplyr` (data wrangling) the three main packages we will be using. 
+### The problem
+
+### Copy and paste code to produce plots.
+
+```{r}
+#| label: copy_plots
+#| echo: true
+#| warning: false
+#| message: false
+
+# Afghanistan
+gapminder |>
+  filter(country == "Afghanistan" ) |>
+ggplot(aes(x = year, y = lifeExp)) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+  geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+  labs(title = "Afghanistan")
+
+# United States
+gapminder |>
+  filter(country == "United States" ) |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+  geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+  labs(title = "United States")
+
+# United Kingdom
+gapminder |>
+  filter(country == "United Kingdom" ) |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+  geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+  labs(title = "United Kingdom")
+
+# China
+gapminder |>
+  filter(country == "China" ) |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+  geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+  labs(title = "China")
+
+# India
+gapminder |>
+  filter(country == "India" ) |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+  geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+  labs(title = "India")
+```
+
+Five plots might not be a big deal. But it quickly becomes a hassle to keep track of when you have over a dozen variables and the plots are roughly the same that it's not worth writing a whole new chunk. I've omitted creating respective object for the plots, but that is how I would usually store them and call them throughout the analysis (e.g., `us_scatter` or something like that). The issue with this approach is that it is prone to a lot of error. Copying and pasting, then tweaking the code ever so slightly is a major source of human error (e.g. forgetting to change the `x` variable). Again, its manageable now, but not with bigger projects.
+
+## How do we automate this?
+
+First,  let's write a function
+```{r}
+#| label: ggplot_function
+#| echo: true
+#| warning: false
+#| message: false
+
+lm_ggplot <- function(data, .country, x, y) {
+data |>
+    filter(country == {{.country}} ) |>
+    ggplot(aes(x = {{x}}, y = {{y}})) +
+    geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1) +
+    geom_smooth(method = lm, se = T, level = 0.95, na.rm = F) +
+    labs(title = .country)
+}
+```
+
+Let's test our function
+```{r}
+#| label: test_function
+#| message: false
+
+lm_ggplot(gapminder, .country = "Afghanistan", x = year, y = lifeExp)
+```
+
+Great! Our function has the desired output and we can now use it to automate the plot generation.
+
+```{r}
+#| label: automate_plots
+
+countries <- c("Afghanistan", "United States", "United Kingdom", "China", "India")
+
+map(countries, \(.x) lm_ggplot(data = gapminder, .country = .x, x = year, y = lifeExp))
+```
+
+We are able to generate the sample plot for all countries with far fewer lines of code. We have effectively, iterated over the `countries` vector and applied the `lm_ggplot` function to each element. This is a simple example, but the power of `purrr` is that it can be used to iterate over any object that can be iterated over (e.g., lists, dataframes, etc.).
+
+## How does `map()` work?
+
+`map()` is a function that takes two arguments: 
+```
+map(v, .fun)
+```
+a vector or list and a function. The function is applied to each element of the vector or list. It is specialized to iterate over and return vectors and lists.
+
+The way I used `map()` here is with the syntax usually used for anonymous functions. The `\.x` is a shorthand for the first argument of the function. in this case, it is were the vectors of `countries` will be passed to to iterate over.  
+
+
+## Behold, the *list column*
+
+When we work with R work are working with  object that are atomic vectors of different types (e.g., character, numerical, integers, floats, etc.). One of the most powerful data structures in R are lists. Lists are a collection of objects that can be of any type. This makes them very flexible and powerful. We can have a list of data frames (which are list themselves), plots, functions, etc. In this exercise, `map()` returned a list of `ggplots`. Now one of the most useful things I have learned lately is the `list columns`.
+
+List columns are a column in a data frame that contains a list. This is allows us to store multiple objects in a single column. Having a list column within a data frame or by it self can help us reduce the number of intermediate object that we create within a project. Instead of creating an object for each plot or linear models, we can store them in a list column in a single object that we can access and use throughout our analyses. 
+
+
+Let's see how lists columns work.
+We are going to use `nest()` to summarize grouped data by nesting the non-grouping variables into a list column of data frames—one data frame per group.
+```{r}
+#| label: population_lifeExp
+life_expectancy <-
+  gapminder |> 
+  select(country, continent, year, lifeExp) |> 
+  group_by(country, continent) |> 
+  nest()
+
+life_expectancy
+```
+
+Now we have a data frame with column `data` that contains a list of data frames. We can use `map()` to apply a function to each element of the list column.
+
+Let's define some useful functions to fit a linear model, plot the data, and predict life expectancy in 2030.
+
+```{r}
+#| label : population_functions
+
+# Functions to fit a linear model, plot the data, and predict life expectancy in 2030
+fit_pop <- function(df) {
+  lm(pop ~ year, data = df)
+}
+
+plot_pop <- function(df) {
+  ggplot(df, aes(x = year, y = pop)) +
+    geom_point() +
+    geom_smooth(method = lm)
+}
+
+pred_pop <- function(mod) {
+  input <- tibble(year = 2030)
+  predict(mod, newdata = input)
+}
+
+```
+
+Now we can use `map()` to apply these functions to each data frame in the list column.
+
+```{r}
+#| label: list_column
+
+# Fit a linear model to each data frame in the list column
+gap_list_df <- gapminder |> 
+  select(country, year, pop) |> 
+  group_by(country) |> 
+  nest() |> 
+  mutate(
+    model = map(data, fit_pop),
+    plot = map(data, plot_pop),
+    pop_2030 = map_dbl(model, pred_pop)
+  )
+
+gap_list_df
+```
+
+For each country we have a group data frame within `data` column, a linear model in `model` column, and a ggplot in `plot` column. We can access it like this:
+
+```{r}
+#| label: access_list_column
+
+# Afghanistan data frame
+gap_list_df$data[[1]]
+
+# Afghanistan linear model
+gap_list_df$model[[1]]
+
+# Afghanistan ggplot
+gap_list_df$plot[[1]]
+
+# Afghanistan predicted population in 2030
+gap_list_df$pop_2030[[1]]
+```
+With one object we can access all the information we need for each country. We can include this in reports and analyses.
+
+## Conclusion
+
+These are some of the ways I've been using `purrr` to automate my plots and analyses. I hope you find this useful and that it helps you in your work. I highly recommend you check out the [R for Data Science](https://r4ds.had.co.nz/) book by Hadley Wickham and Garrett Grolemund. It is a great resource for learning the `tidyverse` and `purrr`.
+
+## References
+
+- [R for Data Science](https://r4ds.had.co.nz/)
+- [Gapminder vignette](https://cran.r-project.org/web/packages/gapminder/vignettes/gapminder.html)
+- [Efficiency and Consistency: Automate Subset Graphics with ggplot2 and purrr](https://www.cedricscherer.com/2023/07/05/efficiency-and-consistency-automate-subset-graphics-with-ggplot2-and-purrr/)
+

@@ -43,15 +43,15 @@ website:
       - text: Research
         icon: book-fill
         href: research/index.qmd
-      - text: Blog
-        icon: pen-fill
+      - text: Sandbox
+        icon: box
         href: blog/index.qmd
-      - text: Talks
-        icon: mic-fill
-        href: talks/index.qmd
-      - text: Projects
-        icon: puzzle-fill
-        href: projects/index.qmd
+      # - text: Talks
+      #   icon: mic-fill
+      #   href: talks/index.qmd
+      # - text: Projects
+      #   icon: puzzle-fill
+      #   href: projects/index.qmd
 
     right:
       - icon: github
