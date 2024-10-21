@@ -1,6 +1,6 @@
 ---
 title:  "Loop Less, Do More: Iterating Efficiently with `purrr`"
-subtitle: "Automating lists, plots, and possibilities"
+#subtitle: "Automating lists, plots, and possibilities"
 author: "Bolívar Aponte Rolón"
 date: today
 description: "Automating lists, plots, and possibilities"
