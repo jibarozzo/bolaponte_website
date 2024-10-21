@@ -1,17 +1,15 @@
 ---
-title: "Automating plots with purrr"
-subtitle: "Exploring iteration with `purrr` to automate list and plot generation"
+title:  "Loop Less, Do More: Iterating Efficiently with `purrr`"
+subtitle: "Automating lists, plots, and possibilities"
 author: "Bolívar Aponte Rolón"
 date: today
-description: ""
-#image: 
-#image-alt: 
+description: "Automating lists, plots, and possibilities"
+image: apple-touch-icon-152x152.png
+image-alt: Hand dranw sleeping cat in hexagon frame
 categories:
   - R
-  - Quarto
   - tidyverse
   - purrr
-#bibliography: references.bib
 number-sections: false
 number-depth: 2
 execute: 
@@ -234,5 +232,6 @@ These are some of the ways I've been using `purrr` to automate my plots and anal
 
 - [R for Data Science](https://r4ds.had.co.nz/)
 - [Gapminder vignette](https://cran.r-project.org/web/packages/gapminder/vignettes/gapminder.html)
+- [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels)
 - [Efficiency and Consistency: Automate Subset Graphics with ggplot2 and purrr](https://www.cedricscherer.com/2023/07/05/efficiency-and-consistency-automate-subset-graphics-with-ggplot2-and-purrr/)
 

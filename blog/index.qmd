@@ -1,6 +1,7 @@
 ---
- title: "Experiment freely, learn endlessly."
+ title: "Experiment freely, learn endlessly"
  description: |
+    Divagations (yes, it's a word) at the intersection data, biology and code
 
  listing:
    contents:
