@@ -1,11 +1,10 @@
 ---
 title:  "Loop Less, Do More: Iterating Efficiently with `purrr`"
-#subtitle: "Automating lists, plots, and possibilities"
+description: 'Automating lists, plots, and possibilities'
 author: "Bolívar Aponte Rolón"
 date: today
-description: "Automating lists, plots, and possibilities"
 image: apple-touch-icon-152x152.png
-image-alt: Hand dranw sleeping cat in hexagon frame
+image-alt: Hand drawn sleeping cat in hexagon frame
 categories:
   - R
   - tidyverse
