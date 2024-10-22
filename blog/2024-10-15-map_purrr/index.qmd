@@ -2,7 +2,8 @@
 title:  "Loop Less, Do More: Iterating Efficiently with `purrr`"
 description: 'Automating lists, plots, and possibilities'
 author: "Bolívar Aponte Rolón"
-date: today
+date: 10/21/2024
+date-format: long
 image: apple-touch-icon-152x152.png
 image-alt: Hand drawn sleeping cat in hexagon frame
 categories:
@@ -18,7 +19,7 @@ execute:
 
 ---
 
-For the past couple of years, I've been deepening my understanding of R—its ecosystem and the many tools it offers for supporting open and reproducible science. Lately, I've been participating in the *Programming in R* course by [Posit Academy](https://posit.co/products/enterprise/academy/) and learning functional programming concepts, which I highly recommend even if your a seasoned useR.  This has prompted me to refactor much of the code I've produce to be more maintainable and human. My main focus has been plot reproduction. Some of my code has hundreds of lines producing *ggplots* that can easily be turned into a function(s).  This is where the `purrr` package comes in.
+For the past couple of years, I've been deepening my understanding of R—its ecosystem and the many tools it offers for supporting open and reproducible science. Lately, I've been participating in the *Programming in R* course by [Posit Academy](https://posit.co/products/enterprise/academy/) and learning functional programming concepts, which I highly recommend even if you're a seasoned useR.  This has prompted me to refactor much of the code I've produce to be more maintainable and human. My main focus has been plot reproduction. Some of my code has hundreds of lines producing *ggplots* that can easily be turned into a function(s).  This is where the `purrr` package comes in.
 
 ## What have I learned? 
 
