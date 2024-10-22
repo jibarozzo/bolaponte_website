@@ -10,7 +10,7 @@
 <atom:link href="https://www.bolaponte.com/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Divagations (yes, it&#39;s a word) at the intersection data, biology and code
 </description>
-<generator>quarto-1.4.555</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Mon, 21 Oct 2024 05:00:00 GMT</lastBuildDate>
 <item>
   <title>Loop Less, Do More: Iterating Efficiently with purrr
@@ -26,6 +26,7 @@
 <div class="cell">
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -35,6 +36,7 @@ background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -642,6 +644,7 @@ font-style: inherit;">lm_ggplot</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -1042,6 +1045,7 @@ font-style: inherit;">fit_pop</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -1078,6 +1082,7 @@ font-style: inherit;">plot_pop</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -1142,6 +1147,7 @@ font-style: inherit;">pred_pop</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">(</span><span class="va" style="color: #111111;
@@ -1426,9 +1432,9 @@ font-style: inherit;">]</span></span></code></pre></div>
 </ul>
 
 
-</section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-aponte rolón2024" class="csl-entry quarto-appendix-citeas">
+</section><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-aponte_rolón2024" class="csl-entry quarto-appendix-citeas">
 Aponte Rolón, Bolívar. 2024. <span>“Loop Less, Do More: Iterating
-Efficiently with `Purrr`.”</span> October 21, 2024. <a href="https://www.bolaponte.com/blog/2024-10-15-map_purrr">https://www.bolaponte.com/blog/2024-10-15-map_purrr</a>.
+Efficiently with `Purrr`.”</span> October 21, 2024. <a href="https://www.bolaponte.com/blog/2024-10-15-map_purrr/">https://www.bolaponte.com/blog/2024-10-15-map_purrr/</a>.
 </div></div></section></div> ]]></description>
   <category>R</category>
   <category>tidyverse</category>
@@ -1439,3 +1445,4 @@ Efficiently with `Purrr`.”</span> October 21, 2024. <a href="https://www.bolap
 </item>
 </channel>
 </rss>
+
