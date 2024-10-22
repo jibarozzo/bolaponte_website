@@ -3,6 +3,26 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+// Define font-family variables
+// stylelint-disable-next-line value-keyword-case
+$font-family-sans-serif: "Red Hat Text", "Source Sans Pro", -apple-system, 
+                         BlinkMacSystemFont, "Segoe UI", Roboto, 
+                         "Helvetica Neue", Arial, sans-serif, 
+                         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-family-monospace: "Dank Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
+                        "Liberation Mono", "Courier New", monospace;
+                        
+$font-family-serif: "Petrona", serif,;
+
+$headings-font-family: "Petrona";
+$headings-font-weight: 400;
+
 // Colors
 
 // Most colors adopted from https://palx.jxnblk.com/
@@ -63,7 +83,7 @@ $min-contrast-ratio:   7;
 h1, h2 {
   font-size: 1.3em;
   font-weight: 900;
-  font-family: Domine, serif;
+  font-family: Raleway, serif;
   color: $secondary-dark;
 }
 
