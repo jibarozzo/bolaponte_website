@@ -2,7 +2,7 @@
 title:  "Flexible R Setup on Linux"
 subtitle: 'Managing Multiple Versions with OpenBLAS support'
 author: "Bolívar Aponte Rolón"
-#date: 11/11/2024
+date: 11/11/2024
 modified: today
 date-format: long
 #image: apple-touch-icon-152x152.png
@@ -20,8 +20,6 @@ editor:
   markdown: 
     wrap: 72
 ---
-
-# Flexible R Setup on Linux: Managing Multiple Versions with OpenBLAS
 
 Achieving reproducible results, whether full analytical pipelines or
 simple analyses, is contingent on the specific software used and the
@@ -68,6 +66,10 @@ Intel.](https://www.intel.com/content/www/us/en/developer/articles/technical/usi
 For now I'll stick to OpenBLAS.
 
 ------------------------------------------------------------------------
+::: {.callout-warning}
+## Transparency Notice
+To provide a polished and comprehensive overview, I utilized ChatGPT, an AI language model by OpenAI, for drafting and refining portions of this article.
+:::
 
 ## Let's get into it
 
@@ -555,3 +557,41 @@ of suggestions.
 
 ## Additional Resources
 
+### Official Documentation
+
+- [Installing Multiple Versions of R on Linux](https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux)  
+    Comprehensive guide from Posit on how to install and manage multiple R versions on Linux systems.
+    
+- [Changing R Versions for the RStudio Desktop IDE](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE)  
+    Instructions on how to switch between different R versions within the RStudio IDE.
+    
+- [R Administration Manual](https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html)  
+    Official R documentation detailing configurations.
+    
+
+### Community Discussions
+
+- [R with LAPACK from OpenBLAS - Posit Forum](https://forum.posit.co/t/r-with-lapack-from-openblas/170554)  
+    A forum thread discussing the integration of LAPACK from OpenBLAS in R.
+    
+- [Faster BLAS in R - Brett Klamer's Blog](https://brettklamer.com/diversions/statistical/faster-blas-in-r/)  
+    Blog post exploring methods to speed up BLAS operations in R.
+    
+
+### Tutorials and Guides
+
+- [R Performance with BLAS - csantill.github.io](https://csantill.github.io/RPerformanceWBLAS/)  
+    A detailed tutorial on optimizing R performance using BLAS libraries.
+    
+- [Why is R Slow? Explanations and MKL/OpenBLAS Setup to Fix It](https://www.r-bloggers.com/2017/11/why-is-r-slow-some-explanations-and-mklopenblas-setup-to-try-to-fix-this/)  
+    An R-bloggers article explaining common performance issues in R and how to address them with MKL/OpenBLAS.
+
+- [Managing Multiple R Installations on Linux](https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/)
+
+- [Monica Thieu’s Post on Managing Multiple R Versions](https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/)  
+    Insights and solutions from the community on handling multiple R versions.
+
+### Tools and Repositories
+
+- [r-blas GitHub Repository](https://github.com/goepp/r-blas)  
+    GitHub repository for managing BLAS configurations in R.
