@@ -24,6 +24,9 @@
  format:
    html:
      page-layout: full
+     code-block-border-left: "#0C3823"
+     code-block-bg: "#eeeeee"
+     highlight-style: github
  title-block-banner: false
 
  header-includes: >
