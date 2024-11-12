@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Bolívar Aponte Rolón">
+<meta name="dcterms.date" content="2024-11-11">
+
+<title>Bolívar Aponte Rolón | Flexible R Setup on Linux – Bolívar Aponte Rolón</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LEVV3VZT0E"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LEVV3VZT0E', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Bolívar Aponte Rolón | Flexible R Setup on Linux">
+<meta property="og:description" content="Managing Multiple Versions with OpenBLAS support">
+<meta property="og:site_name" content="Bolívar Aponte Rolón">
+<meta property="og:locale" content="en_EN">
+<meta name="twitter:title" content="Bolívar Aponte Rolón | Flexible R Setup on Linux">
+<meta name="twitter:description" content="Managing Multiple Versions with OpenBLAS support">
+<meta name="twitter:creator" content="@bolaponte">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Bolívar Aponte Rolón</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html"> <i class="bi bi-person-circle" role="img">
+</i> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> <i class="bi bi-file-earmark-text-fill" role="img">
+</i> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research/index.html"> <i class="bi bi-book-fill" role="img">
+</i> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> <i class="bi bi-box" role="img">
+</i> 
+<span class="menu-text">Sandbox</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jibarozzo"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/jibarozzo/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns">
+<div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
+<h1 class="title">Flexible R Setup on Linux</h1>
+<p class="subtitle lead">Managing Multiple Versions with OpenBLAS support</p>
+    <div class="quarto-categories">
+        <div class="quarto-category">R</div>
+        <div class="quarto-category">Linux</div>
+        <div class="quarto-category">OpenBLAS</div>
+        <div class="quarto-category">Computer Science</div>
+      </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bolívar Aponte Rolón </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 11, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" id="toc-how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" class="nav-link active" data-scroll-target="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment">How to install and switch between various versions of R in a Linux base environment?</a></li>
+  <li><a href="#lets-get-into-it" id="toc-lets-get-into-it" class="nav-link" data-scroll-target="#lets-get-into-it">Let’s get into it</a></li>
+  <li><a href="#configuration-1-using-rs-internal-shared-blas-library" id="toc-configuration-1-using-rs-internal-shared-blas-library" class="nav-link" data-scroll-target="#configuration-1-using-rs-internal-shared-blas-library">Configuration 1: Using R’s Internal Shared BLAS Library</a>
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#configure" id="toc-configure" class="nav-link" data-scroll-target="#configure">Configure</a>
+  <ul class="collapse">
+  <li><a href="#explanation-of-flags" id="toc-explanation-of-flags" class="nav-link" data-scroll-target="#explanation-of-flags">Explanation of Flags</a></li>
+  </ul></li>
+  <li><a href="#verification-after-.configure" id="toc-verification-after-.configure" class="nav-link" data-scroll-target="#verification-after-.configure">Verification after <code>./configure</code></a></li>
+  <li><a href="#building-and-installing-r" id="toc-building-and-installing-r" class="nav-link" data-scroll-target="#building-and-installing-r">Building and Installing R</a></li>
+  </ul></li>
+  <li><a href="#configuration-2-linking-to-system-optimized-openblas-and-lapack" id="toc-configuration-2-linking-to-system-optimized-openblas-and-lapack" class="nav-link" data-scroll-target="#configuration-2-linking-to-system-optimized-openblas-and-lapack">Configuration 2: Linking to System-Optimized OpenBLAS and LAPACK</a>
+  <ul>
+  <li><a href="#prerequisites-1" id="toc-prerequisites-1" class="nav-link" data-scroll-target="#prerequisites-1">Prerequisites</a></li>
+  <li><a href="#installing-r-with-openblas" id="toc-installing-r-with-openblas" class="nav-link" data-scroll-target="#installing-r-with-openblas">Installing R with <code>openblas</code></a>
+  <ul class="collapse">
+  <li><a href="#flags-used" id="toc-flags-used" class="nav-link" data-scroll-target="#flags-used">Flags used</a></li>
+  <li><a href="#configuration-output" id="toc-configuration-output" class="nav-link" data-scroll-target="#configuration-output">Configuration output</a></li>
+  <li><a href="#building-and-installing-r-1" id="toc-building-and-installing-r-1" class="nav-link" data-scroll-target="#building-and-installing-r-1">Building and installing R</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#benefits-of-using-system-optimized-blaslapack" id="toc-benefits-of-using-system-optimized-blaslapack" class="nav-link" data-scroll-target="#benefits-of-using-system-optimized-blaslapack">Benefits of Using System-Optimized BLAS/LAPACK</a></li>
+  <li><a href="#how-to-switch-between-r-versions" id="toc-how-to-switch-between-r-versions" class="nav-link" data-scroll-target="#how-to-switch-between-r-versions">How to switch between R versions</a></li>
+  <li><a href="#toggle-shim" id="toc-toggle-shim" class="nav-link" data-scroll-target="#toggle-shim">Toggle Shim</a>
+  <ul>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a>
+  <ul>
+  <li><a href="#official-documentation" id="toc-official-documentation" class="nav-link" data-scroll-target="#official-documentation">Official Documentation</a></li>
+  <li><a href="#community-discussions" id="toc-community-discussions" class="nav-link" data-scroll-target="#community-discussions">Community Discussions</a></li>
+  <li><a href="#tutorials-and-guides" id="toc-tutorials-and-guides" class="nav-link" data-scroll-target="#tutorials-and-guides">Tutorials and Guides</a></li>
+  <li><a href="#tools-and-repositories" id="toc-tools-and-repositories" class="nav-link" data-scroll-target="#tools-and-repositories">Tools and Repositories</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/blog/2024-11-11-flexible_r/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+<!-- source: https://github.com/gadenbuie/garrickadenbuie-com/blob/main/_partials/title-block-link-buttons/title-block.html -->
+<!-- <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title"> 
+-->
+<!-- <header id="title-block-header" class="quarto-title-block default page-columns"> -->
+<!-- <div class="quarto-title page-columns page-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);"> -->
+
+
+
+<p>Achieving reproducible results, whether working with full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times, we need to reproduce experimental results or need to use packages that are no longer being maintained. With R, this is easily achievable through some combination of Conda virtual environments, <code>renv</code> and Docker images. This is often considered the epitome of reproducibility. However, sometimes it just doesn’t merit setting up a whole environment to work on a small project, therefore having multiple versions of R in the base environment might be desirable to speed things up. The process of setting up different R versions in the base environment, accessed through RStudio, depends on your operating system:</p>
+<ul>
+<li><strong>Windows</strong>:
+<ul>
+<li>Access <strong>RStudio’s Global Options</strong> to easily set your preferred binary version.</li>
+</ul></li>
+<li><strong>Mac</strong>:
+<ul>
+<li>You can install R in various ways with the most seamless method being <a href="https://rud.is/rswitch/">Rswitch</a>.</li>
+</ul></li>
+<li><strong>Additional Resources</strong>:
+<ul>
+<li>For installation details on Windows, Mac and Linux, check <a href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Posit’s support page</a>.</li>
+<li>See <a href="https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/">Monica Thieu’s post</a> for further insights from the community on managing multiple R versions on Mac.</li>
+</ul></li>
+</ul>
+<section id="how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment">How to install and switch between various versions of R in a Linux base environment?</h3>
+<p>It quite straightforward but like many tasks on Linux, it requires a bit more forethought and understanding of the system. Posit also has a good <a href="https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux">support page</a> , but the seamless switching is only available in their Pro products. I decided to document how I did this on my local machine following Posit’s guides and the extensive documentation from the <a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html">R Core Team</a>. Along the way, I also opted to install R with the OpenBLAS library, which provides optimizedBLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) libraries to improve performance. An alternative BLAS/LAPACK library is the <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">Intel oneAPI Base</a> that is apparently faster. Perhaps I will try that later following <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html">instructions from Intel.</a> For now, I’ll stick to OpenBLAS.</p>
+<hr>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Transparency Notice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To provide a polished and comprehensive overview, I utilized ChatGPT, an AI language model by OpenAI, for drafting and refining portions of this article.</p>
+</div>
+</div>
+</section>
+<section id="lets-get-into-it" class="level2">
+<h2 class="anchored" data-anchor-id="lets-get-into-it">Let’s get into it</h2>
+<p>We’ll install R from source with two different configurations and learn how to switch between versions. See the <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#BLAS">R installation guide for more options.</a></p>
+<ol type="1">
+<li><p><strong>Internal BLAS</strong>: Uses R’s internal shared BLAS library (<code>libRblas.so</code>) for simplicity and modularity.</p></li>
+<li><p><strong>OpenBLAS</strong>: Links R to system-optimized OpenBLAS and LAPACK libraries for performance gains.</p></li>
+<li><p><strong>How to switch between R versions</strong>: Changing environment variables to choose our R versions.</p></li>
+</ol>
+<p>Both configurations include the shared R library (<code>libR.so</code>), which is important for compatibility with external applications like RStudio.</p>
+<hr>
+</section>
+<section id="configuration-1-using-rs-internal-shared-blas-library" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-1-using-rs-internal-shared-blas-library">Configuration 1: Using R’s Internal Shared BLAS Library</h2>
+<p>This configuration uses R’s internal BLAS library (<code>libRblas.so</code>) by building it as a shared library. It is straightforward and avoids external dependencies, ensuring compatibility across various setups. Although this configuration may lack some of the performance optimizations provided by OpenBLAS, it is ideal for general usage and stable builds.</p>
+<hr>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>Install the necessary build dependencies:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> base-devel gcc-fortran blas lapack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Download and extract the R source code from CRAN:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cran.r-project.org/src/base/R-4/R-4.4.2.tar.gz  </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzvf</span> R-4.4.2.tar.gz  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> R-4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>For this tutorial I installed R 4.4.1 and 4.4.2, which are not really that different but the same steps apply to any version.</em></p>
+<hr>
+</section>
+<section id="configure" class="level3">
+<h3 class="anchored" data-anchor-id="configure">Configure</h3>
+<p>Run the following command to configure R with its internal shared BLAS:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/opt/R/<span class="va">$(</span><span class="fu">cat</span> VERSION<span class="va">)</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-BLAS-shlib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="explanation-of-flags" class="level4">
+<h4 class="anchored" data-anchor-id="explanation-of-flags">Explanation of Flags</h4>
+<ul>
+<li><strong><code>--prefix=/opt/R/$(cat VERSION)</code></strong>: Installs R in a versioned directory under <code>/opt/R</code>, allowing multiple R versions to coexist (e.g., <code>/opt/R/4.4.2</code>).</li>
+<li><strong><code>--enable-R-shlib</code></strong>: Builds the shared R library <code>libR.so</code>, which is required for integration with RStudio.</li>
+<li><strong><code>--enable-BLAS-shlib</code></strong>: Builds R’s internal BLAS library (<code>libRblas.so</code>) as a shared library.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>configure</code> script to build R from source has many more options. Be sure to check those out and tailor your installation to your needs.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="verification-after-.configure" class="level3">
+<h3 class="anchored" data-anchor-id="verification-after-.configure">Verification after <code>./configure</code></h3>
+<p>This is the last bit <code>.configure</code> outputs when finished:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">R</span> is now configured for x86_64-pc-linux-gnu  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Source</span> directory: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.  </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Installation</span> directory: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/opt/R/4.4.2  </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gcc &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Fortran</span> fixed-form compiler: gfortran &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Default</span> C++ compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++17 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++11</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++11 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++14</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++14 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++17</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++17 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++20</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++20 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++23</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++23 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Fortran</span> free-form compiler: &nbsp;gfortran &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Obj-C</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Interfaces</span> supported: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X11, tcltk  </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;External</span> libraries: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pcre2, readline, curl, libdeflate  </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Additional</span> capabilities: &nbsp;&nbsp;&nbsp;&nbsp;PNG, JPEG, TIFF, NLS, cairo, ICU  </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Options</span> enabled: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shared R library, shared BLAS, R profiling, libdeflate for lazyload  </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Capabilities</span> skipped: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Options</span> not enabled: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory profiling  </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Recommended</span> packages: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="building-and-installing-r" class="level3">
+<h3 class="anchored" data-anchor-id="building-and-installing-r">Building and Installing R</h3>
+<p>Once configured, compile and install R:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span><span class="va">$(</span><span class="fu">nproc</span><span class="va">)</span> <span class="co"># Setting to number cores to speed up a little bit</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After installation, run the following to check R’s configuration:</p>
+<p><code>R  sessionInfo()</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> version 4.4.2 <span class="er">(</span><span class="ex">2024-10-31</span><span class="kw">)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Platform:</span> x86_64-pc-linux-gnu</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> under: Arch Linux</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Matrix</span> products: default</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">BLAS:</span>   /opt/R/4.4.2/lib64/R/lib/libRblas.so <span class="co"># Built shared BLAS library</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">LAPACK:</span> /usr/lib/liblapack.so.3.12.0 <span class="co"># System LAPACK library</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">locale:</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a> <span class="ex">[1]</span> LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8        LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8   </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">[6]</span> LC_MESSAGES=C.UTF-8    LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C           LC_TELEPHONE=C        </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ex">[11]</span> LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> zone: America/Chicago</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="ex">tzcode</span> source: system <span class="er">(</span><span class="ex">glibc</span><span class="kw">)</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="ex">attached</span> base packages:</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="ex">[1]</span> stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ex">loaded</span> via a namespace <span class="er">(</span><span class="ex">and</span> not attached<span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ex">[1]</span> compiler_4.4.2 tools_4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I’ve used this install configuration for almost every data science project I’ve tackled. It is minimal and ready for general usage.</p>
+<p><strong>What if we want better performance?</strong> Let’s set it up with OpenBLAS and get some speed. Checkout some of the benchmarks mentioned in this <a href="https://github.com/goepp/r-blas?tab=readme-ov-file">GitHub repo</a> , <a href="https://csantill.github.io/RPerformanceWBLAS/">here</a>, and also <a href="https://software.intel.com/content/www/us/en/develop/articles/performance-comparison-of-openblas-and-intel-math-kernel-library-in-r.html">here</a></p>
+<div class="tenor-gif-embed" data-postid="12905629" data-share-method="host" data-aspect-ratio="1.75" data-width="100%">
+<a href="https://tenor.com/view/speed-racer-go-time-race-gif-12905629">Speed Racer Go Time GIF</a>from <a href="https://tenor.com/search/speed+racer-gifs">Speed Racer GIFs</a>
+</div>
+<script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+</section>
+</section>
+<section id="configuration-2-linking-to-system-optimized-openblas-and-lapack" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-2-linking-to-system-optimized-openblas-and-lapack">Configuration 2: Linking to System-Optimized OpenBLAS and LAPACK</h2>
+<p>Here, we want to link R to the system’s OpenBLAS and LAPACK libraries, which are optimized for performance and multi-threading. It is ideal for high-performance linear algebra operations. The way to achieve this is by explicitly requesting the libraries using the <code>--with-blas</code> and <code>--with-lapack</code>. Find more details in this <a href="https://colinfay.me/r-installation-administration/appendix-a-essential-and-useful-other-programs-under-a-unix-alike.html">old R installation guide</a> and the <a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html#BLAS">upcoming R guide</a>.</p>
+<section id="prerequisites-1" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites-1">Prerequisites</h3>
+<p>Install the necessary build dependencies:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> base-devel gcc-fortran openblas lapack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The main difference here is that we install <code>openblas</code>. It shouldn’t have any conflict with <code>blas</code>, if it does you might want to build from source in <code>/opt</code> as well.</p>
+</div>
+</div>
+<p>Download and extract the R source code from CRAN:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cran.r-project.org/src/base/R-4/R-4.4.2.tar.gz  </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzvf</span> R-4.4.2.tar.gz  </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> R-4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We need to check where the BLAS and LAPACK library <em>symlinks</em> and executables are located:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ld</span> /usr/lib/liblapack<span class="pp">*</span> /usr/lib/libopenblas<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I prefer to link the libraries by providing the absolute path. It is also possible to give a name without a path (like <code>-lfoo</code>) and the linker will look for a library file named <code>libfoo.so</code> (or <code>libfoo.a</code> for a static library) in standard library directories. See <a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html#BLAS">BLAS configuration guide</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the executables<code>liblapack.so.*</code> and <code>libopenblas.so.*</code>. If you have color coding in your terminal it will be a slightly brighter green, see below.</p>
+<p><a href="images/Pasted image 20241106083443.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/Pasted image 20241106083443.png" class="img-fluid"></a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note on <code>blas-openblas</code> and 64-Bit Integer Library Support
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can link to the bundled BLAS and LAPACK libraries provided by <code>blas-openblas</code> using the <code>--with-blas</code> flag.</p>
+<p><strong>Important:</strong> The <code>blas-openblas</code> library conflicts with <code>blas</code>. Since it provides BLAS/CBLAS/LAPACK/LAPACKE system-wide, any packages that depend on these libraries will need to be rebuilt. For this reason, building from source in a dedicated directory is recommended.</p>
+<p>The <code>blas64-openblas</code> library does not create conflicts and can be particularly beneficial for handling large datasets or complex scientific computations. By supporting 64-bit indexing, <code>blas64-openblas</code> enables larger matrix operations, making it ideal for intensive data processing.</p>
+</div>
+</div>
+</section>
+<section id="installing-r-with-openblas" class="level3">
+<h3 class="anchored" data-anchor-id="installing-r-with-openblas">Installing R with <code>openblas</code></h3>
+<p>Run the following command to configure R with OpenBLAS and LAPACK:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/opt/R/<span class="va">$(</span><span class="fu">cat</span> VERSION<span class="va">)</span> <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">--enable-R-shlib</span> <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">--with-blas</span><span class="op">=</span><span class="st">"/usr/lib/libopenblas.so.0.3"</span> <span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">--with-lapack</span><span class="op">=</span><span class="st">"/usr/lib/liblapack.so.3.12.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="flags-used" class="level4">
+<h4 class="anchored" data-anchor-id="flags-used">Flags used</h4>
+<ul>
+<li><strong><code>--prefix=/opt/R/$(cat VERSION)</code></strong>: Installs R in a versioned directory under <code>/opt/R</code>, as in Configuration 1.</li>
+<li><strong><code>--enable-R-shlib</code></strong>: Builds <code>libR.so</code>, the shared R library.</li>
+<li><strong><code>--with-blas="/usr/lib/libopenblas.so.0.3"</code></strong>: Links R to the system’s OpenBLAS library for optimized BLAS routines.</li>
+<li><strong><code>--with-lapack="/usr/lib/liblapack.so.3.12.0"</code></strong>: Links R to the system’s LAPACK library, providing optimized higher-level matrix operations.</li>
+</ul>
+</section>
+<section id="configuration-output" class="level4">
+<h4 class="anchored" data-anchor-id="configuration-output">Configuration output</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> is now configured for x86_64-pc-linux-gnu  </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Source</span> directory: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.  </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Installation</span> directory: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/opt/R/4.4.2  </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gcc &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Fortran</span> fixed-form compiler: gfortran &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Default</span> C++ compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++17 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++11</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++11 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++14</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++14 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++17</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++17 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++20</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++20 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;C++23</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g++ <span class="at">-std</span><span class="op">=</span>gnu++23 &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Fortran</span> free-form compiler: &nbsp;gfortran &nbsp;-g <span class="at">-O2</span>  </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Obj-C</span> compiler: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Interfaces</span> supported: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X11, tcltk  </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;External</span> libraries: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pcre2, readline, BLAS<span class="er">(</span><span class="ex">generic</span><span class="kw">)</span><span class="ex">,</span> LAPACK<span class="er">(</span><span class="ex">generic</span><span class="kw">)</span><span class="ex">,</span> curl, libdeflate  </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Additional</span> capabilities: &nbsp;&nbsp;&nbsp;&nbsp;PNG, JPEG, TIFF, NLS, cairo, ICU  </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Options</span> enabled: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shared R library, R profiling, libdeflate for lazyload  </span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Capabilities</span> skipped: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Options</span> not enabled: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shared BLAS, memory profiling  </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="ex">&nbsp;Recommended</span> packages: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Notice <code>BLAS(generic), LAPACK(generic)</code>, indicating the use of the system’s libraries.</em></p>
+</section>
+<section id="building-and-installing-r-1" class="level4">
+<h4 class="anchored" data-anchor-id="building-and-installing-r-1">Building and installing R</h4>
+<p>Once configured with the above command, compile and install R:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span><span class="va">$(</span><span class="fu">nproc</span><span class="va">)</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Like before, we run the following to check R’s configuration:</p>
+<p><code>R sessionInfo()</code></p>
+<p>Your output should look like this:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>R version <span class="dv">4</span>.<span class="fl">4.2</span> (<span class="dv">2024-10-31</span>)  </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Platform<span class="sc">:</span> x86_64<span class="sc">-</span>pc<span class="sc">-</span>linux<span class="sc">-</span>gnu  </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Running under<span class="sc">:</span> Arch Linux  </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>Matrix products<span class="sc">:</span> default  </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>BLAS<span class="sc">/</span>LAPACK<span class="sc">:</span> <span class="er">/</span>usr<span class="sc">/</span>lib<span class="sc">/</span>libopenblas.so.<span class="fl">0.3</span>; &nbsp;LAPACK version <span class="dv">3</span>.<span class="fl">12.0</span>  </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>locale<span class="sc">:</span>  </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] LC_CTYPE<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LC_NUMERIC<span class="ot">=</span>C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LC_TIME<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">4</span>] LC_COLLATE<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;&nbsp;LC_MONETARY<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;LC_MESSAGES<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;  </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">7</span>] LC_PAPER<span class="ot">=</span>C.UTF<span class="dv">-8</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LC_NAME<span class="ot">=</span>C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LC_ADDRESS<span class="ot">=</span>C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>[<span class="dv">10</span>] LC_TELEPHONE<span class="ot">=</span>C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LC_MEASUREMENT<span class="ot">=</span>C.UTF<span class="dv">-8</span> LC_IDENTIFICATION<span class="ot">=</span>C &nbsp;&nbsp;&nbsp;  </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>time zone<span class="sc">:</span> America<span class="sc">/</span>Chicago  </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>tzcode source<span class="sc">:</span> <span class="fu">system</span> (glibc)  </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>attached base packages<span class="sc">:</span>  </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] stats &nbsp;&nbsp;&nbsp;&nbsp;graphics &nbsp;grDevices utils &nbsp;&nbsp;&nbsp;&nbsp;datasets &nbsp;methods &nbsp;&nbsp;base &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>loaded via a <span class="fu">namespace</span> (and not attached)<span class="sc">:</span>  </span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] compiler_4.<span class="fl">4.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice the linked <code>openblas</code> library in BLAS/LAPACK , in comparison to when we use <code>--enable-BLAS-shlib</code> only. OpenBLAS typically includes LAPACK routines as part of the library, so R is effectively using the LAPACK routines within OpenBLAS, which is compatible with LAPACK version 3.12.0.</p>
+</section>
+</section>
+</section>
+<section id="benefits-of-using-system-optimized-blaslapack" class="level2">
+<h2 class="anchored" data-anchor-id="benefits-of-using-system-optimized-blaslapack">Benefits of Using System-Optimized BLAS/LAPACK</h2>
+<p>By linking R to system-provided OpenBLAS and LAPACK libraries, we improved performance in numerical operations. Well, I haven’t performed a benchmark of my own but I trust that it is a little faster. We should expect:</p>
+<ol type="1">
+<li><strong>Performance Gains</strong>:
+<ul>
+<li><a href="https://www.openblas.net/"><strong>OpenBLAS</strong></a> is highly optimized for operations such as matrix multiplications, dot products, and other foundational linear algebra tasks. It can significantly speed up computations in R, especially for functions that rely heavily on these operations (e.g., matrix decompositions, linear regression, and large-scale simulations).</li>
+<li><strong>LAPACK</strong> complements BLAS by providing higher-level mathematical functions, such as eigenvalue decompositions, singular value decompositions (SVD), and other advanced matrix operations. LAPACK routines calls BLAS to perform complex computations, thus reducing computation time for common data science, statistical modeling, and machine learning operations.</li>
+</ul></li>
+<li><strong>Multi-threading Support</strong>:
+<ul>
+<li>OpenBLAS is designed to take advantage of multi-core CPUs, (with some <a href="https://github.com/OpenMathLib/OpenBLAS/wiki/Faq#after-making-openblas-i-find-that-the-static-library-is-multithreaded-but-the-dynamic-one-is-not-">caveats</a>), making it ideal for computations that benefit from parallel processing. By linking R to OpenBLAS, R can automatically utilize multiple cores for matrix and linear algebra computations, significantly reducing computation times on multi-threaded operations.</li>
+</ul></li>
+<li><strong>Architecture-Specific Optimizations</strong>:
+<ul>
+<li>OpenBLAS and LAPACK are frequently optimized for specific CPU architectures (e.g., Intel, AMD) and can take advantage of processor-specific instructions like Advanced Vector Extensions (AVX) and Streaming SIMD Extensions (SSE). This means that R can achieve better performance on compatible hardware, albeit contingent on the underlying architecture, compared to using its internal BLAS/LAPACK libraries.</li>
+</ul></li>
+</ol>
+<p>We could conduct benchmarks to measure how much computation time has improved, but that’s beyond our scope for now. To compare different R versions, I need to switch between them. So, how do we go about doing that?</p>
+</section>
+<section id="how-to-switch-between-r-versions" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-switch-between-r-versions">How to switch between R versions</h2>
+<p>All that effort is impressive but it loses its value if it comes with friction. On Windows and Mac, toggling between R versions is straightforward, as I mentioned earlier. However, Linux users often face more challenges. Fortunately, the community has developed several solutions to streamline this process.</p>
+<p>I found a nifty shim written by Jeff Keller to <a href="https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/">toggle between R versions</a>. It’s a shell script to set the environment variable <code>R_VERSION</code> to the preferred version and then launch R Studio.</p>
+<p>I echo his script here with some modifications of my own.</p>
+</section>
+<section id="toggle-shim" class="level2">
+<h2 class="anchored" data-anchor-id="toggle-shim">Toggle Shim</h2>
+<p>As a <code>root</code>, replace the <code>R</code> and <code>Rscript</code> binaries found in <code>/bin/R/</code> and /<code>bin/Rscript</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt; 'EOF'</span>  /bin/R</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="st">#!/bin/bash</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;&lt;prelude</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">Shim from https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">used to toggle between R versions installed in /opt/R</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">prelude</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st"># Uncomment this to set a fixed default version of R. Otherwise, the</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st"># most recent version will be used.</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">R_VERSION_DEFAULT="4.4.1"</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st"># The default installation directory is /opt/R (https://docs.rstudio.com/resources/install-r/)</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st"># Change this as is necessary for your environment.</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">R_INSTALL_DIR="/opt/R"</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="st">R_VERSIONS_AVAIL=($(basename --multiple $(dirname $(dirname $(ls "${R_INSTALL_DIR}"/*/bin/R))) | sort --version-sort))</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="st"># If no default R version is set then set the most recent version as the default</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="st">if [ -z ${R_VERSION_DEFAULT} ]; then</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">  R_VERSION_DEFAULT="${R_VERSIONS_AVAIL[-1]}"</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">fi</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="st"># If a specific R version was not requested then use the default</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="st">if [ -z ${R_VERSION} ]; then</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="st">  R_VERSION="${R_VERSION_DEFAULT}"</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="st">fi</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="st">R_BINARY_BASE=$(basename $0)</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="st">R_BINARY="${R_INSTALL_DIR}/${R_VERSION}/bin/${R_BINARY_BASE}"</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="st">if [ ! -f $R_BINARY ]; then</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="st">  echo "${R_BINARY_BASE} ${R_VERSION} not found. Available versions: ${R_VERSIONS_AVAIL[*]}"</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="st">  exit 1</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="st">fi</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="st"># Unset the R_HOME env var if something else set it</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="st">unset R_HOME</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="st">"${R_BINARY}" "$@"</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Changing <code>/bin/R/</code> should result in changes in <code>/usr/bin/R</code>. You can double check before proceeding. I fixed my default version of R but you can comment to set to the latest R version.</p>
+<p>Make the script executable:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x /bin/R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create a Symlink to <code>Rscript</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /bin/R /bin/Rscript</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="usage" class="level3">
+<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_VERSION</span><span class="op">=</span>4.4.1</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>We’ve installed different versions of R and learned how to switch between them. This flexibility can help us experiment with different analyses and projects. The toggling shim is an excellent solution for launching RStudio with your preferred R version. However, I encountered an issue when opening R projects (.Rproj files). Regardless of the R version specified for the project, it always loads the latest installed version of R. Additionally, setting the <code>R_VERSION</code> environment variable does not affect which R version the project uses. This means that even if your project was created with an different version of R, it will still open with an unintended latest version in /opt/R.</p>
+<p>A practical workaround I found is to launch RStudio with the desired R version first, then switch to the intended project using the toggle in the upper right corner. See green arrow below.</p>
+<p><a href="images/Pasted image 20241111143836.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/Pasted image 20241111143836.png" class="img-fluid"></a></p>
+<p>It’s not a frictionless solution but it’s not too bad once you’ve incorporated it in your workflow. For now, it will do. I’ll slowly make improvements to see if I can get it working with projects.</p>
+<hr>
+<p>I hope this helps out folks wanting to have various versions of R and easily switch between them. Please let me know if you have any comments of suggestions.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<section id="official-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="official-documentation">Official Documentation</h3>
+<ul>
+<li><p><a href="https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux">Installing Multiple Versions of R on Linux</a><br>
+Comprehensive guide from Posit on how to install and manage multiple R versions on Linux systems.</p></li>
+<li><p><a href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Changing R Versions for the RStudio Desktop IDE</a><br>
+Instructions on how to switch between different R versions within the RStudio IDE.</p></li>
+<li><p><a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html">R Administration Manual</a><br>
+Official R documentation detailing configurations.</p></li>
+</ul>
+</section>
+<section id="community-discussions" class="level3">
+<h3 class="anchored" data-anchor-id="community-discussions">Community Discussions</h3>
+<ul>
+<li><p><a href="https://forum.posit.co/t/r-with-lapack-from-openblas/170554">R with LAPACK from OpenBLAS - Posit Forum</a><br>
+A forum thread discussing the integration of LAPACK from OpenBLAS in R.</p></li>
+<li><p><a href="https://brettklamer.com/diversions/statistical/faster-blas-in-r/">Faster BLAS in R - Brett Klamer’s Blog</a><br>
+Blog post exploring methods to speed up BLAS operations in R.</p></li>
+</ul>
+</section>
+<section id="tutorials-and-guides" class="level3">
+<h3 class="anchored" data-anchor-id="tutorials-and-guides">Tutorials and Guides</h3>
+<ul>
+<li><p><a href="https://csantill.github.io/RPerformanceWBLAS/">R Performance with BLAS - csantill.github.io</a><br>
+A detailed tutorial on optimizing R performance using BLAS libraries.</p></li>
+<li><p><a href="https://www.r-bloggers.com/2017/11/why-is-r-slow-some-explanations-and-mklopenblas-setup-to-try-to-fix-this/">Why is R Slow? Explanations and MKL/OpenBLAS Setup to Fix It</a><br>
+An R-bloggers article explaining common performance issues in R and how to address them with MKL/OpenBLAS.</p></li>
+<li><p><a href="https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/">Managing Multiple R Installations on Linux</a></p></li>
+<li><p><a href="https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/">Monica Thieu’s Post on Managing Multiple R Versions</a><br>
+Insights and solutions from the community on handling multiple R versions.</p></li>
+</ul>
+</section>
+<section id="tools-and-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="tools-and-repositories">Tools and Repositories</h3>
+<ul>
+<li><a href="https://github.com/goepp/r-blas">r-blas GitHub Repository</a><br>
+GitHub repository for managing BLAS configurations in R.</li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-aponte_rolón2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Aponte Rolón, Bolívar. 2024. <span>“Flexible R Setup on Linux.”</span>
+November 11, 2024. <a href="https://www.bolaponte.com/blog/2024-11-11-flexible_r/">https://www.bolaponte.com/blog/2024-11-11-flexible_r/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.bolaponte\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 Bolívar Aponte Rolón</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../coc.html">
+<p>Code of conduct</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../accessibility.html">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+</ul>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/blog/2024-11-11-flexible_r/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Change cookies 🍪</a></div></div>
+    <div class="nav-footer-right">
+<p>made with ︎♥️ &amp; <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

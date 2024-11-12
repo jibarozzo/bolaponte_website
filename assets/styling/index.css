@@ -1,6 +1,6 @@
 /* title */
 .title {
-  font-family: "Domine";
+  font-family: "Baskervville SC";
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.1em !important;
@@ -8,7 +8,7 @@
 
 /* subtitle + Learn More About Me */
 .subtitle {
-  font-family: "Domine";
+  font-family: "Baskervville SC";
   font-size: 1rem;
   font-weight: 700;
   text-align: right !important;
@@ -45,7 +45,7 @@
 /* Learn More About Me */
 .about-links.subtitle {
   font-size: 1em !important;
-  font-family: "Atkinson Hyperlegible";
+  font-family: Raleway;
   justify-content: flex-end !important;
 }
 
