@@ -21,51 +21,57 @@ editor:
     wrap: 72
 ---
 
-Achieving reproducible results, whether full analytical pipelines or
+Achieving reproducible results, whether working with full analytical pipelines or
 simple analyses, is contingent on the specific software used and the
-underlying environment. Often times we need to reproduce experimental
-results or need to use packages that are no longer maintained. With R
+underlying environment. Often times, we need to reproduce experimental
+results or need to use packages that are no longer being maintained. With R,
 this is easily achievable through some combination of Conda virtual
-environments, `renv` and Docker images, and often considered the epitome
-of reproducibility. However, sometimes it doesn't merit setting up a
-whole environment just to work on a small project, therefore having
-multiple versions of R in the base environment might be desirable,
-ultimately speeding things up.
-Setting up different R versions in the base environment and accessed
-through RStudio varies depending on your operating system: -
-**Windows**: - Access **RStudio’s Global Options** to easily set your
-preferred binary version. - **Mac**: - You can install R in various
-ways, the most seamless method being
-[Rswitch](https://rud.is/rswitch/). - **Additional Resources**: - For
-installation details on both Windows, Mac and Linux, check [Posit’s
-support
-page](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE). -
-See [Monica Thieu’s
+environments, `renv` and Docker images. This is often considered the epitome
+of reproducibility. However, sometimes it just doesn't merit setting up a
+whole environment to work on a small project, therefore having
+multiple versions of R in the base environment might be desirable
+to speed things up.
+The process of setting up different R versions in the base environment, accessed
+through RStudio, depends on your operating system:
+
+- **Windows**: 
+  - Access **RStudio’s Global Options** to easily set your
+preferred binary version. 
+
+- **Mac**: 
+  - You can install R in various ways with the most seamless method being
+[Rswitch](https://rud.is/rswitch/). 
+
+- **Additional Resources**: 
+  - For installation details on Windows, Mac and Linux, check [Posit’s
+support page](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE). 
+  - See [Monica Thieu’s
 post](https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/)
 for further insights from the community on managing multiple R versions
 on Mac.
 
 ### How to install and switch between various versions of R in a Linux base environment?
 
-It quite straightforward but, like many tasks on Linux, requires a bit
+It quite straightforward but like many tasks on Linux, it requires a bit
 more forethought and understanding of the system. Posit also has a good
 [support
 page](https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux)
-on this, but the seamless switching is only available in their Pro
-products. I decided to document how I did thislocal machine following
-their Posit's guides and the extensive documentation from the [R Core
+, but the seamless switching is only available in their Pro
+products. I decided to document how I did this on my local machine following
+Posit's guides and the extensive documentation from the [R Core
 Team](https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html). Along
-the way I also opted to install R with the OpenBLAS library, which
+the way, I also opted to install R with the OpenBLAS library, which
 provides optimizedBLAS (Basic Linear Algebra Subprograms) and LAPACK
 (Linear Algebra PACKage) libraries to improve performance. An
 alternative BLAS/LAPACK library is the [Intel oneAPI
 Base](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html)
-that is apparently faster. Maybe I will try that later following
+that is apparently faster. Perhaps I will try that later following
 [instructions from
 Intel.](https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html)
-For now I'll stick to OpenBLAS.
+For now, I'll stick to OpenBLAS.
 
 ------------------------------------------------------------------------
+
 ::: {.callout-warning}
 ## Transparency Notice
 To provide a polished and comprehensive overview, I utilized ChatGPT, an AI language model by OpenAI, for drafting and refining portions of this article.
@@ -75,13 +81,15 @@ To provide a polished and comprehensive overview, I utilized ChatGPT, an AI lang
 
 We'll install R from source with two different configurations and learn
 how to switch between versions. See the [R installation guide for more
-options](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#BLAS)
+options.](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#BLAS)
 
 1.  **Internal BLAS**: Uses R’s internal shared BLAS library
     (`libRblas.so`) for simplicity and modularity.
+    
 2.  **OpenBLAS**: Links R to system-optimized OpenBLAS and LAPACK
     libraries for performance gains.
-3.  **How to switch between R versions**: changing environment
+    
+3.  **How to switch between R versions**: Changing environment
     variables to choose our R versions.
 
 Both configurations include the shared R library (`libR.so`), which is
@@ -214,8 +222,8 @@ loaded via a namespace (and not attached):
 [1] compiler_4.4.2 tools_4.4.2
 ```
 
-I use this install configuration for almost every data science project
-I've tackled. It is a minimal and ready for general usage.
+I've used this install configuration for almost every data science project
+I've tackled. It is minimal and ready for general usage.
 
 **What if we want better performance?**
 
@@ -236,12 +244,12 @@ repo](https://github.com/goepp/r-blas?tab=readme-ov-file) ,
 
 ## Configuration 2: Linking to System-Optimized OpenBLAS and LAPACK
 
-Here we want to link R to the system’s OpenBLAS and LAPACK libraries,
+Here, we want to link R to the system’s OpenBLAS and LAPACK libraries,
 which are optimized for performance and multi-threading. It is ideal for
 high-performance linear algebra operations. The way to achieve this is
 by explicitly requesting the libraries using the `--with-blas` and
 `--with-lapack`. Find more details in this [old R installation
-guide](https://colinfay.me/r-installation-administration/appendix-a-essential-and-useful-other-programs-under-a-unix-alike.html)and
+guide](https://colinfay.me/r-installation-administration/appendix-a-essential-and-useful-other-programs-under-a-unix-alike.html) and
 the [upcoming R
 guide](https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html#BLAS).
 
@@ -268,14 +276,14 @@ cd R-4.4.2
 ```
 
 We need to check where the BLAS and LAPACK library *symlinks* and
-executables are located :
+executables are located:
 
 ```bash
 ls -ld /usr/lib/liblapack* /usr/lib/libopenblas*
 ```
 
 I prefer to link the libraries by providing the absolute path. It is
-also possible to give a name without a path (like `-lfoo`), the linker
+also possible to give a name without a path (like `-lfoo`) and the linker
 will look for a library file named `libfoo.so` (or `libfoo.a` for a
 static library) in standard library directories. See [BLAS configuration
 guide](https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html#BLAS).
@@ -289,8 +297,9 @@ below.
 :::
 
 ::: {.callout-note} 
-### Note on `blas-openblas` and 64-Bit Integer Library
-Support You can link to the bundled BLAS and LAPACK libraries provided
+### Note on `blas-openblas` and 64-Bit Integer Library Support 
+
+You can link to the bundled BLAS and LAPACK libraries provided
 by `blas-openblas` using the `--with-blas` flag.
 
 **Important:** The `blas-openblas` library conflicts with `blas`. Since
@@ -372,7 +381,7 @@ sudo make install
 
 Like before, we run the following to check R’s configuration:
 
-`R  sessionInfo()`
+`R sessionInfo()`
 
 Your output should look like this:
 
@@ -408,7 +417,7 @@ LAPACK routines within OpenBLAS, which is compatible with LAPACK version
 
 ## Benefits of Using System-Optimized BLAS/LAPACK
 
-By linking R to system-provided OpenBLAS and LAPACK libraries we
+By linking R to system-provided OpenBLAS and LAPACK libraries, we
 improved performance in numerical operations. Well, I haven't performed
 a benchmark of my own but I trust that it is a little faster. We should
 expect:
@@ -424,12 +433,12 @@ expect:
         mathematical functions, such as eigenvalue decompositions,
         singular value decompositions (SVD), and other advanced matrix
         operations. LAPACK routines calls BLAS to perform complex
-        computations,thus reducing computation time for common in data
+        computations, thus reducing computation time for common data
         science, statistical modeling, and machine learning operations.
 2.  **Multi-threading Support**:
     -   OpenBLAS is designed to take advantage of multi-core CPUs,
-        although with some
-        [caveats](https://github.com/OpenMathLib/OpenBLAS/wiki/Faq#after-making-openblas-i-find-that-the-static-library-is-multithreaded-but-the-dynamic-one-is-not-),
+        (with some
+        [caveats](https://github.com/OpenMathLib/OpenBLAS/wiki/Faq#after-making-openblas-i-find-that-the-static-library-is-multithreaded-but-the-dynamic-one-is-not-)),
         making it ideal for computations that benefit from parallel
         processing. By linking R to OpenBLAS, R can automatically
         utilize multiple cores for matrix and linear algebra
@@ -447,9 +456,11 @@ expect:
 We could conduct benchmarks to measure how much computation time has
 improved, but that's beyond our scope for now. To compare different R
 versions, I need to switch between them. So, how do we go about doing
-that? \## How to switch between R versions
+that? 
 
-All that effort is impressive, but it loses its value if comes with
+## How to switch between R versions
+
+All that effort is impressive but it loses its value if it comes with
 friction. On Windows and Mac, toggling between R versions is
 straightforward, as I mentioned earlier. However, Linux users often face
 more challenges. Fortunately, the community has developed several
@@ -457,7 +468,7 @@ solutions to streamline this process.
 
 I found a nifty shim written by Jeff Keller to [toggle between R
 versions](https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/).
-It's shell script to set the environment variable `R_VERSION` to the
+It's a shell script to set the environment variable `R_VERSION` to the
 preferred version and then launch R Studio.
 
 I echo his script here with some modifications of my own.
@@ -511,8 +522,8 @@ unset R_HOME
 EOF
 ```
 
-*Changing `/bin/R/` should result in changes in `/usr/bin/R`. You can
-double check before proceeding.* I fixed my default version of R, but
+Changing `/bin/R/` should result in changes in `/usr/bin/R`. You can
+double check before proceeding. I fixed my default version of R but
 you can comment to set to the latest R version.
 
 Make the script executable:
@@ -538,20 +549,20 @@ rstudio &
 
 ## Conclusions
 
-We've installed different verions of R and learn how to switch between them. Having this flexibility can help use experiment with different analyses and projects. The toggling shim is an excellent solution for launching RStudio with your preferred R version. However, I encountered an issue when opening R projects (.Rproj files). Regardless of the R version specified for the project, it always loads the latest installed version of R. Additionally, setting the `R_VERSION` environment variable does not affect which R version the project uses. This means that even if your project was created with an different version of R, it will still open with an unintended, latest version in /opt/R.
+We've installed different versions of R and learned how to switch between them. This flexibility can help us experiment with different analyses and projects. The toggling shim is an excellent solution for launching RStudio with your preferred R version. However, I encountered an issue when opening R projects (.Rproj files). Regardless of the R version specified for the project, it always loads the latest installed version of R. Additionally, setting the `R_VERSION` environment variable does not affect which R version the project uses. This means that even if your project was created with an different version of R, it will still open with an unintended latest version in /opt/R.
 
 A practical workaround I found is to launch RStudio with the desired R version first, then switch to the intended project using the toggle in the upper right corner. See green arrow below.
 
 ![](images/Pasted image 20241111143836.png)
 
-It's not a frictionless solution, but it's not too bad once you've
-incorporated it in your workflow. For now it will do. I'll slowly make
-improvement to see if I can get it working with projects, you can too.
+It's not a frictionless solution but it's not too bad once you've
+incorporated it in your workflow. For now, it will do. I'll slowly make
+improvements to see if I can get it working with projects.
 
 ---
 
-I hope this helps out folks wanting to have various versions of R a
-switch between them easily. Please let me know if you have any comments
+I hope this helps out folks wanting to have various versions of R and
+easily switch between them. Please let me know if you have any comments
 of suggestions.
 
 

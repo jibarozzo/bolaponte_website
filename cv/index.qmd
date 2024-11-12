@@ -14,7 +14,7 @@ format:
 #| echo: false
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-path <- "/home/baponte/Boxx/CV_Resume/CVR_BAR"
+path <- "/home/baponte/gdrive/CV_Resume/CVR_BAR"
 ```
 
 ## {{< fa graduation-cap >}} Education

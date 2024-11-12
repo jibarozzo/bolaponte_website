@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Bolívar Aponte Rolón">
+<meta name="dcterms.date" content="2024-11-11">
 
 <title>Bolívar Aponte Rolón | Flexible R Setup on Linux – Bolívar Aponte Rolón</title>
 <style>
@@ -228,6 +229,12 @@ cookieconsent.run({
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 11, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -243,12 +250,10 @@ cookieconsent.run({
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#flexible-r-setup-on-linux-managing-multiple-versions-with-openblas" id="toc-flexible-r-setup-on-linux-managing-multiple-versions-with-openblas" class="nav-link active" data-scroll-target="#flexible-r-setup-on-linux-managing-multiple-versions-with-openblas">Flexible R Setup on Linux: Managing Multiple Versions with OpenBLAS</a>
-  <ul>
-  <li><a href="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" id="toc-how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" class="nav-link" data-scroll-target="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment">How to install and switch between various versions of R in a Linux base environment?</a></li>
+  <li><a href="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" id="toc-how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" class="nav-link active" data-scroll-target="#how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment">How to install and switch between various versions of R in a Linux base environment?</a></li>
   <li><a href="#lets-get-into-it" id="toc-lets-get-into-it" class="nav-link" data-scroll-target="#lets-get-into-it">Let’s get into it</a></li>
   <li><a href="#configuration-1-using-rs-internal-shared-blas-library" id="toc-configuration-1-using-rs-internal-shared-blas-library" class="nav-link" data-scroll-target="#configuration-1-using-rs-internal-shared-blas-library">Configuration 1: Using R’s Internal Shared BLAS Library</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#configure" id="toc-configure" class="nav-link" data-scroll-target="#configure">Configure</a>
   <ul class="collapse">
@@ -258,7 +263,7 @@ cookieconsent.run({
   <li><a href="#building-and-installing-r" id="toc-building-and-installing-r" class="nav-link" data-scroll-target="#building-and-installing-r">Building and Installing R</a></li>
   </ul></li>
   <li><a href="#configuration-2-linking-to-system-optimized-openblas-and-lapack" id="toc-configuration-2-linking-to-system-optimized-openblas-and-lapack" class="nav-link" data-scroll-target="#configuration-2-linking-to-system-optimized-openblas-and-lapack">Configuration 2: Linking to System-Optimized OpenBLAS and LAPACK</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#prerequisites-1" id="toc-prerequisites-1" class="nav-link" data-scroll-target="#prerequisites-1">Prerequisites</a></li>
   <li><a href="#installing-r-with-openblas" id="toc-installing-r-with-openblas" class="nav-link" data-scroll-target="#installing-r-with-openblas">Installing R with <code>openblas</code></a>
   <ul class="collapse">
@@ -269,10 +274,16 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#benefits-of-using-system-optimized-blaslapack" id="toc-benefits-of-using-system-optimized-blaslapack" class="nav-link" data-scroll-target="#benefits-of-using-system-optimized-blaslapack">Benefits of Using System-Optimized BLAS/LAPACK</a></li>
   <li><a href="#toggle-shim" id="toc-toggle-shim" class="nav-link" data-scroll-target="#toggle-shim">Toggle Shim</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
   </ul></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a>
+  <ul>
+  <li><a href="#official-documentation" id="toc-official-documentation" class="nav-link" data-scroll-target="#official-documentation">Official Documentation</a></li>
+  <li><a href="#community-discussions" id="toc-community-discussions" class="nav-link" data-scroll-target="#community-discussions">Community Discussions</a></li>
+  <li><a href="#tutorials-and-guides" id="toc-tutorials-and-guides" class="nav-link" data-scroll-target="#tutorials-and-guides">Tutorials and Guides</a></li>
+  <li><a href="#tools-and-repositories" id="toc-tools-and-repositories" class="nav-link" data-scroll-target="#tools-and-repositories">Tools and Repositories</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/blog/2024-11-11-flexible_r/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -289,21 +300,47 @@ cookieconsent.run({
 
 
 
-<section id="flexible-r-setup-on-linux-managing-multiple-versions-with-openblas" class="level1">
-<h1>Flexible R Setup on Linux: Managing Multiple Versions with OpenBLAS</h1>
-<p>Achieving reproducible results, whether full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times we need to reproduce experimental results or need to use packages that are no longer maintained. With R this is easily achievable through some combination of Conda virtual environments, <code>renv</code> and Docker images, and often considered the epitome of reproducibility. However, sometimes it doesn’t merit setting up a whole environment just to work on a small project, therefore having multiple versions of R in the base environment might be desirable, ultimately speeding things up. Setting up different R versions in the base environment and accessed through RStudio varies depending on your operating system: - <strong>Windows</strong>: - Access <strong>RStudio’s Global Options</strong> to easily set your preferred binary version. - <strong>Mac</strong>: - You can install R in various ways, the most seamless method being <a href="https://rud.is/rswitch/">Rswitch</a>. - <strong>Additional Resources</strong>: - For installation details on both Windows, Mac and Linux, check <a href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Posit’s support page</a>. - See <a href="https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/">Monica Thieu’s post</a> for further insights from the community on managing multiple R versions on Mac.</p>
+<p>Achieving reproducible results, whether full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times we need to reproduce experimental results or need to use packages that are no longer maintained. With R this is easily achievable through some combination of Conda virtual environments, <code>renv</code> and Docker images, and often considered the epitome of reproducibility. However, sometimes it doesn’t merit setting up a whole environment just to work on a small project, therefore having multiple versions of R in the base environment might be desirable, ultimately speeding things up. Setting up different R versions in the base environment and accessed through RStudio varies depending on your operating system:</p>
+<ul>
+<li><strong>Windows</strong>:
+<ul>
+<li>Access <strong>RStudio’s Global Options</strong> to easily set your preferred binary version.</li>
+</ul></li>
+<li><strong>Mac</strong>:
+<ul>
+<li>You can install R in various ways, the most seamless method being <a href="https://rud.is/rswitch/">Rswitch</a>.</li>
+</ul></li>
+<li><strong>Additional Resources</strong>:
+<ul>
+<li>For installation details on both Windows, Mac and Linux, check <a href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Posit’s support page</a>.</li>
+<li>See <a href="https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/">Monica Thieu’s post</a> for further insights from the community on managing multiple R versions on Mac.</li>
+</ul></li>
+</ul>
 <section id="how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-install-and-switch-between-various-versions-of-r-in-a-linux-base-environment">How to install and switch between various versions of R in a Linux base environment?</h3>
-<p>It quite straightforward but, like many tasks on Linux, requires a bit more forethought and understanding of the system. Posit also has a good <a href="https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux">support page</a> on this, but the seamless switching is only available in their Pro products. I decided to document how I did thislocal machine following their Posit’s guides and the extensive documentation from the <a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html">R Core Team</a>. Along the way I also opted to install R with the OpenBLAS library, which provides optimizedBLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) libraries to improve performance. An alternative BLAS/LAPACK library is the <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">Intel oneAPI Base</a> that is apparently faster. Maybe I will try that later following <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html">instructions from Intel.</a> For now I’ll stick to OpenBLAS.</p>
+<p>It quite straightforward but, like many tasks on Linux, requires a bit more forethought and understanding of the system. Posit also has a good <a href="https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux">support page</a> on this, but the seamless switching is only available in their Pro products. I decided to document how I did this local machine following their Posit’s guides and the extensive documentation from the <a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html">R Core Team</a>. Along the way I also opted to install R with the OpenBLAS library, which provides optimizedBLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) libraries to improve performance. An alternative BLAS/LAPACK library is the <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">Intel oneAPI Base</a> that is apparently faster. Maybe I will try that later following <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html">instructions from Intel.</a> For now I’ll stick to OpenBLAS.</p>
 <hr>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Transparency Notice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To provide a polished and comprehensive overview, I utilized ChatGPT, an AI language model by OpenAI, for drafting and refining portions of this article.</p>
+</div>
+</div>
 </section>
 <section id="lets-get-into-it" class="level2">
 <h2 class="anchored" data-anchor-id="lets-get-into-it">Let’s get into it</h2>
 <p>We’ll install R from source with two different configurations and learn how to switch between versions. See the <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#BLAS">R installation guide for more options</a></p>
 <ol type="1">
-<li><strong>Internal BLAS</strong>: Uses R’s internal shared BLAS library (<code>libRblas.so</code>) for simplicity and modularity.</li>
-<li><strong>OpenBLAS</strong>: Links R to system-optimized OpenBLAS and LAPACK libraries for performance gains.</li>
-<li><strong>How to switch between R versions</strong>: changing environment variables to choose our R versions.</li>
+<li><p><strong>Internal BLAS</strong>: Uses R’s internal shared BLAS library (<code>libRblas.so</code>) for simplicity and modularity.</p></li>
+<li><p><strong>OpenBLAS</strong>: Links R to system-optimized OpenBLAS and LAPACK libraries for performance gains.</p></li>
+<li><p><strong>How to switch between R versions</strong>: changing environment variables to choose our R versions.</p></li>
 </ol>
 <p>Both configurations include the shared R library (<code>libR.so</code>), which is important for compatibility with external applications like RStudio.</p>
 <hr>
@@ -636,13 +673,55 @@ Note on <code>blas-openblas</code> and 64-Bit Integer Library
 <p>It’s not a frictionless solution, but it’s not too bad once you’ve incorporated it in your workflow. For now it will do. I’ll slowly make improvement to see if I can get it working with projects, you can too.</p>
 <hr>
 <p>I hope this helps out folks wanting to have various versions of R a switch between them easily. Please let me know if you have any comments of suggestions.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<section id="official-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="official-documentation">Official Documentation</h3>
+<ul>
+<li><p><a href="https://support.posit.co/hc/en-us/articles/215488098-Installing-multiple-versions-of-R-on-Linux">Installing Multiple Versions of R on Linux</a><br>
+Comprehensive guide from Posit on how to install and manage multiple R versions on Linux systems.</p></li>
+<li><p><a href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Changing R Versions for the RStudio Desktop IDE</a><br>
+Instructions on how to switch between different R versions within the RStudio IDE.</p></li>
+<li><p><a href="https://cran.rstudio.com/doc/manuals/r-devel/R-admin.html">R Administration Manual</a><br>
+Official R documentation detailing configurations.</p></li>
+</ul>
+</section>
+<section id="community-discussions" class="level3">
+<h3 class="anchored" data-anchor-id="community-discussions">Community Discussions</h3>
+<ul>
+<li><p><a href="https://forum.posit.co/t/r-with-lapack-from-openblas/170554">R with LAPACK from OpenBLAS - Posit Forum</a><br>
+A forum thread discussing the integration of LAPACK from OpenBLAS in R.</p></li>
+<li><p><a href="https://brettklamer.com/diversions/statistical/faster-blas-in-r/">Faster BLAS in R - Brett Klamer’s Blog</a><br>
+Blog post exploring methods to speed up BLAS operations in R.</p></li>
+</ul>
+</section>
+<section id="tutorials-and-guides" class="level3">
+<h3 class="anchored" data-anchor-id="tutorials-and-guides">Tutorials and Guides</h3>
+<ul>
+<li><p><a href="https://csantill.github.io/RPerformanceWBLAS/">R Performance with BLAS - csantill.github.io</a><br>
+A detailed tutorial on optimizing R performance using BLAS libraries.</p></li>
+<li><p><a href="https://www.r-bloggers.com/2017/11/why-is-r-slow-some-explanations-and-mklopenblas-setup-to-try-to-fix-this/">Why is R Slow? Explanations and MKL/OpenBLAS Setup to Fix It</a><br>
+An R-bloggers article explaining common performance issues in R and how to address them with MKL/OpenBLAS.</p></li>
+<li><p><a href="https://jeff.vtkellers.com/posts/data-science/managing-multiple-r-installations-on-linux/">Managing Multiple R Installations on Linux</a></p></li>
+<li><p><a href="https://www.monicathieu.com/posts/2024-05-21-multiple-r-versions/">Monica Thieu’s Post on Managing Multiple R Versions</a><br>
+Insights and solutions from the community on handling multiple R versions.</p></li>
+</ul>
+</section>
+<section id="tools-and-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="tools-and-repositories">Tools and Repositories</h3>
+<ul>
+<li><a href="https://github.com/goepp/r-blas">r-blas GitHub Repository</a><br>
+GitHub repository for managing BLAS configurations in R.</li>
+</ul>
 
 
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-aponte_rolón" class="csl-entry quarto-appendix-citeas" role="listitem">
-Aponte Rolón, Bolívar. n.d. <span>“Flexible R Setup on Linux.”</span> <a href="https://www.bolaponte.com/blog/2024-11-11-flexible_r/">https://www.bolaponte.com/blog/2024-11-11-flexible_r/</a>.
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-aponte_rolón2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Aponte Rolón, Bolívar. 2024. <span>“Flexible R Setup on Linux.”</span>
+November 11, 2024. <a href="https://www.bolaponte.com/blog/2024-11-11-flexible_r/">https://www.bolaponte.com/blog/2024-11-11-flexible_r/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1243,7 +1322,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
