@@ -1,8 +1,9 @@
 ---
 title:  "Loop Less, Do More: Iterating Efficiently with `purrr`"
-description: 'Automating lists, plots, and possibilities'
+subtitle: 'Automating lists, plots, and possibilities'
 author: "Bolívar Aponte Rolón"
 date: 10/21/2024
+modified: today
 date-format: long
 image: apple-touch-icon-152x152.png
 image-alt: Hand drawn sleeping cat in hexagon frame

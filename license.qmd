@@ -14,7 +14,7 @@ execute:
 
 Opinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.
 
-My content is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+My content is released under the [Creative Commons Attribution-NonCommercial-Sharealike 4.0 International (CC BY-NC-SA) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 {{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}
 

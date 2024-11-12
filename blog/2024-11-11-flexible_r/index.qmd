@@ -10,6 +10,7 @@ date-format: long
 categories:
   - R
   - Linux
+  - OpenBLAS
   - Computer Science
 number-sections: false
 number-depth: 2
@@ -225,22 +226,17 @@ loaded via a namespace (and not attached):
 I've used this install configuration for almost every data science project
 I've tackled. It is minimal and ready for general usage.
 
-**What if we want better performance?**
-
-\<div class="tenor-gif-embed" data-postid="12905629"
-data-share-method="host" data-aspect-ratio="1.32275"
-data-width="100%"\<a
-href="https://tenor.com/view/speed-racer-go-time-race-gif-12905629"Speed
-Racer Go Time GIF\</afrom \<a
-href="https://tenor.com/search/speed+racer-gifs"Speed Racer
-GIFs\</a\</div \<script type="text/javascript" async
-src="https://tenor.com/embed.js"\</script
-
-Let's set it up with OpenBLAS. Checkout some of the benchmarks mentioned
+**What if we want better performance?** Let's set it up with OpenBLAS and get some speed. Checkout some of the benchmarks mentioned
 in this [GitHub
 repo](https://github.com/goepp/r-blas?tab=readme-ov-file) ,
 [here](https://csantill.github.io/RPerformanceWBLAS/), and also
 [here](https://software.intel.com/content/www/us/en/develop/articles/performance-comparison-of-openblas-and-intel-math-kernel-library-in-r.html)
+
+
+<div class="tenor-gif-embed" data-postid="12905629" data-share-method="host" data-aspect-ratio="1.75" data-width="100%"><a href="https://tenor.com/view/speed-racer-go-time-race-gif-12905629">Speed Racer Go Time GIF</a>from <a href="https://tenor.com/search/speed+racer-gifs">Speed Racer GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+
 
 ## Configuration 2: Linking to System-Optimized OpenBLAS and LAPACK
 
