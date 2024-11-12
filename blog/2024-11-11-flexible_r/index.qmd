@@ -3,10 +3,10 @@ title:  "Flexible R Setup on Linux"
 subtitle: 'Managing Multiple Versions with OpenBLAS support'
 author: "Bolívar Aponte Rolón"
 date: 11/11/2024
-last-modified: today
+date-modified: today
 date-format: long
-#image: apple-touch-icon-152x152.png
-#image-alt: Hand drawn sleeping cat in hexagon frame
+image: featured.png
+image-alt: Three R logo icons plus Linux penguin
 categories:
   - R
   - Linux
@@ -26,7 +26,7 @@ Achieving reproducible results, whether working with full analytical pipelines o
 simple analyses, is contingent on the specific software used and the
 underlying environment. Often times, we need to reproduce experimental
 results or need to use packages that are no longer being maintained. With R,
-this is easily achievable through some combination of Conda virtual
+this is easily achieved through some combination of Conda virtual
 environments, `renv` and Docker images. This is often considered the epitome
 of reproducibility. However, sometimes it just doesn't merit setting up a
 whole environment to work on a small project, therefore having

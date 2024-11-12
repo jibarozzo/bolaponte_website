@@ -27,7 +27,7 @@
 
 
 
-<p>Achieving reproducible results, whether working with full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times, we need to reproduce experimental results or need to use packages that are no longer being maintained. With R, this is easily achievable through some combination of Conda virtual environments, <code>renv</code> and Docker images. This is often considered the epitome of reproducibility. However, sometimes it just doesn’t merit setting up a whole environment to work on a small project, therefore having multiple versions of R in the base environment might be desirable to speed things up. The process of setting up different R versions in the base environment, accessed through RStudio, depends on your operating system:</p>
+<p>Achieving reproducible results, whether working with full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times, we need to reproduce experimental results or need to use packages that are no longer being maintained. With R, this is easily achieved through some combination of Conda virtual environments, <code>renv</code> and Docker images. This is often considered the epitome of reproducibility. However, sometimes it just doesn’t merit setting up a whole environment to work on a small project, therefore having multiple versions of R in the base environment might be desirable to speed things up. The process of setting up different R versions in the base environment, accessed through RStudio, depends on your operating system:</p>
 <ul>
 <li><strong>Windows</strong>:
 <ul>
@@ -991,6 +991,7 @@ November 11, 2024. <a href="https://www.bolaponte.com/blog/2024-11-11-flexible_r
   <category>Computer Science</category>
   <guid>https://www.bolaponte.com/blog/2024-11-11-flexible_r/</guid>
   <pubDate>Mon, 11 Nov 2024 06:00:00 GMT</pubDate>
+  <media:content url="https://www.bolaponte.com/blog/2024-11-11-flexible_r/featured.png" medium="image" type="image/png" height="67" width="144"/>
 </item>
 <item>
   <title>Loop Less, Do More: Iterating Efficiently with purrr

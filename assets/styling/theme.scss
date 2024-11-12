@@ -72,14 +72,46 @@ $min-contrast-ratio:   7;
 
 /*-- scss:rules --*/
 
+// Throughout the site
+
+// title
+// .title {
+//  font-size: 2.5em;
+//  font-weight: 500;
+//  line-height: 1.1em;
+//}
+
+// subtitle + Learn More About Me
+//.subtitle {
+//  font-size: 1.2em;
+  // links within subtitles
+//  a {
+//    color: white;
+//    text-decoration: underline !important;
+//    &:hover {
+//      text-decoration: none !important;
+//    }
+//  }
+//}
+
+
 .navbar-title {
   font-family:$font-family-serif;
   font-size: 1.3em;
   font-weight: 500;
 }
 
-h1, h2 {
-  font-size: 1.5em;
+h1, {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.1em;
+  font-family: $headings-font-family;
+  color: $secondary;
+}
+
+
+h2 {
+  font-size: 1.2em;
   font-weight: 700;
   font-family: $headings-font-family;
   color: $secondary-dark;
@@ -124,11 +156,46 @@ body {
   background-color: $light;
 }
 
+// Blob title block
+
+// style background image on posts
+.featured-image {
+  // https://stackoverflow.com/a/24084708
+  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
+  background-size: cover; 
+  background-position: center;
+  color: white; 
+  box-shadow: inset 0 0 0 1000px rgba(0,38,66,0.75);
+}
+
+
 // navbar
 
 // Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
 .navbar-nav.navbar-nav-scroll.ms-auto {
     flex-direction: row;
+}
+
+// nav footer
+
+body .nav-footer {
+  border-top: 1px solid $gray-4;
+}
+
+.nav-footer {
+  background-color: $light;
+  color: $dark;
+}
+
+.nav-footer a {
+    color: $dark;
+    text-decoration: underline;
+}
+
+// nav toc actions
+
+.nav-footer .toc-actions {
+    padding-top: 0;
 }
 
 // code
@@ -165,63 +232,6 @@ div.quarto-about-jolla .about-link:hover {
   color: $white;
 }
 
-// nav footer
-
-body .nav-footer {
-  border-top: 1px solid $gray-4;
-}
-
-.nav-footer {
-  background-color: $light;
-  color: $dark;
-}
-
-.nav-footer a {
-    color: $dark;
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 991.98px) {
-
-// make nice footer rows
-// from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
-
-  .nav-footer {
-      flex-direction: row;
-    }
-
-  .nav-footer-center {
-    order: 3 !important;
-    flex-basis: 100%;
-    margin-top: -0.5em;
-  }
-
-  .nav-footer-right {
-    order: 2 !important;
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .nav-footer-left {
-    order: 1 !important;
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .navbar .quarto-navbar-tools {
-    text-align: left;
-  }
-
-  div.cookie-consent-footer {
-    margin-top: -0.5em;
-  }
-}
-
-// nav toc actions
-
-.nav-footer .toc-actions {
-    padding-top: 0;
-}
 
 // cookies
 
@@ -305,15 +315,6 @@ div.cookie-consent-footer {
   padding-left: 1em;
 }
 
-@media screen and (max-width: 991.98px) {
-  .img-float-right {
-    float: right;
-    width: 100%;
-    padding-bottom: 1em;
-    padding-left: 0em;
-  }
-}
-
 .cv-date {
   float: right;
   color: $gray-8;
@@ -387,5 +388,50 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
 @media screen and (max-width: 991.98px) {
   #subscribe-thumbnail, #subscribe-iframe {
     width: 100%;
+  }
+}
+
+
+// Mobile screen ratio
+@media screen and (max-width: 991.98px) {
+
+  .img-float-right {
+    float: right;
+    width: 100%;
+    padding-bottom: 1em;
+    padding-left: 0em;
+  }
+
+// make nice footer rows
+// from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
+
+  .nav-footer {
+      flex-direction: row;
+    }
+
+  .nav-footer-center {
+    order: 3 !important;
+    flex-basis: 100%;
+    margin-top: -0.5em;
+  }
+
+  .nav-footer-right {
+    order: 2 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .nav-footer-left {
+    order: 1 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .navbar .quarto-navbar-tools {
+    text-align: left;
+  }
+
+  div.cookie-consent-footer {
+    margin-top: -0.5em;
   }
 }
