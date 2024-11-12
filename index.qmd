@@ -33,7 +33,7 @@ execute:
 I am researcher and data scientist with experience in statistical analyses and data visualizations in **R** and **Python**. 
 My research focuses fascinating microbial fungi that live inside (*endophytes*), how they interact with plant hosts, and their distribution along environmental gradients. I am also passionate about reproducible science, open-source software, and data literacy.
 
-[Learn more about me &rarr;](/about){.about-links .subtitle}
+[Learn more about me &rarr;](/about/index.html){.about-links .subtitle}
 
 :::
 

@@ -3,7 +3,7 @@ title:  "Flexible R Setup on Linux"
 subtitle: 'Managing Multiple Versions with OpenBLAS support'
 author: "Bolívar Aponte Rolón"
 date: 11/11/2024
-modified: today
+last-modified: today
 date-format: long
 #image: apple-touch-icon-152x152.png
 #image-alt: Hand drawn sleeping cat in hexagon frame

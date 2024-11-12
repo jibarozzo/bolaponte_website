@@ -21,7 +21,7 @@ appendix-cite-as: display
 format: 
   html: 
     code-overflow: wrap
-    template-partials: 
+    template-partials:
       - ../_partials/title-block.html
 
 # # Enable comments

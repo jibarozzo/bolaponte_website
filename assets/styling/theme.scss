@@ -1,8 +1,11 @@
 /*-- scss:defaults --*/
 
 // Fonts
+// Old families
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
 
+// New families
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -10,17 +13,21 @@
 
 // Define font-family variables
 // stylelint-disable-next-line value-keyword-case
-$font-family-sans-serif: "Red Hat Text", "Source Sans Pro", -apple-system, 
+
+// Body font-synthesis-style: ;
+$font-family-sans-serif: "Nunito Sans", Raleway, "Red Hat Text", "Source Sans Pro", -apple-system, 
                          BlinkMacSystemFont, "Segoe UI", Roboto, 
                          "Helvetica Neue", Arial, sans-serif, 
                          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-$font-family-monospace: "Dank Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
+// Code fonts
+$font-family-monospace: "Fira Code", "Dank Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
                         "Liberation Mono", "Courier New", monospace;
-                        
-$font-family-serif: "Petrona", serif,;
 
-$headings-font-family: "Petrona";
+// Heading fonts                        
+$font-family-serif: "Baskervville SC", serif;
+$main-headings-font-family: Raleway;
+$secondary-headings-font-family: Raleway;
 $headings-font-weight: 400;
 
 // Colors
@@ -42,7 +49,7 @@ $primary:         #4056A1;
 $secondary:       #D79922;
 $accent:          #F12C20;
 $secondary-accent:#FA7D75;
-$light:           #FFF5E4; //#EFE2BA;
+$light:           #f7f2e9; // #fcf9f2; #EFE2BA; #FFF5E4;
 $secondary-light: #C5CBE3;
 $terciary-light:  #E1E6fE;
 $primary-dark:    #D79922;
@@ -66,14 +73,15 @@ $min-contrast-ratio:   7;
 /*-- scss:rules --*/
 
 .navbar-title {
-  font-family: Domine, serif;
-  font-weight: 700;
+  font-family:$font-family-serif;
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
 h1, h2 {
-  font-size: 1.3em;
-  font-weight: 900;
-  font-family: Raleway, serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: $headings-font-family;
   color: $secondary-dark;
 }
 
@@ -83,7 +91,7 @@ h2 {
 
 h3, h4 {
   font-weight: 700;
-  font-family: Domine, serif;
+  font-family: $secondary-headings-font-family;
   color: $accent;
 }
 
@@ -98,7 +106,7 @@ h4 {
 h5, h6 {
   font-size: 1.05em;
   font-weight: 600;
-  font-family: Domine, serif;
+  font-family: $secondary-headings-font-family;
   color: $secondary;
 }
 
@@ -112,7 +120,7 @@ p.subtitle.lead {
 }
 
 body {
-  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+  font-family: $font-family-sans-serif;
   background-color: $light;
 }
 
@@ -126,7 +134,7 @@ body {
 // code
 
 code {
-  font-family: Fira Mono, monospace;
+  font-family: $font-family-monospace;
 }
 
 pre.sourceCode {
@@ -218,7 +226,7 @@ body .nav-footer {
 // cookies
 
 div.cookie-consent-footer {
-  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+  font-family: $font-family-sans-serif;
   font-size: 1em;
 }
 
@@ -229,11 +237,11 @@ div.cookie-consent-footer {
 }
 
 .termsfeed-com---nb .cc-nb-title, #cc-pc-head-title-headline, .cc-cp-body-content-entry .cc-cp-body-content-entry-title {
-  font-family: Domine, serif;
+  font-family: $secondary-headings-font-family;
 }
 
 .termsfeed-com---reset {
-  font-family: Atkinson Hyperlegible, Nunito, sans-serif;
+  font-family: $font-family-sans-serif;
 }
 
 .termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
