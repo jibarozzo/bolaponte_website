@@ -141,12 +141,20 @@ cookieconsent.run({
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Bolívar Aponte Rolón | Flexible R Setup on Linux">
 <meta property="og:description" content="Managing Multiple Versions with OpenBLAS support">
+<meta property="og:image" content="https://www.bolaponte.com/blog/2024-11-11-flexible_r/featured.png">
 <meta property="og:site_name" content="Bolívar Aponte Rolón">
 <meta property="og:locale" content="en_EN">
+<meta property="og:image:height" content="219">
+<meta property="og:image:width" content="472">
+<meta property="og:image:alt" content="Three R logo icons plus Linux penguin">
 <meta name="twitter:title" content="Bolívar Aponte Rolón | Flexible R Setup on Linux">
 <meta name="twitter:description" content="Managing Multiple Versions with OpenBLAS support">
+<meta name="twitter:image" content="https://www.bolaponte.com/blog/2024-11-11-flexible_r/featured.png">
 <meta name="twitter:creator" content="@bolaponte">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="219">
+<meta name="twitter:image-width" content="472">
+<meta name="twitter:image:alt" content="Three R logo icons plus Linux penguin">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -209,6 +217,7 @@ cookieconsent.run({
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns">
 <div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
+  
 <h1 class="title">Flexible R Setup on Linux</h1>
 <p class="subtitle lead">Managing Multiple Versions with OpenBLAS support</p>
     <div class="quarto-categories">
@@ -237,6 +246,12 @@ cookieconsent.run({
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 12, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -302,7 +317,7 @@ cookieconsent.run({
 
 
 
-<p>Achieving reproducible results, whether working with full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times, we need to reproduce experimental results or need to use packages that are no longer being maintained. With R, this is easily achievable through some combination of Conda virtual environments, <code>renv</code> and Docker images. This is often considered the epitome of reproducibility. However, sometimes it just doesn’t merit setting up a whole environment to work on a small project, therefore having multiple versions of R in the base environment might be desirable to speed things up. The process of setting up different R versions in the base environment, accessed through RStudio, depends on your operating system:</p>
+<p>Achieving reproducible results, whether working with full analytical pipelines or simple analyses, is contingent on the specific software used and the underlying environment. Often times, we need to reproduce experimental results or need to use packages that are no longer being maintained. With R, this is easily achieved through some combination of Conda virtual environments, <code>renv</code> and Docker images. This is often considered the epitome of reproducibility. However, sometimes it just doesn’t merit setting up a whole environment to work on a small project, therefore having multiple versions of R in the base environment might be desirable to speed things up. The process of setting up different R versions in the base environment, accessed through RStudio, depends on your operating system:</p>
 <ul>
 <li><strong>Windows</strong>:
 <ul>
@@ -1329,7 +1344,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
