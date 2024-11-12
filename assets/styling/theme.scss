@@ -25,9 +25,6 @@ $headings-font-weight: 400;
 
 // Colors
 
-// Most colors adopted from https://palx.jxnblk.com/
-// with base color #0b7366
-
 $white:  #fff;
 $gray-0: #f9f9f9;
 $gray-1: #eceeee;
@@ -39,36 +36,29 @@ $gray-6: #99a1a0;
 $gray-7: #818b8a;
 $gray-8: #626f6d;
 $gray-9: #334240;
-$black:  #000;
+$black:  #000000;
 
-// colors
-$orange:      #E8B86D;
-$sand-light:  #FFF5E4;
-$teal-flat:   #A1D6B2;
-$brown-light: #a98069;
-$mint-light:  #CEDF9F;
-$brown-dark:  #8D493A;
-
-
-$primary:         $orange;
-$secondary:       $brown-dark;
-$accent:          $teal-flat;
-$light:           $sand-light;
-$secondary-light: $mint-light;
-$primary-dark:    $brown-dark;
-$secondary-dark:  $brown-light;
+$primary:         #4056A1;
+$secondary:       #D79922;
+$accent:          #F12C20;
+$secondary-accent:#FA7D75;
+$light:           #FFF5E4; //#EFE2BA;
+$secondary-light: #C5CBE3;
+$terciary-light:  #E1E6fE;
+$primary-dark:    #D79922;
+$secondary-dark:  #4056A1;
 $light-accent:    $gray-3;
 $dark:            $gray-9;
 
 // Base document colors
 $navbar-bg: $primary; // navbar
 $navbar-fg: $white; // navbar foreground elements
-$navbar-hl: $accent; // highlight color when hovering over navbar links
+$navbar-hl: $secondary; // highlight color when hovering over navbar links
 $link-color: $primary-dark; // hyperlinks
 
 // Inline code colors
-$code-bg: $secondary-light; // inline code background color
-$code-color: $primary-dark; // inline code text color
+$code-bg: $terciary-light; // inline code background color
+$code-color: $dark; // inline code text color
 
 // Contrast
 $min-contrast-ratio:   7;
@@ -234,7 +224,7 @@ div.cookie-consent-footer {
 
 .termsfeed-com---nb .cc-nb-main-container {
     padding: 1rem;
-    background: $mint-light;
+    background: $secondary-light;
     border-radius: 6px;
 }
 
@@ -247,7 +237,7 @@ div.cookie-consent-footer {
 }
 
 .termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
-  background-color: $accent;
+  background-color: $secondary-accent;
   border-radius: 6px;
 }
 
