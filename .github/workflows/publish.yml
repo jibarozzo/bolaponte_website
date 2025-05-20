@@ -36,7 +36,8 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
-              
+      - run: Rscript install.packages(c("tidyverse", "rmarkdown", "knitr", "gapminder"))'
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
