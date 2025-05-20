@@ -24,11 +24,15 @@ We developed an experiment where we reared 7 tropical tree species in a greenhou
 
 Our findings highlight the complex dynamics of plant-herbivore-pathogen relationships and underscore the importance of endophytes as a potentially low-cost, preemptive defense strategy for plants, especially during early growth stages. These insights not shed light on the nuanced role of endophytes in plant ecology.
 
+
 **Collaborators:**
 
 - A. Elizabeth Arnold
 - Mareli Sánchez Juliá
 - Sunshine A. Van Bael
+
+***See publication [here](https://doi.org/10.1111/1365-2435.14717)***
+
 :::
 
 ::::
@@ -89,7 +93,7 @@ Our results may shed light on how plants and their microbial partners work toget
 
 The process of capturing fungal endophytes from yellow monkeyflower tissue led to innovations in DNA extraction and PCR setup. See below:
 
--   **Aponte Rolón, B.** (2023). *High-Molecular-Weight SPRI-aided DNA extraction from Mimulus (Phrymaceae) leaf tissue.* [dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2](dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2)
+-   **Aponte Rolón, B.** (2023). High-Molecular-Weight SPRI-aided DNA extraction from *Mimulus* (Phrymaceae) leaf tissue. [dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2](dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2)
 
 
 <!-- ## Monkey flowers and local adaptation -->
