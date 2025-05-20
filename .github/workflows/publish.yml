@@ -43,7 +43,12 @@ jobs:
           extra-packages: |
             any::tidyverse
             any::gapminder
-          needs: check
+          needs: check      - name: Setup R Dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            any::tidyverse
+            any::gapminder
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
