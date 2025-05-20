@@ -42,8 +42,9 @@ jobs:
         with:
           extra-packages: |
             any::tidyverse
-            any::gapminder
-          needs: check      - name: Setup R Dependencies
+            any::gapminder  
+              
+      - name: Setup R Dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
