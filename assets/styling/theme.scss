@@ -1,38 +1,35 @@
 /*-- scss:defaults --*/
 
 // Fonts
-// Old families
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
-
-// New families
-@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Space+Mono:wght@400;700&display=swap');
 
 // Define font-family variables
-// stylelint-disable-next-line value-keyword-case
-
-// Body font-synthesis-style: ;
-$font-family-sans-serif: "Nunito Sans", Raleway, "Red Hat Text", "Source Sans Pro", -apple-system, 
+$font-family-sans-serif: "Nunito Sans", "Red Hat Text", -apple-system, 
                          BlinkMacSystemFont, "Segoe UI", Roboto, 
-                         "Helvetica Neue", Arial, sans-serif, 
-                         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                         "Helvetica Neue", Arial, sans-serif;
 
 // Code fonts
-$font-family-monospace: "Fira Code", "Dank Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
+$font-family-monospace: "Fira Code", "Space Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
                         "Liberation Mono", "Courier New", monospace;
 
-// Heading fonts                        
-$font-family-serif: "Baskervville SC", serif;
-$main-headings-font-family: Raleway;
-$secondary-headings-font-family: Raleway;
-$headings-font-weight: 400;
+// Heading fonts - using monospace for edgy tech feel                        
+$font-family-serif: "Space Mono", serif;
+$main-headings-font-family: "Space Mono";
+$secondary-headings-font-family: "Fira Code";
+$headings-font-weight: 700;
 
-// Colors
+// Colors from your palette
+$primary:         #4056A1;
+$secondary:       #D79922;
+$accent:          #F12C20;
+$secondary-accent:#FA7D75;
+$light:           #f7f2e9;
+$secondary-light: #C5CBE3;
+$terciary-light:  #E1E6FE;
+$primary-dark:    #D79922;
+$secondary-dark:  #4056A1;
 
-$white:  #fff;
+// Additional complementary colors for edgy design
 $gray-0: #f9f9f9;
 $gray-1: #eceeee;
 $gray-2: #dfe1e1;
@@ -44,394 +41,287 @@ $gray-7: #818b8a;
 $gray-8: #626f6d;
 $gray-9: #334240;
 $black:  #000000;
-
-$primary:         #4056A1;
-$secondary:       #D79922;
-$accent:          #F12C20;
-$secondary-accent:#FA7D75;
-$light:           #f7f2e9; // #fcf9f2; #EFE2BA; #FFF5E4;
-$secondary-light: #C5CBE3;
-$terciary-light:  #E1E6fE;
-$primary-dark:    #D79922;
-$secondary-dark:  #4056A1;
-$light-accent:    $gray-3;
-$dark:            $gray-9;
+$dark:   #202124;
 
 // Base document colors
-$navbar-bg: $primary; // navbar
-$navbar-fg: $white; // navbar foreground elements
-$navbar-hl: $secondary; // highlight color when hovering over navbar links
-$link-color: $primary-dark; // hyperlinks
+$navbar-bg: $primary;
+$navbar-fg: $light;
+$navbar-hl: $secondary;
+$link-color: $accent;
 
 // Inline code colors
-$code-bg: $terciary-light; // inline code background color
-$code-color: $dark; // inline code text color
+$code-bg: rgba(64, 86, 161, 0.1);
+$code-color: $accent;
 
 // Contrast
-$min-contrast-ratio:   7;
+$min-contrast-ratio: 4.5;
 
 /*-- scss:rules --*/
 
-// Throughout the site
-
-// title
-// .title {
-//  font-size: 2.5em;
-//  font-weight: 500;
-//  line-height: 1.1em;
-//}
-
-// subtitle + Learn More About Me
-//.subtitle {
-//  font-size: 1.2em;
-  // links within subtitles
-//  a {
-//    color: white;
-//    text-decoration: underline !important;
-//    &:hover {
-//      text-decoration: none !important;
-//    }
-//  }
-//}
-
-
-.navbar-title {
-  font-family:$font-family-serif;
-  font-size: 1.3em;
-  font-weight: 500;
-}
-
-h1, {
-  font-size: 2.5em;
-  font-weight: 700;
-  line-height: 1.1em;
-  font-family: $headings-font-family;
-  color: $secondary;
-}
-
-
-h2 {
-  font-size: 1.2em;
-  font-weight: 700;
-  font-family: $headings-font-family;
-  color: $secondary-dark;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-h3, h4 {
-  font-weight: 700;
-  font-family: $secondary-headings-font-family;
-  color: $accent;
-}
-
-h3 {
-  font-size: 1.15em;
-}
-
-h4 {
-  font-size: 1.1em;
-}
-
-h5, h6 {
-  font-size: 1.05em;
-  font-weight: 600;
-  font-family: $secondary-headings-font-family;
-  color: $secondary;
-}
-
-p.subtitle.lead {
-  font-size: 1em;
-  text-align: left;
-}
-
-#title-block-header.quarto-title-block.default .description {
-  margin-top: 1em;
-}
-
+// Global styles
 body {
   font-family: $font-family-sans-serif;
   background-color: $light;
+  position: relative;
 }
 
-// Blob title block
-
-// style background image on posts
-.featured-image {
-  // https://stackoverflow.com/a/24084708
-  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
-  background-size: cover; 
-  background-position: center;
-  color: white; 
-  box-shadow: inset 0 0 0 1000px rgba(0,38,66,0.75);
-}
-
-
-// navbar
-
-// Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
-.navbar-nav.navbar-nav-scroll.ms-auto {
-    flex-direction: row;
-}
-
-// nav footer
-
-body .nav-footer {
-  border-top: 1px solid $gray-4;
-}
-
-.nav-footer {
+// Add subtle background pattern for texture
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: $light;
-  color: $dark;
+  background-image: 
+    radial-gradient(square at 0 0, transparent 12px, rgba(64, 86, 161, 3) 12px, rgba(64, 86, 161, 3) 14px, transparent 14px),
+    radial-gradient(circle at 33.33% 33.33%, transparent 12px, rgba(215, 153, 34, 3) 12px, rgba(215, 153, 34, 0.03) 14px, transparent 14px),
+    radial-gradient(circle at 66.66% 66.66%, transparent 12px, rgba(241, 44, 32, 2) 12px, rgba(241, 44, 32, 0.02) 14px, transparent 14px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px, 30px 30px;
+  z-index: -1;
 }
 
-.nav-footer a {
-    color: $dark;
-    text-decoration: underline;
+// Heading styles with sharp angles
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
-// nav toc actions
+h1 {
+  color: $primary;
+  font-size: 2.5em;
 
-.nav-footer .toc-actions {
-    padding-top: 0;
 }
 
-// code
+h2 {
+  color: $secondary-dark;
+  font-size: 1.8em;
+
+}
+
+h3 {
+  color: $accent;
+  font-size: 1.4em;
+
+}
+
+h4, h5, h6 {
+  color: $secondary;
+
+}
+
+// Links with edgy hover effect
+a {
+  color: $primary;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: $accent;
+  text-decoration: none;
+}
+
+a:not(.nav-link):not(.navbar-brand):not(.btn):after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $accent;
+  transition: width 0.3s ease;
+}
+
+a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
+  width: 100%;
+}
+
+// Code blocks with tech styling
+pre {
+  border-radius: 0 !important;
+  border-left: 4px solid $secondary-light !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
 
 code {
   font-family: $font-family-monospace;
+  border-radius: 0;
 }
 
-pre.sourceCode {
-  font-size: 0.9em;
+// Navbar with sharper edges
+.navbar {
+  border-bottom: 3px solid $secondary;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sourceCode pre code {
-  padding: 0.9em;
+.navbar-title {
+  font-family: $font-family-monospace;
+  font-weight: 700;
+  letter-spacing: -0.05em;
 }
 
-// about section
-
-// adjust about separator
-div.quarto-about-jolla .about-sep {
-  margin: -1em 0em 1em 0em;
+// Cards with edgy styling
+.card {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, $light, $terciary-light);
 }
 
-div.quarto-about-jolla .about-link {
-  color: $secondary;
-  font-size: 1em;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-div.quarto-about-jolla .about-link:hover {
-  background-color: $secondary;
-  color: $white;
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, $primary, $accent);
 }
 
-
-// cookies
-
-div.cookie-consent-footer {
-  font-family: $font-family-sans-serif;
-  font-size: 1em;
+.card-img-top {
+  border-radius: 0;
 }
 
-.termsfeed-com---nb .cc-nb-main-container {
-    padding: 1rem;
-    background: $secondary-light;
-    border-radius: 6px;
-}
-
-.termsfeed-com---nb .cc-nb-title, #cc-pc-head-title-headline, .cc-cp-body-content-entry .cc-cp-body-content-entry-title {
-  font-family: $secondary-headings-font-family;
-}
-
-.termsfeed-com---reset {
-  font-family: $font-family-sans-serif;
-}
-
-.termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
-  background-color: $secondary-accent;
-  border-radius: 6px;
-}
-
-.termsfeed-com---palette-light .cc-nb-changep {
-  background-color: $light;
-  border-radius: 6px;
-}
-
-.cc-cp-body .cc-cp-body-tabs-item-link, .cc-cp-body .cc-cp-body-tabs {
-  background-color: $secondary-light;
-}
-
-.termsfeed-com---palette-light .cc-cp-body-tabs-item[active=true] button {
-  background-color: $primary-dark;
-  color: white;
-}
-
-.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:before {
-  background: #18bc9c;
-}
-
-// appendix
-
-#quarto-appendix.default {
-  background-color: $light;
-  padding-top: 1em;
-  margin-top: 1em;
-  z-index: 998;
-}
-
-// images
-
-.figure-img {
-    margin-bottom: 0;
-    line-height: 0;
-    border-radius: 5px;
-}
-
-// specific classes
-
-.center-text {
-  text-align: center;
-}
-
-.img-va-bottom {
-  vertical-align: bottom;
-}
-
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.img-float-right {
-  float: right;
-  padding-left: 1em;
-}
-
-.cv-date {
-  float: right;
-  color: $gray-8;
-}
-
-// listing buttons
-
-div.quarto-post .listing-categories .listing-category, .quarto-category, .btn {
-  opacity: 0.8 !important;
-  color: $secondary;
-  border-color: $secondary;
-  text-align: center;
-  border-style: solid;
-  text-decoration: none;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-
+// Buttons with angular design
 .btn {
-  opacity: 1 !important;
-  padding: 0.5em;
-  border-radius: 6px;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-div.quarto-post .listing-categories .listing-category:hover, .quarto-category:hover, .btn:hover {
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary, 10%);
+  border-color: darken($primary, 10%);
+}
+
+.btn-secondary {
   background-color: $secondary;
-  color: $white;
+  border-color: $secondary;
 }
 
-.listing-btn-group {
-  display: inline-flex;
-  gap: 1em;
+.btn-secondary:hover {
+  background-color: darken($secondary, 10%);
+  border-color: darken($secondary, 10%);
 }
 
-// page buttons
-
-.page-link {
-  background-color: $secondary-light;
-  color: $secondary;
-}
-
-.page-link:hover {
-  background-color: $secondary;
+.btn-accent {
+  background-color: $accent;
+  border-color: $accent;
   color: white;
 }
 
-.page-item.active .page-link {
-  background-color: $secondary;
+.btn-accent:hover {
+  background-color: darken($accent, 10%);
+  border-color: darken($accent, 10%);
+  color: white;
 }
 
-// Slide iframes
+// Add diagonal accents to sections
+.section-accent {
+  position: relative;
+  padding: 3em 0;
+}
 
-.slides {
+.section-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border-style: solid;
-  border-width: 1px;
+  height: 5px;
+  background: linear-gradient(to right, $accent, $secondary-accent);
 }
 
-// Embed iframe
+// Featured sections with graphic elements
+.featured-section {
+  position: relative;
+  background-color: $terciary-light;
+  padding: 3em 1em;
+  margin: 2em 0;
+  overflow: hidden;
+}
 
-.mastodon-embed {
+.featured-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 49%, $secondary-accent 50%, transparent 51%);
+  opacity: 0.2;
+}
+
+// Footer with edgy style
+.footer {
+  background-color: $primary;
+  color: $light;
+  padding: 2em 0;
+  margin-top: 3em;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
   width: 100%;
-  height: 100;
-  overflow: scroll;
+  height: 5px;
+  background: linear-gradient(to right, $accent, $secondary);
 }
 
-// Blog subscribe section
-
-@media screen and (max-width: 991.98px) {
-  #subscribe-thumbnail, #subscribe-iframe {
-    width: 100%;
-  }
+// About area with edgy styling
+.about-entity {
+  background: linear-gradient(to bottom right, $light, $terciary-light);
+  border-left: 4px solid $accent;
+  border-radius: 0;
+  padding: 2em !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+// Social links with vibrant hover
+.about-entity .about-link {
+  color: $primary;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
 
-// Mobile screen ratio
+.about-entity .about-link:hover {
+  color: $accent;
+  transform: scale(1.2);
+}
+
+// Media queries
 @media screen and (max-width: 991.98px) {
-
-  .img-float-right {
-    float: right;
-    width: 100%;
-    padding-bottom: 1em;
-    padding-left: 0em;
+  h1 {
+    font-size: 2em;
   }
-
-// make nice footer rows
-// from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
-
-  .nav-footer {
-      flex-direction: row;
-    }
-
-  .nav-footer-center {
-    order: 3 !important;
-    flex-basis: 100%;
-    margin-top: -0.5em;
-  }
-
-  .nav-footer-right {
-    order: 2 !important;
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .nav-footer-left {
-    order: 1 !important;
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .navbar .quarto-navbar-tools {
-    text-align: left;
-  }
-
-  div.cookie-consent-footer {
-    margin-top: -0.5em;
+  
+  h2 {
+    font-size: 1.5em;
   }
 }
