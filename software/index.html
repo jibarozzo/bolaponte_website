@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Bolívar Aponte Rolón">
-<meta name="description" content="Divagations (yes, it’s a word) at the intersection data, biology and code">
 
-<title>Bolívar Aponte Rolón | Experiment freely, learn endlessly – Bolívar Aponte Rolón</title>
+<title>Bolívar Aponte Rolón | Software and Tools – Bolívar Aponte Rolón</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -71,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-categories','listing-date','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LEVV3VZT0E"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -128,52 +96,16 @@ cookieconsent.run({
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="../assets/styling/listing-default.css">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Bolívar Aponte Rolón" href="index.xml" data-external="1"><meta property="og:title" content="Bolívar Aponte Rolón | Experiment freely, learn endlessly">
-<meta property="og:description" content="Divagations (yes, it’s a word) at the intersection data, biology and code">
-<meta property="og:image" content="https://www.bolaponte.com/blog/2024-11-11-flexible_r/featured.png">
+<meta property="og:title" content="Bolívar Aponte Rolón | Software and Tools">
+<meta property="og:description" content="Data scientist at the intersection of ecology, evolution, and data literacy.">
 <meta property="og:site_name" content="Bolívar Aponte Rolón">
 <meta property="og:locale" content="en_EN">
-<meta property="og:image:height" content="219">
-<meta property="og:image:width" content="472">
-<meta name="twitter:title" content="Bolívar Aponte Rolón | Experiment freely, learn endlessly">
-<meta name="twitter:description" content="Divagations (yes, it’s a word) at the intersection data, biology and code">
-<meta name="twitter:image" content="https://www.bolaponte.com/blog/2024-11-11-flexible_r/featured.png">
+<meta name="twitter:title" content="Bolívar Aponte Rolón | Software and Tools">
+<meta name="twitter:description" content="Data scientist at the intersection of ecology, evolution, and data literacy.">
 <meta name="twitter:creator" content="@bolaponte">
-<meta name="twitter:image-height" content="219">
-<meta name="twitter:image-width" content="472">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed">
@@ -209,12 +141,12 @@ window.Quarto = {
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../software/index.html"> <i class="bi bi-laptop-fill" role="img">
+    <a class="nav-link active" href="../software/index.html" aria-current="page"> <i class="bi bi-laptop-fill" role="img">
 </i> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> <i class="bi bi-box" role="img">
+    <a class="nav-link" href="../blog/index.html"> <i class="bi bi-box" role="img">
 </i> 
 <span class="menu-text">Sandbox</span></a>
   </li>  
@@ -238,131 +170,45 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<!-- source: https://github.com/gadenbuie/garrickadenbuie-com/blob/main/_partials/title-block-link-buttons/title-block.html -->
-<!-- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title"> 
--->
-<!-- <header id="title-block-header" class="quarto-title-block default page-columns"> -->
-<!-- <div class="quarto-title page-columns page-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);"> -->
-<header id="title-block-header" class="quarto-title-block default page-columns">
-<div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
-  
-<h1 class="title">Experiment freely, learn endlessly</h1>
-</div>
-
-<div>
-  <div id="title-block-title-desc" class="description pt-4">
-    <p>Divagations (yes, it’s a word) at the intersection data, biology and code</p>
-  </div>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Software and Tools</h1>
 </div>
 
 
-<div class="quarto-title-meta column-page">
+
+<div class="quarto-title-meta">
 
     
   
     
   </div>
   
-
 
 
 </header>
 
 
+<p>I develop and maintain several R packages and analysis tools for the research community, including:</p>
+<ul>
+<li><a href="https://github.com/germs-lab/BRCore"><strong>BRCore</strong></a>: An R package for core analysis workflows in microbial ecology.</li>
+<li><a href="https://github.com/germs-lab/interbrc-core-analysis"><strong>interbrc-core-analysis</strong></a>: Analysis pipelines for the Bioenergy Research Centers shared research objective in feedstock microbiomes.</li>
+<li><a href="https://github.com/ESIPFed/esipDMP"><strong>esipDMP</strong></a>: A premier in data management planning and stewardship.</li>
+<li><a href="https://github.com/jibarozzo/rateDMP"><strong>rateDMP</strong></a>: (Rust) An experimental tool for rating or evaluating Data Management Plans.</li>
+</ul>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R,Linux,OpenBLAS,Computer Science" data-listing-date-sort="1731304800000" data-listing-file-modified-sort="1750220733131" data-listing-date-modified-sort="1731304800000" data-listing-reading-time-sort="15" data-listing-word-count-sort="2904">
-<div class="thumbnail">
-<p><a href="../blog/2024-11-11-flexible_r/index.html" class="no-external"></a></p><a href="../blog/2024-11-11-flexible_r/index.html" class="no-external">
-<p><img loading="lazy" src="../blog/2024-11-11-flexible_r/featured.png" class="thumbnail-image" alt="Three R logo icons plus Linux penguin"></p>
-</a><p><a href="../blog/2024-11-11-flexible_r/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2024-11-11-flexible_r/index.html" class="no-external">Flexible R Setup on Linux</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2024-11-11-flexible_r/index.html" class="no-external">Managing Multiple Versions with OpenBLAS support</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Linux'); return false;">
-Linux
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('OpenBLAS'); return false;">
-OpenBLAS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Computer Science'); return false;">
-Computer Science
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2024-11-11-flexible_r/index.html" class="no-external">
-<div class="listing-date">
-Nov 11, 2024
-</div>
-<div class="listing-author">
-Bolívar Aponte Rolón
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="R,tidyverse,purrr" data-listing-date-sort="1729486800000" data-listing-file-modified-sort="1750221850997" data-listing-date-modified-sort="1731304800000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1371">
-<div class="thumbnail">
-<p><a href="../blog/2024-10-15-map_purrr/index.html" class="no-external"></a></p><a href="../blog/2024-10-15-map_purrr/index.html" class="no-external">
-<p><img loading="lazy" src="../blog/2024-10-15-map_purrr/featured.png" class="thumbnail-image" alt="Hand drawn sleeping cat in hexagon frame"></p>
-</a><p><a href="../blog/2024-10-15-map_purrr/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2024-10-15-map_purrr/index.html" class="no-external">Loop Less, Do More: Iterating Efficiently with <code>purrr</code></a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2024-10-15-map_purrr/index.html" class="no-external">Automating lists, plots, and possibilities</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tidyverse'); return false;">
-tidyverse
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('purrr'); return false;">
-purrr
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2024-10-15-map_purrr/index.html" class="no-external">
-<div class="listing-date">
-Oct 21, 2024
-</div>
-<div class="listing-author">
-Bolívar Aponte Rolón
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -812,7 +658,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Change cookies 🍪</a></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/software/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Change cookies 🍪</a></div></div>
     <div class="nav-footer-right">
 <p>made with ︎♥️ &amp; <a href="https://quarto.org">Quarto</a></p>
 </div>

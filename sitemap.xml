@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bolaponte.com/research/index.html</loc>
-    <lastmod>2025-05-20T17:15:56.489Z</lastmod>
+    <loc>https://www.bolaponte.com/software/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/license.html</loc>
-    <lastmod>2024-11-12T05:03:59.914Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/scraps/Untitled.html</loc>
-    <lastmod>2024-10-19T13:02:04.405Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/index.html</loc>
-    <lastmod>2025-05-20T16:59:52.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/blog/2024-11-11-flexible_r/index.html</loc>
-    <lastmod>2024-11-12T19:51:17.816Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/blog/2024-10-15-map_purrr/index.html</loc>
-    <lastmod>2024-11-12T19:42:44.663Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/blog/index.html</loc>
-    <lastmod>2024-11-11T21:32:27.787Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/coc.html</loc>
-    <lastmod>2024-11-12T15:27:43.871Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/about/index.html</loc>
-    <lastmod>2025-05-20T16:56:27.466Z</lastmod>
+    <loc>https://www.bolaponte.com/cv/index.html</loc>
+    <lastmod>2025-05-20T16:56:47.865Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/accessibility.html</loc>
     <lastmod>2024-11-12T15:27:07.950Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/cv/index.html</loc>
-    <lastmod>2025-05-20T16:56:47.865Z</lastmod>
+    <loc>https://www.bolaponte.com/about/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.900Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/coc.html</loc>
+    <lastmod>2024-11-12T15:27:43.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/blog/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/blog/2024-10-15-map_purrr/index.html</loc>
+    <lastmod>2025-06-18T04:44:10.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/blog/2024-11-11-flexible_r/index.html</loc>
+    <lastmod>2025-06-18T04:25:33.131Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/scraps/Untitled.html</loc>
+    <lastmod>2024-10-19T13:02:04.405Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/license.html</loc>
+    <lastmod>2024-11-12T05:03:59.914Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/research/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
   </url>
 </urlset>
