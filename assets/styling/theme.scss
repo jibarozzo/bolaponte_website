@@ -138,7 +138,7 @@ a:hover {
   text-decoration: none;
 }
 
-a:not(.nav-link):not(.navbar-brand):not(.btn):not(.lightbox):not(.figure-link):hover:after {
+a:not(.nav-link):not(.navbar-brand):not(.btn):not(.figure-link):hover:after { //:not(.lightbox)
   content: '';
   position: absolute;
   bottom: -2px;
@@ -146,7 +146,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):not(.lightbox):not(.figure-link):h
   width: 0;
   height: 2px;
   background-color: $accent;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
 
 a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
@@ -185,7 +185,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 }
 
 
-// Navbar
+// Navbar and Footer
 // Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
 .navbar {
   border-bottom: 3px solid $secondary;
@@ -202,6 +202,42 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
     flex-direction: row;
 }
 
+
+.footer {
+  background-color: $primary;
+  color: $light;
+  padding: 2em 0;
+  margin-top: 3em;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, $accent, $secondary);
+}
+
+// About
+// About box
+/*.about-entity { 
+  background: linear-gradient(to bottom right, $light, $terciary-light);
+  border-left: 4px solid $accent;
+  border-radius: 0;
+  padding: 2em !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+} */
+
+
+// adjust about separator
+div.quarto-about-jolla .about-sep {
+  margin: -1em 0em 1em 0em;
+}
+
+// Cards and Buttons
 
 // Cards
 .card {
@@ -313,40 +349,6 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   opacity: 0.2;
 }
 
-// Footer
-.footer {
-  background-color: $primary;
-  color: $light;
-  padding: 2em 0;
-  margin-top: 3em;
-  position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(to right, $accent, $secondary);
-}
-
-// About
-// About box
-/*.about-entity { 
-  background: linear-gradient(to bottom right, $light, $terciary-light);
-  border-left: 4px solid $accent;
-  border-radius: 0;
-  padding: 2em !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-} */
-
-
-// adjust about separator
-div.quarto-about-jolla .about-sep {
-  margin: -1em 0em 1em 0em;
-}
 
 // Social links with vibrant hover
 .about-entity .about-link {
@@ -546,98 +548,6 @@ pre.sourceCode {
 }
 
 
-
-// Glitch effect for headers on hover
-.glitch-hover {
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.glitch-hover:hover {
-  text-shadow: 
-    0.05em 0 0 rgba(255,0,0,0.75),
-    -0.025em -0.05em 0 rgba(0,255,0,0.75),
-    0.025em 0.05em 0 rgba(0,0,255,0.75);
-  animation: glitch 500ms infinite;
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: 
-      0.05em 0 0 rgba(241,44,32,0.75),
-      -0.05em -0.025em 0 rgba(64,86,161,0.75),
-      -0.025em 0.05em 0 rgba(215,153,34,0.75);
-  }
-  14% {
-    text-shadow: 
-      0.05em 0 0 rgba(241,44,32,0.75),
-      -0.05em -0.025em 0 rgba(64,86,161,0.75),
-      -0.025em 0.05em 0 rgba(215,153,34,0.75);
-  }
-  15% {
-    text-shadow: 
-      -0.05em -0.025em 0 rgba(241,44,32,0.75),
-      0.025em 0.025em 0 rgba(64,86,161,0.75),
-      -0.05em -0.05em 0 rgba(215,153,34,0.75);
-  }
-  49% {
-    text-shadow: 
-      -0.05em -0.025em 0 rgba(241,44,32,0.75),
-      0.025em 0.025em 0 rgba(64,86,161,0.75),
-      -0.05em -0.05em 0 rgba(215,153,34,0.75);
-  }
-  50% {
-    text-shadow: 
-      0.025em 0.05em 0 rgba(241,44,32,0.75),
-      0.05em 0 0 rgba(64,86,161,0.75),
-      0 -0.05em 0 rgba(215,153,34,0.75);
-  }
-  99% {
-    text-shadow: 
-      0.025em 0.05em 0 rgba(241,44,32,0.75),
-      0.05em 0 0 rgba(64,86,161,0.75),
-      0 -0.05em 0 rgba(215,153,34,0.75);
-  }
-  100% {
-    text-shadow: 
-      -0.025em 0 0 rgba(241,44,32,0.75),
-      -0.025em -0.025em 0 rgba(64,86,161,0.75),
-      -0.025em -0.05em 0 rgba(215,153,34,0.75);
-  }
-}
-
-// Animated border for cards
-.card-animated-border {
-  position: relative;
-}
-
-.card-animated-border::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid transparent;
-  background: linear-gradient(90deg, $primary, $accent, $secondary, $primary) border-box;
-  -webkit-mask: linear-gradient($white 0 0) padding-box, linear-gradient($white 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  animation: border-rotate 3s linear infinite;
-  background-size: 300% 300%;
-}
-
-@keyframes border-rotate {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 // Tech-inspired progress bars
 .progress-tech {
