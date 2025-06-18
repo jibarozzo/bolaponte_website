@@ -93,7 +93,7 @@ body::before {
   z-index: -1;
 }
 
-// Heading styles with sharp angles
+// Heading styles
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-left: 0.5em;
@@ -202,10 +202,9 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
     flex-direction: row;
 }
 
-
 .footer {
   background-color: $primary;
-  color: $light;
+  color: $accent;
   padding: 2em 0;
   margin-top: 3em;
   position: relative;
@@ -221,6 +220,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   background: linear-gradient(to right, $accent, $secondary);
 }
 
+
 // About
 // About box
 /*.about-entity { 
@@ -231,10 +231,44 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 } */
 
-
 // adjust about separator
 div.quarto-about-jolla .about-sep {
   margin: -1em 0em 1em 0em;
+}
+
+// Social links with vibrant hover
+.about-entity .about-link {
+  color: $primary;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  font-size: 1em;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.about-entity .about-link:hover {
+  color: $accent;
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+
+
+// Blog title block (banner)
+// style background image on posts
+.featured-image {
+  // https://stackoverflow.com/a/24084708
+  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
+  background-size: cover; 
+  background-position: center;
+  color: $secondary; 
+  box-shadow: inset 0 0 0 1000px rgba(15,38,38,0.65);
+}
+
+p.subtitle.lead {
+  font-size: 1em;
+  text-align: left;
 }
 
 // Cards and Buttons
@@ -350,41 +384,6 @@ div.quarto-about-jolla .about-sep {
 }
 
 
-// Social links with vibrant hover
-.about-entity .about-link {
-  color: $primary;
-  transition: all 0.3s ease;
-  transform: scale(1);
-  font-size: 1em;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-
-.about-entity .about-link:hover {
-  color: $accent;
-  transform: scale(1.2);
-  background-color: transparent;
-}
-
-p.subtitle.lead {
-  font-size: 1em;
-  text-align: left;
-}
-
-
-// Blog title block (banner)
-// style background image on posts
-.featured-image {
-  // https://stackoverflow.com/a/24084708
-  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
-  background-size: cover; 
-  background-position: center;
-  color: $secondary; 
-  box-shadow: inset 0 0 0 1000px rgba(15,38,38,0.65);
-}
-
-
 // Appendix
 
 #quarto-appendix.default {
@@ -394,6 +393,7 @@ p.subtitle.lead {
   z-index: 998;
 }
 
+
 // Images
 
 .figure-img {
@@ -401,6 +401,7 @@ p.subtitle.lead {
     line-height: 0;
     border-radius: 5px;
 }
+
 
 // Specific classes
 
@@ -428,6 +429,7 @@ p.subtitle.lead {
   color: $gray-8;
 }
 
+
 // Listing buttons
 
 div.quarto-post .listing-categories .listing-category, .quarto-category {
@@ -451,6 +453,7 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
   display: inline-flex;
   gap: 1em;
 }
+
 
 // Page buttons
 
@@ -477,6 +480,7 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
   border-style: solid;
   border-width: 1px;
 }
+
 
 // Embed iframe
 
@@ -549,7 +553,7 @@ pre.sourceCode {
 
 
 
-// Tech-inspired progress bars
+// Progress bars
 .progress-tech {
   height: 8px;
   background-color: $terciary-light;
