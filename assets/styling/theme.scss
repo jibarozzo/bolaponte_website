@@ -138,7 +138,7 @@ a:hover {
   text-decoration: none;
 }
 
-a:not(.nav-link):not(.navbar-brand):not(.btn):after {
+a:not(.nav-link):not(.navbar-brand):not(.btn):not(.lightbox):not(.figure-link):hover:after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -153,6 +153,36 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   width: 100%;
 }
 
+// Set up the positioning context
+.figure {
+  position: relative;
+  display: inline-block; // igure container fits its content
+  padding: 10px;
+}
+
+// The border highlight effect
+.figure a.lightbox {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.figure a.lightbox:hover::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid $accent;
+  z-index: 1;
+}
+
+// Make the image pop from border
+.figure a.lightbox img {
+  position: relative;
+  z-index: 2;
+}
 
 
 // Navbar
@@ -188,7 +218,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card::after {
+.card:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -353,52 +383,7 @@ p.subtitle.lead {
 }
 
 
-
-// cookies
-
-div.cookie-consent-footer {
-  font-family: $font-family-sans-serif;
-  font-size: 1em;
-}
-
-.termsfeed-com---nb .cc-nb-main-container {
-    padding: 1rem;
-    background: $secondary-light;
-    border-radius: 6px;
-}
-
-.termsfeed-com---nb .cc-nb-title, #cc-pc-head-title-headline, .cc-cp-body-content-entry .cc-cp-body-content-entry-title {
-  font-family: $secondary-headings-font-family;
-}
-
-.termsfeed-com---reset {
-  font-family: $font-family-sans-serif;
-}
-
-.termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
-  background-color: $secondary-accent;
-  border-radius: 6px;
-}
-
-.termsfeed-com---palette-light .cc-nb-changep {
-  background-color: $light;
-  border-radius: 6px;
-}
-
-.cc-cp-body .cc-cp-body-tabs-item-link, .cc-cp-body .cc-cp-body-tabs {
-  background-color: $secondary-light;
-}
-
-.termsfeed-com---palette-light .cc-cp-body-tabs-item[active=true] button {
-  background-color: $primary-dark;
-  color: white;
-}
-
-.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:before {
-  background: #18bc9c;
-}
-
-// appendix
+// Appendix
 
 #quarto-appendix.default {
   background-color: $light;
@@ -407,7 +392,7 @@ div.cookie-consent-footer {
   z-index: 998;
 }
 
-// images
+// Images
 
 .figure-img {
     margin-bottom: 0;
@@ -415,7 +400,7 @@ div.cookie-consent-footer {
     border-radius: 5px;
 }
 
-// specific classes
+// Specific classes
 
 .center-text {
   text-align: center;
@@ -441,7 +426,7 @@ div.cookie-consent-footer {
   color: $gray-8;
 }
 
-// listing buttons
+// Listing buttons
 
 div.quarto-post .listing-categories .listing-category, .quarto-category {
   opacity: 0.8 !important;
@@ -465,15 +450,15 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
   gap: 1em;
 }
 
-// page buttons
+// Page buttons
 
 .page-link {
   background-color: $secondary-light;
-  color: $secondary;
+  color: $accent;
 }
 
 .page-link:hover {
-  background-color: $secondary;
+  background-color: $accent;
   color: white;
 }
 
@@ -499,13 +484,6 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
   overflow: scroll;
 }
 
-// Blog subscribe section
-
-@media screen and (max-width: 991.98px) {
-  #subscribe-thumbnail, #subscribe-iframe {
-    width: 100%;
-  }
-}
 
 // Terminal-style code blocks
 pre.sourceCode::before {
@@ -544,8 +522,6 @@ pre.sourceCode {
 }
 
 
-
-
 // Diagonal section dividers
 .section-divider {
   height: 5em;
@@ -569,24 +545,7 @@ pre.sourceCode {
   opacity: 0.1;
 }
 
-// Edgy image frames
-.img-edgy {
-  position: relative;
-  padding: 5px;
-  background-color: $white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
 
-.img-edgy::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, $accent, $primary);
-  z-index: -1;
-}
 
 // Glitch effect for headers on hover
 .glitch-hover {
@@ -740,7 +699,8 @@ blockquote::before {
     padding-left: 0em;
   }
 
-// make nice footer rows
+
+// Nice footer rows
 // from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
 
   .nav-footer {
@@ -774,3 +734,47 @@ blockquote::before {
   }
 }
 
+
+// Cookies
+
+div.cookie-consent-footer {
+  font-family: $font-family-sans-serif;
+  font-size: 1em;
+}
+
+.termsfeed-com---nb .cc-nb-main-container {
+    padding: 1rem;
+    background: $secondary-light;
+    border-radius: 6px;
+}
+
+.termsfeed-com---nb .cc-nb-title, #cc-pc-head-title-headline, .cc-cp-body-content-entry .cc-cp-body-content-entry-title {
+  font-family: $secondary-headings-font-family;
+}
+
+.termsfeed-com---reset {
+  font-family: $font-family-sans-serif;
+}
+
+.termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
+  background-color: $secondary-accent;
+  border-radius: 6px;
+}
+
+.termsfeed-com---palette-light .cc-nb-changep {
+  background-color: $light;
+  border-radius: 6px;
+}
+
+.cc-cp-body .cc-cp-body-tabs-item-link, .cc-cp-body .cc-cp-body-tabs {
+  background-color: $secondary-light;
+}
+
+.termsfeed-com---palette-light .cc-cp-body-tabs-item[active=true] button {
+  background-color: $primary-dark;
+  color: white;
+}
+
+.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:before {
+  background: #18bc9c;
+}
