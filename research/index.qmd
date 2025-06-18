@@ -6,7 +6,8 @@ format:
     code-overflow: wrap
 ---
 
-## [Fungal endophytes and natural enemies](https://doi.org/10.1101/2024.04.18.589827)
+## Fungal endophytes and natural enemies
+
 :::: {layout="[40, 60]"}
 
 ::: {#first-column}

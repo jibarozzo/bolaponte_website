@@ -45,22 +45,23 @@ $gray-8: #626f6d;
 $gray-9: #334240;
 $black:  #000000;
 
-$primary:         #4056A1;
-$secondary:       #D79922;
-$accent:          #F12C20;
-$secondary-accent:#FA7D75;
-$light:           #f7f2e9; // #fcf9f2; #EFE2BA; #FFF5E4;
-$secondary-light: #C5CBE3;
-$terciary-light:  #E1E6fE;
-$primary-dark:    #D79922;
-$secondary-dark:  #4056A1;
+$primary:         #3b017e;
+$secondary:       #7a026e;
+$accent:          #fd4104;
+$secondary-accent:#b8094e;
+$terciary-accent: #ff596c;
+$light:           #f8f8f3; // #fcf9f2; #EFE2BA; #FFF5E4;
+$secondary-light: #ffade0;
+$terciary-light:  #ffd5ff;
+$primary-dark:    #7a026e;
+$secondary-dark:  #3b017e;
 $light-accent:    $gray-3;
 $dark:            $gray-9;
 
 // Base document colors
 $navbar-bg: $primary; // navbar
 $navbar-fg: $white; // navbar foreground elements
-$navbar-hl: $secondary; // highlight color when hovering over navbar links
+$navbar-hl: $secondary-accent; // highlight color when hovering over navbar links
 $link-color: $primary-dark; // hyperlinks
 
 // Inline code colors
@@ -75,8 +76,10 @@ $min-contrast-ratio:   7;
 // Global styles
 body {
   font-family: $font-family-sans-serif;
+  color: $primary;
   background-color: $light;
   position: relative;
+  
 }
 
 // Body background
@@ -96,26 +99,26 @@ body::before {
 // Heading styles
 h1, h2, h3, h4, h5, h6 {
   position: relative;
-  padding-left: 0.5em;
+  padding-left: 0em;
   margin-bottom: 1em;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 h1 {
-  color: $secondary;
+  color: $secondary-accent;
   font-size: 2.5em;
-  font-family: $headings-font-family;
+  font-family: $main-headings-font-family;
 }
 
 h2 {
-  color: $secondary-dark;
+  color: $accent;
   font-size: 1.8em;
-  font-family: $headings-font-family;
+  font-family: $main-headings-font-family;
 }
 
 h3 {
-  color: $accent;
+  color: $terciary-accent;
   font-size: 1.4em;
   font-family: $secondary-headings-font-family;
 }
@@ -127,7 +130,7 @@ h4, h5, h6 {
 
 // Links
 a {
-  color: $primary;
+  color: $accent;
   text-decoration: none;
   position: relative;
   transition: all 0.2s ease;
@@ -135,7 +138,7 @@ a {
 
 a:hover {
   color: $accent;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:not(.nav-link):not(.navbar-brand):not(.btn):not(.figure-link):hover:after { //:not(.lightbox)
@@ -188,13 +191,24 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 // Navbar and Footer
 // Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
 .navbar {
-  border-bottom: 3px solid $secondary;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  //bottom-border: 3px solid $primary;
+  //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: $font-family-monospace;
+  padding: 5px;
   //background: linear-gradient(to right, $primary, $accent);
+}
+.navbar::after{
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(to right, $primary, $accent);
 }
 
 .navbar-title {
-  font-family: $font-family-monospace;
+  font-family: $font-family-sans-serif;
   font-weight: 700;
   letter-spacing: -0.05em;
 }
@@ -261,8 +275,8 @@ div.quarto-about-jolla .about-sep {
   // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
   background-size: cover; 
   background-position: center;
-  color: $secondary; 
-  box-shadow: inset 0 0 0 1000px rgba(15,38,38,0.65);
+  color: $secondary-accent; 
+  box-shadow: inset 0 0 0 1000px rgba(248, 248, 243,0.7);
 }
 
 p.subtitle.lead {
@@ -433,8 +447,9 @@ p.subtitle.lead {
 
 div.quarto-post .listing-categories .listing-category, .quarto-category {
   opacity: 0.8 !important;
-  color: $secondary;
-  border-color: $secondary;
+  color: $secondary-accent;
+  border-color: $secondary-accent;
+  background-color: $light;
   text-align: center;
   border-style: solid;
   text-decoration: none;
