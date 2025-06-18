@@ -30,8 +30,8 @@
  title-block-banner: false
 
  header-includes: >
-   <link rel="stylesheet" href="../assets/listing-default.css">
+   <link rel="stylesheet" href="../assets/styling/listing-default.css">
  resources:
- - ../assets/listing-default.css
+ - ../assets/styling/listing-default.css
 # include-after-body: ../assets/silvia/subscribe.html
 ---

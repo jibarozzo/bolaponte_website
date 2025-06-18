@@ -77,12 +77,14 @@ website:
 format:
    html:
     theme:
-      light:
-        - flatly
-        - assets/styling/theme.scss
-      dark: 
-        - darkly
-    css: styles.css
+      - default
+      - assets/styling/theme.scss
+    #   light:
+    #     - flatly
+    #     - assets/styling/theme.scss
+    #   dark: 
+    #     - darkly
+    css: assets/styling/hexagon.css
     toc: true
     toc-depth: 4
     pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"

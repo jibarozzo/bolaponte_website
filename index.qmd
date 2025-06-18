@@ -15,7 +15,7 @@ about:
       href: https://github.com/jibarozzo
     - icon: linkedin
       # text: LinkedIn
-      href: https://www.linkedin.com/in/jibarozzo/
+      href: https://www.linkedin.com/in/bolivar-aponte/
 
 toc: false
 anchor-sections: false

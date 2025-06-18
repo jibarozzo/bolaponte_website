@@ -1,35 +1,38 @@
 /*-- scss:defaults --*/
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Space+Mono:wght@400;700&display=swap');
+// Old families
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
+
+// New families
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 
 // Define font-family variables
-$font-family-sans-serif: "Nunito Sans", "Red Hat Text", -apple-system, 
+// stylelint-disable-next-line value-keyword-case
+
+// Body font-synthesis-style: ;
+$font-family-sans-serif: "Nunito Sans", Raleway, "Red Hat Text", "Source Sans Pro", -apple-system, 
                          BlinkMacSystemFont, "Segoe UI", Roboto, 
-                         "Helvetica Neue", Arial, sans-serif;
+                         "Helvetica Neue", Arial, sans-serif, 
+                         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // Code fonts
-$font-family-monospace: "Fira Code", "Space Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
+$font-family-monospace: "Fira Code", "Dank Mono", SFMono-Regular, Menlo, Monaco, Consolas, 
                         "Liberation Mono", "Courier New", monospace;
 
-// Heading fonts - using monospace for edgy tech feel                        
-$font-family-serif: "Space Mono", serif;
-$main-headings-font-family: "Space Mono";
-$secondary-headings-font-family: "Fira Code";
-$headings-font-weight: 700;
+// Heading fonts                        
+$font-family-serif: "Baskervville SC", serif;
+$main-headings-font-family: Raleway;
+$secondary-headings-font-family: Raleway;
+$headings-font-weight: 400;
 
-// Colors from your palette
-$primary:         #4056A1;
-$secondary:       #D79922;
-$accent:          #F12C20;
-$secondary-accent:#FA7D75;
-$light:           #f7f2e9;
-$secondary-light: #C5CBE3;
-$terciary-light:  #E1E6FE;
-$primary-dark:    #D79922;
-$secondary-dark:  #4056A1;
+// Colors
 
-// Additional complementary colors for edgy design
+$white:  #fff;
 $gray-0: #f9f9f9;
 $gray-1: #eceeee;
 $gray-2: #dfe1e1;
@@ -41,20 +44,31 @@ $gray-7: #818b8a;
 $gray-8: #626f6d;
 $gray-9: #334240;
 $black:  #000000;
-$dark:   #202124;
+
+$primary:         #4056A1;
+$secondary:       #D79922;
+$accent:          #F12C20;
+$secondary-accent:#FA7D75;
+$light:           #f7f2e9; // #fcf9f2; #EFE2BA; #FFF5E4;
+$secondary-light: #C5CBE3;
+$terciary-light:  #E1E6fE;
+$primary-dark:    #D79922;
+$secondary-dark:  #4056A1;
+$light-accent:    $gray-3;
+$dark:            $gray-9;
 
 // Base document colors
-$navbar-bg: $primary;
-$navbar-fg: $light;
-$navbar-hl: $secondary;
-$link-color: $accent;
+$navbar-bg: $primary; // navbar
+$navbar-fg: $white; // navbar foreground elements
+$navbar-hl: $secondary; // highlight color when hovering over navbar links
+$link-color: $primary-dark; // hyperlinks
 
 // Inline code colors
-$code-bg: rgba(64, 86, 161, 0.1);
-$code-color: $accent;
+$code-bg: $terciary-light; // inline code background color
+$code-color: $dark; // inline code text color
 
 // Contrast
-$min-contrast-ratio: 4.5;
+$min-contrast-ratio:   7;
 
 /*-- scss:rules --*/
 
@@ -93,29 +107,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: $primary;
+  color: $secondary;
   font-size: 2.5em;
-
+  font-family: $headings-font-family;
 }
 
 h2 {
   color: $secondary-dark;
   font-size: 1.8em;
-
+  font-family: $headings-font-family;
 }
 
 h3 {
   color: $accent;
   font-size: 1.4em;
-
+  font-family: $secondary-headings-font-family;
 }
 
 h4, h5, h6 {
   color: $secondary;
-
+  font-family: $secondary-headings-font-family;
 }
 
-// Links with edgy hover effect
+// Links
 a {
   color: $primary;
   text-decoration: none;
@@ -167,7 +181,7 @@ code {
   letter-spacing: -0.05em;
 }
 
-// Cards with edgy styling
+// Cards
 .card {
   border: none;
   border-radius: 0;
@@ -205,6 +219,8 @@ code {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  opacity: 1 !important;
+  padding: 0.5em;
 }
 
 .btn-primary {
@@ -275,7 +291,7 @@ code {
   opacity: 0.2;
 }
 
-// Footer with edgy style
+// Footer
 .footer {
   background-color: $primary;
   color: $light;
@@ -294,7 +310,7 @@ code {
   background: linear-gradient(to right, $accent, $secondary);
 }
 
-// About area with edgy styling
+// About
 .about-entity {
   background: linear-gradient(to bottom right, $light, $terciary-light);
   border-left: 4px solid $accent;
@@ -308,12 +324,436 @@ code {
   color: $primary;
   transition: all 0.3s ease;
   transform: scale(1);
+  font-size: 1em;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .about-entity .about-link:hover {
   color: $accent;
   transform: scale(1.2);
+  background-color: transparent;
 }
+
+p.subtitle.lead {
+  font-size: 1em;
+  text-align: left;
+}
+
+
+// Blog title block
+
+// style background image on posts
+.featured-image {
+  // https://stackoverflow.com/a/24084708
+  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
+  background-size: cover; 
+  background-position: center;
+  color: $secondary; 
+  box-shadow: inset 0 0 0 1000px rgba(15,38,38,0.65);
+}
+
+
+// navbar
+
+// Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
+.navbar-nav.navbar-nav-scroll.ms-auto {
+    flex-direction: row;
+}
+
+// nav footer
+body .nav-footer {
+  border-top: 1px solid $gray-4;
+}
+
+.nav-footer {
+  background-color: $light;
+  color: $dark;
+}
+
+.nav-footer a {
+    color: $dark;
+    text-decoration: underline;
+}
+
+// nav toc actions
+
+.nav-footer .toc-actions {
+    padding-top: 0;
+}
+
+pre.sourceCode {
+  font-size: 0.9em;
+}
+
+.sourceCode pre code {
+  padding: 0.9em;
+}
+
+// about section
+
+// adjust about separator
+div.quarto-about-jolla .about-sep {
+  margin: -1em 0em 1em 0em;
+}
+
+// cookies
+
+div.cookie-consent-footer {
+  font-family: $font-family-sans-serif;
+  font-size: 1em;
+}
+
+.termsfeed-com---nb .cc-nb-main-container {
+    padding: 1rem;
+    background: $secondary-light;
+    border-radius: 6px;
+}
+
+.termsfeed-com---nb .cc-nb-title, #cc-pc-head-title-headline, .cc-cp-body-content-entry .cc-cp-body-content-entry-title {
+  font-family: $secondary-headings-font-family;
+}
+
+.termsfeed-com---reset {
+  font-family: $font-family-sans-serif;
+}
+
+.termsfeed-com---palette-light .cc-nb-okagree, .termsfeed-com---palette-light .cc-nb-reject, .cc-pc-container .cc-cp-foot-save {
+  background-color: $secondary-accent;
+  border-radius: 6px;
+}
+
+.termsfeed-com---palette-light .cc-nb-changep {
+  background-color: $light;
+  border-radius: 6px;
+}
+
+.cc-cp-body .cc-cp-body-tabs-item-link, .cc-cp-body .cc-cp-body-tabs {
+  background-color: $secondary-light;
+}
+
+.termsfeed-com---palette-light .cc-cp-body-tabs-item[active=true] button {
+  background-color: $primary-dark;
+  color: white;
+}
+
+.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:before {
+  background: #18bc9c;
+}
+
+// appendix
+
+#quarto-appendix.default {
+  background-color: $light;
+  padding-top: 1em;
+  margin-top: 1em;
+  z-index: 998;
+}
+
+// images
+
+.figure-img {
+    margin-bottom: 0;
+    line-height: 0;
+    border-radius: 5px;
+}
+
+// specific classes
+
+.center-text {
+  text-align: center;
+}
+
+.img-va-bottom {
+  vertical-align: bottom;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-float-right {
+  float: right;
+  padding-left: 1em;
+}
+
+.cv-date {
+  float: right;
+  color: $gray-8;
+}
+
+// listing buttons
+
+div.quarto-post .listing-categories .listing-category, .quarto-category {
+  opacity: 0.8 !important;
+  color: $secondary;
+  border-color: $secondary;
+  text-align: center;
+  border-style: solid;
+  text-decoration: none;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+div.quarto-post .listing-categories .listing-category:hover, .quarto-category:hover {
+  background-color: $secondary;
+  color: $white;
+}
+
+.listing-btn-group {
+  display: inline-flex;
+  gap: 1em;
+}
+
+// page buttons
+
+.page-link {
+  background-color: $secondary-light;
+  color: $secondary;
+}
+
+.page-link:hover {
+  background-color: $secondary;
+  color: white;
+}
+
+.page-item.active .page-link {
+  background-color: $secondary;
+}
+
+// Slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-style: solid;
+  border-width: 1px;
+}
+
+// Embed iframe
+
+.mastodon-embed {
+  width: 100%;
+  height: 100;
+  overflow: scroll;
+}
+
+// Blog subscribe section
+
+@media screen and (max-width: 991.98px) {
+  #subscribe-thumbnail, #subscribe-iframe {
+    width: 100%;
+  }
+}
+
+// Terminal-style code blocks
+div.sourceCode {
+  position: relative;
+  font-family: $font-family-monospace;
+  margin: 1.5em 0;
+}
+
+div.sourceCode::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: #333;
+  border-radius: 5px 5px 0 0;
+}
+
+div.sourceCode::after {
+  content: "●";
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  color: $accent;
+  font-size: 14px;
+}
+
+// Diagonal section dividers
+.section-divider {
+  height: 5em;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, $primary 25%, transparent 25%) -50px 0,
+              linear-gradient(225deg, $primary 25%, transparent 25%) -50px 0,
+              linear-gradient(315deg, $primary 25%, transparent 25%),
+              linear-gradient(45deg, $primary 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: $secondary;
+  opacity: 0.1;
+}
+
+// Edgy image frames
+.img-edgy {
+  position: relative;
+  padding: 5px;
+  background-color: $white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.img-edgy::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, $accent, $primary);
+  z-index: -1;
+}
+
+// Glitch effect for headers on hover
+.glitch-hover {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.glitch-hover:hover {
+  text-shadow: 
+    0.05em 0 0 rgba(255,0,0,0.75),
+    -0.025em -0.05em 0 rgba(0,255,0,0.75),
+    0.025em 0.05em 0 rgba(0,0,255,0.75);
+  animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0.05em 0 0 rgba(241,44,32,0.75),
+      -0.05em -0.025em 0 rgba(64,86,161,0.75),
+      -0.025em 0.05em 0 rgba(215,153,34,0.75);
+  }
+  14% {
+    text-shadow: 
+      0.05em 0 0 rgba(241,44,32,0.75),
+      -0.05em -0.025em 0 rgba(64,86,161,0.75),
+      -0.025em 0.05em 0 rgba(215,153,34,0.75);
+  }
+  15% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(241,44,32,0.75),
+      0.025em 0.025em 0 rgba(64,86,161,0.75),
+      -0.05em -0.05em 0 rgba(215,153,34,0.75);
+  }
+  49% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(241,44,32,0.75),
+      0.025em 0.025em 0 rgba(64,86,161,0.75),
+      -0.05em -0.05em 0 rgba(215,153,34,0.75);
+  }
+  50% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(241,44,32,0.75),
+      0.05em 0 0 rgba(64,86,161,0.75),
+      0 -0.05em 0 rgba(215,153,34,0.75);
+  }
+  99% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(241,44,32,0.75),
+      0.05em 0 0 rgba(64,86,161,0.75),
+      0 -0.05em 0 rgba(215,153,34,0.75);
+  }
+  100% {
+    text-shadow: 
+      -0.025em 0 0 rgba(241,44,32,0.75),
+      -0.025em -0.025em 0 rgba(64,86,161,0.75),
+      -0.025em -0.05em 0 rgba(215,153,34,0.75);
+  }
+}
+
+// Animated border for cards
+.card-animated-border {
+  position: relative;
+}
+
+.card-animated-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, $primary, $accent, $secondary, $primary) border-box;
+  -webkit-mask: linear-gradient($white 0 0) padding-box, linear-gradient($white 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: border-rotate 3s linear infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Tech-inspired progress bars
+.progress-tech {
+  height: 8px;
+  background-color: $terciary-light;
+  border-radius: 0;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  overflow: visible;
+  margin-bottom: 30px;
+}
+
+.progress-tech .progress-bar {
+  position: relative;
+  background: linear-gradient(90deg, $primary, $accent);
+  border-radius: 0;
+}
+
+.progress-tech .progress-bar::after {
+  content: attr(aria-valuenow) "%";
+  position: absolute;
+  right: 0;
+  top: -25px;
+  color: $primary;
+  font-family: $font-family-monospace;
+  font-weight: bold;
+}
+
+// Terminal-style blockquotes
+blockquote {
+  background-color: #202124;
+  color: $light;
+  border-left: 4px solid $accent;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  position: relative;
+  font-family: $font-family-monospace;
+}
+
+blockquote::before {
+  content: "> ";
+  color: $secondary;
+}
+
 
 // Media queries
 @media screen and (max-width: 991.98px) {
@@ -324,4 +764,45 @@ code {
   h2 {
     font-size: 1.5em;
   }
+
+  .img-float-right {
+    float: right;
+    width: 100%;
+    padding-bottom: 1em;
+    padding-left: 0em;
+  }
+
+// make nice footer rows
+// from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
+
+  .nav-footer {
+      flex-direction: row;
+    }
+
+  .nav-footer-center {
+    order: 3 !important;
+    flex-basis: 100%;
+    margin-top: -0.5em;
+  }
+
+  .nav-footer-right {
+    order: 2 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .nav-footer-left {
+    order: 1 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .navbar .quarto-navbar-tools {
+    text-align: left;
+  }
+
+  div.cookie-consent-footer {
+    margin-top: -0.5em;
+  }
 }
+
