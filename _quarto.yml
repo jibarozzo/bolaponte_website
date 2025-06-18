@@ -7,7 +7,8 @@ execute:
     
 website:
   title: "Bolívar Aponte Rolón"
-  description: "Data scientist at the intersection of ecology, evolution, and data literacy." 
+  description: "Data scientist at the intersection of ecology, evolution, and data literacy."
+  favicon: assets/img/lapisazuli_logo.webp
   site-url: https://www.bolaponte.com
   repo-url: https://github.com/jibarozzo/bolaponte_website
   repo-actions:
@@ -29,7 +30,7 @@ website:
     
   navbar:
     pinned: false
-    # logo: assets/img/JR-logo-circle.webp
+    logo: assets/img/lapisazuli_logo.webp
     # logo-alt: "Cat with tail shaped as the letter J next to last name initial R"
     right:
       - text: About
