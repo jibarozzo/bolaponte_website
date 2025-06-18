@@ -30,8 +30,7 @@ execute:
 ---
 
 ::: {#hero-heading}
-I am researcher and data scientist with experience in statistical analyses and data visualizations in **R** and **Python**. 
-My research focuses fascinating microbial fungi that live inside (*endophytes*), how they interact with plant hosts, and their distribution along environmental gradients. I am also passionate about reproducible science, open-source software, and data literacy.
+I am a data scientist, bioinformatician, and research software developer with a background in ecology and evolutionary biology. 
 
 [Learn more about me &rarr;](/about/index.html){.about-links .subtitle}
 
