@@ -44,6 +44,9 @@ website:
       - text: Research
         icon: book-fill
         href: research/index.qmd
+      - text: Software
+        icon: laptop-fill
+        href: software/index.qmd
       - text: Sandbox
         icon: box
         href: blog/index.qmd
@@ -64,7 +67,7 @@ website:
 
   page-footer:
     border: true
-    left: "&#169; 2024 Bolívar Aponte Rolón"
+    left: "&#169; 2025 Bolívar Aponte Rolón"
     center:
       - text: Code of conduct
         href: coc.qmd
@@ -77,12 +80,14 @@ website:
 format:
    html:
     theme:
-      light:
-        - flatly
-        - assets/styling/theme.scss
-      dark: 
-        - darkly
-    css: styles.css
+      - default
+      - assets/styling/theme.scss
+    #   light:
+    #     - flatly
+    #     - assets/styling/theme.scss
+    #   dark: 
+    #     - darkly
+    #css: assets/styling/hexagon.css
     toc: true
     toc-depth: 4
     pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"

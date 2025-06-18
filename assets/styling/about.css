@@ -5,12 +5,23 @@
   margin-bottom: 0px;
 }
 
-/* see all links */
-.about-links.subtitle {
-  font-family: "Red Hat Text"
+
+/* about area */
+.about-entity {
+  background-color: var(--spc-bg-1);
+  padding: 3em 0em 3em 0em !important;
+  margin: 0em 2em 0em 2em;
+  border-radius: 5px;
+}
+.about-entity .subtitle {
+  text-align: center !important;
 }
 
 /* social links: block of links */
+.about-links .subtitle {
+  font-family: "Red Hat Text";
+}
+
 .about-entity .about-links {
   justify-content: center !important;
   column-gap: 0em !important;
@@ -20,16 +31,9 @@
 /* social links: individual links */
 .about-entity .about-link {
   padding: 0.25em 0.25em !important;
-  border: none !important;  
+  border: none !important;
 }
 
-/* about area */
-.about-entity {
-  background-color: var(--spc-bg-1);
-  padding: 3em 0em 3em 0em !important;
-  margin: 0em 2em 0em 2em;
-  border-radius: 5px;
-}
 
 /* mobile query up for screens up to ~992px wide */
 @media screen and (max-width: 991.98px) {

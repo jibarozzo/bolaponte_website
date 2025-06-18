@@ -1,7 +1,7 @@
 ---
 #pagetitle: "Bolívar Aponte Rolón | About"
 title: "Bolívar Aponte Rolón, PhD"
-subtitle: "Data Scientist | Bioinformatician | Educator"
+subtitle: "Data Scientist | Bioinformatician | Research Software Developer"
 image: ../assets/img/boli_mimulus.jpg
 image-alt: "Smilling man with light-tan complexion and dark beard, holding a Mimulus flower the mountainous outdoors"
 
@@ -16,7 +16,7 @@ about:
       href: https://github.com/jibarozzo
     - icon: linkedin
       #text: LinkedIn
-      href: https://www.linkedin.com/in/jibarozzo/
+      href: https://www.linkedin.com/in/bolivar-aponte/
 
 toc: false
 anchor-sections: false
@@ -41,11 +41,12 @@ execute:
 
 ## Thanks for visiting my website!
 
-My research investigates how leaf traits and microbial fungi (endophytes) in tropical woody species influence host responses to herbivory and pathogens, and how leaf shape affects endophyte colonization in *Mimulus* spp. across altitudes. Learn more about my interests by visiting [Research](/research).
+My work centers on applying reproducible data pipelines in R (with a dash of Python) to amplicon and whole-genome sequencing datasets to unravel the complex interactions between microbial symbionts and their plant hosts—ranging from tropical trees to alpine yellow monkeyflowers, and most recently, bioenergy feedstocks 
 
-I empower people around me to extract meaningful insights from data by sharing my knowledge on data visualization, data wrangling, and data analysis. You can learn more about my teaching experience by visiting [Teaching](/teaching).
+I leverage a range of statistical and machine learning methods, including Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), distance-based Redundancy Analysis (dbRDA), and advanced linear modeling (GLMs and GLMMs), to analyze genomic and ecological data. Learn more about my interests by visiting [Research](/research).
 
-I'm currently looking for new opportunities for jobs, collaborations, and projects. Get in touch by sending me a note!
+As a committed advocate for open, transparent, and reproducible science, I empower people around me to extract meaningful insights from data by sharing my knowledge on data visualization, data wrangling, and data analysis. Additionally, I collaborate with the [ESIP Data Stewardship Committee](https://www.esipfed.org/) to advance best practices in data management and stewardship. You can learn more about my teaching experience by visiting [Teaching](/teaching). 
+
 :::
 
 ## About me
