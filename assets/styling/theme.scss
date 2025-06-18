@@ -45,7 +45,7 @@ $gray-8: #626f6d;
 $gray-9: #334240;
 $black:  #000000;
 
-$primary:         #3b017e;
+$primary:         #3b017e; //#120A8F;
 $secondary:       #7a026e;
 $accent:          #fd4104;
 $secondary-accent:#b8094e;
@@ -54,7 +54,7 @@ $light:           #f8f8f3; // #fcf9f2; #EFE2BA; #FFF5E4;
 $secondary-light: #ffade0;
 $terciary-light:  #ffd5ff;
 $primary-dark:    #7a026e;
-$secondary-dark:  #3b017e;
+$secondary-dark:  #3b017e; //#120A8F;
 $light-accent:    $gray-3;
 $dark:            $gray-9;
 
@@ -191,20 +191,11 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 // Navbar and Footer
 // Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
 .navbar {
-  //bottom-border: 3px solid $primary;
-  //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
   font-family: $font-family-monospace;
-  padding: 5px;
+  border-bottom: 3.5px solid;
+  border-image: linear-gradient(to right, $primary, $accent) 1;
   //background: linear-gradient(to right, $primary, $accent);
-}
-.navbar::after{
-  content: '';
-  position: absolute;
-  top: 55px;
-  left: 0;
-  width: 100%;
-  height: 3.5px;
-  background: linear-gradient(to right, $primary, $accent);
 }
 
 .navbar-title {
@@ -632,7 +623,7 @@ blockquote::before {
 // from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
 
   .nav-footer {
-      flex-direction: row;
+      flex-direction: column;
     }
 
   .nav-footer-center {
