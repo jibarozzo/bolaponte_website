@@ -255,7 +255,7 @@ code {
   color: white;
 }
 
-// Add diagonal accents to sections
+// Add accents to sections
 .section-accent {
   position: relative;
   padding: 3em 0;
@@ -362,26 +362,6 @@ p.subtitle.lead {
     flex-direction: row;
 }
 
-// nav footer
-body .nav-footer {
-  border-top: 1px solid $gray-4;
-}
-
-.nav-footer {
-  background-color: $light;
-  color: $dark;
-}
-
-.nav-footer a {
-    color: $dark;
-    text-decoration: underline;
-}
-
-// nav toc actions
-
-.nav-footer .toc-actions {
-    padding-top: 0;
-}
 
 pre.sourceCode {
   font-size: 0.9em;
