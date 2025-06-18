@@ -153,19 +153,10 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   width: 100%;
 }
 
-// Code blocks with tech styling
-pre {
-  border-radius: 0 !important;
-  border-left: 4px solid $secondary-light !important;
-  background-color: rgba(0, 0, 0, 0.03) !important;
-}
 
-code {
-  font-family: $font-family-monospace;
-  border-radius: 0;
-}
 
-// Navbar with sharper edges
+// Navbar
+// Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
 .navbar {
   border-bottom: 3px solid $secondary;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -176,6 +167,11 @@ code {
   font-weight: 700;
   letter-spacing: -0.05em;
 }
+
+.navbar-nav.navbar-nav-scroll.ms-auto {
+    flex-direction: row;
+}
+
 
 // Cards
 .card {
@@ -206,7 +202,7 @@ code {
   border-radius: 0;
 }
 
-// Buttons with angular design
+// Buttons
 .btn {
   border-radius: 0;
   text-transform: uppercase;
@@ -356,21 +352,6 @@ p.subtitle.lead {
   box-shadow: inset 0 0 0 1000px rgba(15,38,38,0.65);
 }
 
-
-// navbar
-// Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
-.navbar-nav.navbar-nav-scroll.ms-auto {
-    flex-direction: row;
-}
-
-
-pre.sourceCode {
-  font-size: 0.9em;
-}
-
-.sourceCode pre code {
-  padding: 0.9em;
-}
 
 
 // cookies
@@ -527,31 +508,43 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
 }
 
 // Terminal-style code blocks
-div.sourceCode {
-  position: relative;
-  font-family: $font-family-monospace;
-  margin: 1.5em 0;
-}
-
-div.sourceCode::before {
+pre.sourceCode::before {
   content: "";
   position: absolute;
-  top: -20px;
+  top: -25px;
   left: 0;
   height: 20px;
   width: 100%;
-  background: #333;
+  background: $gray-7;
   border-radius: 5px 5px 0 0;
 }
 
-div.sourceCode::after {
-  content: "●";
+pre.sourceCode::after {
+  content: ">";
   position: absolute;
-  top: -15px;
+  top: -28px;
   left: 10px;
   color: $accent;
-  font-size: 14px;
+  font-size: 18px;
 }
+
+/* pre {
+  border-radius: 0 !important;
+  border-left: 4px solid $accent !important;
+} 
+*/
+
+pre.sourceCode {
+  position: relative;
+  font-family: $font-family-monospace;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+  border-radius: 0 0 5px 5px
+
+}
+
+
+
 
 // Diagonal section dividers
 .section-divider {
