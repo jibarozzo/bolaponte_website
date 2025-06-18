@@ -190,6 +190,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 .navbar {
   border-bottom: 3px solid $secondary;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  //background: linear-gradient(to right, $primary, $accent);
 }
 
 .navbar-title {
@@ -203,10 +204,8 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 }
 
 .footer {
-  background-color: $primary;
+  background-color: $light;
   color: $accent;
-  padding: 2em 0;
-  margin-top: 3em;
   position: relative;
 }
 
