@@ -55,21 +55,6 @@
   padding: 0 0 0 0em;
 }
 
-/* // Home
-
-// social links
-.about-entity {
-  // block of links
-  .about-links {
-    column-gap: 0em !important;
-    font-size: 1.2em;
-  }
-  // individual links
-  .about-link {
-    padding: 0.25em 0.25em !important;
-    border: none !important;
-  }
-} */
 
 /* mobile query up for screens up to ~992px wide */
 @media screen and (max-width: 991.98px) {
