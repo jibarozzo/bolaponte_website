@@ -13,11 +13,7 @@ website:
   repo-actions:
     - source
     - issue
-  twitter-card:
-    creator: "@bolaponte"
-    # commented out images so I could specify them individually for various pages
-    # image: assets/img/JR-logo-circle.webp
-    # image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+
   open-graph:
     locale: en_EN
     # image: assets/img/JR-logo-circle.webp
@@ -27,14 +23,15 @@ website:
   google-analytics:
     tracking-id: "G-LEVV3VZT0E"
     anonymize-ip: true
-  cookie-consent:
-    type: express
-    prefs-text: "Change cookies 🍪"
+  # cookie-consent:
+  #   type: express
+  #   prefs-text: "Change cookies 🍪"
+    
   navbar:
-    pinned: true
+    pinned: false
     # logo: assets/img/JR-logo-circle.webp
     # logo-alt: "Cat with tail shaped as the letter J next to last name initial R"
-    left:
+    right:
       - text: About
         icon: person-circle
         href: about/index.qmd
@@ -57,7 +54,6 @@ website:
       #   icon: puzzle-fill
       #   href: projects/index.qmd
 
-    right:
       - icon: github
         aria-label: GitHub
         href: https://github.com/jibarozzo
@@ -67,15 +63,14 @@ website:
 
   page-footer:
     border: true
-    left: "&#169; 2025 Bolívar Aponte Rolón"
-    center:
+    left: "&#169; 2025 Bolívar Aponte Rolón | Made with [Quarto](https://quarto.org) "
+    right:
       - text: Code of conduct
         href: coc.qmd
       - text: Accessibility
         href: accessibility.qmd
       - text: License
         href: license.qmd
-    right: "made with ︎♥️ & [Quarto](https://quarto.org)"
 
 format:
    html:

@@ -112,13 +112,13 @@ h1 {
 }
 
 h2 {
-  color: $accent;
+  color: $terciary-accent;
   font-size: 1.8em;
   font-family: $main-headings-font-family;
 }
 
 h3 {
-  color: $terciary-accent;
+  color: $primary;
   font-size: 1.4em;
   font-family: $secondary-headings-font-family;
 }
@@ -130,7 +130,7 @@ h4, h5, h6 {
 
 // Links
 a {
-  color: $accent;
+  color: $terciary-accent;
   text-decoration: none;
   position: relative;
   transition: all 0.2s ease;
@@ -439,7 +439,7 @@ p.subtitle.lead {
 
 .cv-date {
   float: right;
-  color: $gray-8;
+  color: $gray-5;
 }
 
 

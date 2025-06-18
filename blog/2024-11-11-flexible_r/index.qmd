@@ -3,7 +3,7 @@ title:  "Flexible R Setup on Linux"
 subtitle: 'Managing Multiple Versions with OpenBLAS support'
 author: "Bolívar Aponte Rolón"
 date: 11/11/2024
-date-modified: today
+date-modified: 11/11/2024
 date-format: long
 image: featured.png
 image-alt: Three R logo icons plus Linux penguin

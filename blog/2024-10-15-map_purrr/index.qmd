@@ -5,7 +5,7 @@ author: "Bolívar Aponte Rolón"
 date: 10/21/2024
 date-modified: 11/11/2024
 date-format: long
-image: apple-touch-icon-152x152.png
+image: featured.png
 image-alt: Hand drawn sleeping cat in hexagon frame
 categories:
   - R
@@ -16,7 +16,7 @@ number-depth: 2
 execute: 
   eval: true
   echo: true
-  
+
 
 ---
 
