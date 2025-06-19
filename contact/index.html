@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bolívar Aponte Rolón">
 
-<title>Bolívar Aponte Rolón | &lt;strong&gt;?meta:title&lt;/strong&gt; – Bolívar Aponte Rolón</title>
+<title>Bolívar - Contact – Bolívar Aponte Rolón</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,10 +81,10 @@ gtag('js', new Date());
 gtag('config', 'G-LEVV3VZT0E', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="assets/styling/contact.css">
 
 
-<meta property="og:title" content="Bolívar Aponte Rolón | ?meta:title">
-<meta property="og:description" content="Data scientist at the intersection of ecology, evolution, and data literacy.">
+<meta property="og:title" content="Bolívar - Contact">
 <meta property="og:site_name" content="Bolívar Aponte Rolón">
 <meta property="og:locale" content="en_EN">
 </head>
@@ -132,7 +135,7 @@ gtag('config', 'G-LEVV3VZT0E', { 'anonymize_ip': true});
 <span class="menu-text">Sandbox</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../contact/index.html"> <i class="bi bi-envelope-fill" role="img">
+    <a class="nav-link active" href="../contact/index.html" aria-current="page"> <i class="bi bi-envelope-fill" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -166,12 +169,32 @@ gtag('config', 'G-LEVV3VZT0E', { 'anonymize_ip': true});
 
 
 
-<p>More often than not, the way academics learn R, at least in my experience and among my peers, is through a kind of trial by fire—often fueled by term paper deadlines or the looming pressure of thesis and dissertation submissions. It’s more like learning in the middle of a wildfire, to be honest. Learning R (or any coding tool) takes a backseat to the immediate goal: submitting the paper or presentation abstract. The familiar mantra becomes, “I’ll clean up the code later,” but those end up being famous last words before orphaning a repository, incomplete and messy.</p>
-<p>This chaotic learning process has predictable pitfalls. From absolute paths breaking code on a different machine to accidentally deleting entire directories and freaking out in meetings when code refuses to run on a colleague’s setup, I’ve seen it all (Jenny Bryan would burn everyone computers). But it was through these frustrations that I began to unlearn bad habits and embrace reproducibility. Unlearning requires constant effort. Tools like version control, <code>renv</code>, <code>.Rproj</code>, and others became liberating. Yes, they require a little more planning at the start of a project, but having code that runs seamlessly on another person’s machine without issue? That’s priceless.</p>
-<p>For software developers, this might sound like old news, but for many biologists, reproducibility is still an uphill battle. We’re more familiar with the thrill of analyzing data than the discipline of building reproducible environments.</p>
-<p>Personally, my drive to write and share code comes from an innate need to help others benefit from the little I’ve learned. But more than that, creating rigorous and reproducible science isn’t just an academic exercise; it’s a moral compass. My journey didn’t stem from learning best practices. As a trained ecologist and evolutionary biologist (EEB), R and computational tools were primarily a means to answer the big questions in my field. But what really pushed me to dive deeper was frustration—specifically, with how knowledge is often transferred in academia.</p>
+<div class="grid">
+<div id="note" class="g-col-5">
+<section id="send-me-a-note" class="level2">
+<h2 class="anchored" data-anchor-id="send-me-a-note">Send me a note <i class="fa-solid fa-feather-pointed" aria-label="feather-pointed"></i></h2>
+<p>Feel free to reach out if you have any questions, want to collaborate, or just want to chat about science and data.</p>
+<p><a class="link-dark me-1" href="https://github.com/jibarozzo" title="github" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-label="github"></i></a> <a class="link-dark me-1" href="https://linkedin.com/in/bolivar-aponte" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> <a class="link-dark me-1" href="https://orcid.org/0000-0002-2544-4551" title="orcid" target="_blank" rel="noopener"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></a></p>
+</section>
+</div>
+<!-- source: https://github.com/mccarthy-m-g/tidytales/blob/main/about/index.qmd#L24-L46 -->
+<div class="g-col-1">
+
+</div>
+<div id="form" class="g-col-6">
+<form style="margin-top: 5em;" action="https://formspree.io/f/myzjpvjw" method="POST" accept-charset="utf-8">
+<p><label for="full-name">Full Name</label> <input type="text" name="name" id="full-name" class="form-control" placeholder="First and Last" required=""></p>
+<p><label for="email-address">Email Address</label> <input type="email" name="_replyto" id="email-address" class="form-control" placeholder="your@email.here" required=""></p>
+<label for="message">Message</label>
+<textarea rows="6" name="message" id="message" class="form-control" placeholder="Lorem ipsilum" required=""></textarea>
+<button type="submit" class="btn btn-primary mt-4">
+Send message
+</button>
+</form>
+</div>
 
 
+</div>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -607,7 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/scraps/Untitled.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/jibarozzo/bolaponte_website/blob/main/contact/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jibarozzo/bolaponte_website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

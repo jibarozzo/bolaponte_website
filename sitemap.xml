@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bolaponte.com/software/index.html</loc>
-    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
+    <lastmod>2025-06-19T01:14:19.342Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/cv/index.html</loc>
@@ -13,28 +13,32 @@
     <lastmod>2024-11-12T15:27:07.950Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/about/index.html</loc>
-    <lastmod>2025-06-18T16:48:07.900Z</lastmod>
+    <loc>https://www.bolaponte.com/contact/index.html</loc>
+    <lastmod>2025-06-19T02:22:41.193Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/coc.html</loc>
-    <lastmod>2024-11-12T15:27:43.871Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/blog/index.html</loc>
-    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.bolaponte.com/blog/2024-10-15-map_purrr/index.html</loc>
-    <lastmod>2025-06-18T17:31:10.106Z</lastmod>
+    <loc>https://www.bolaponte.com/index.html</loc>
+    <lastmod>2025-06-19T02:09:16.381Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/blog/2024-11-11-flexible_r/index.html</loc>
     <lastmod>2025-06-18T04:25:33.131Z</lastmod>
   </url>
   <url>
-    <loc>https://www.bolaponte.com/index.html</loc>
-    <lastmod>2025-06-18T17:13:19.811Z</lastmod>
+    <loc>https://www.bolaponte.com/blog/2024-10-15-map_purrr/index.html</loc>
+    <lastmod>2025-06-18T17:31:10.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/blog/index.html</loc>
+    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/coc.html</loc>
+    <lastmod>2024-11-12T15:27:43.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bolaponte.com/about/index.html</loc>
+    <lastmod>2025-06-19T02:27:56.575Z</lastmod>
   </url>
   <url>
     <loc>https://www.bolaponte.com/scraps/Untitled.html</loc>
@@ -46,6 +50,6 @@
   </url>
   <url>
     <loc>https://www.bolaponte.com/research/index.html</loc>
-    <lastmod>2025-06-18T16:48:07.904Z</lastmod>
+    <lastmod>2025-06-19T01:02:32.750Z</lastmod>
   </url>
 </urlset>
