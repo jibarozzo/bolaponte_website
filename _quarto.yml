@@ -48,6 +48,9 @@ website:
       - text: Sandbox
         icon: box
         href: blog/index.qmd
+      - text: Contact
+        icon: envelope-fill
+        href: contact/index.qmd
       # - text: Talks
       #   icon: mic-fill
       #   href: talks/index.qmd

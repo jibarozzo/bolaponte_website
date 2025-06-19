@@ -12,11 +12,11 @@ about:
   image-shape: rounded
   links:
     - icon: github
-      #text: GitHub
       href: https://github.com/jibarozzo
     - icon: linkedin
-      #text: LinkedIn
       href: https://www.linkedin.com/in/bolivar-aponte/
+    - text: "{{< iconify fa6-brands orcid >}}"
+      href: https://orcid.org/0000-0002-2544-4551
 
 toc: false
 anchor-sections: false
@@ -43,9 +43,11 @@ execute:
 
 My work centers on applying reproducible data pipelines in R (with a dash of Python) to amplicon and whole-genome sequencing datasets to unravel the complex interactions between microbial symbionts and their plant hosts—ranging from tropical trees to alpine yellow monkeyflowers, and most recently, bioenergy feedstocks 
 
-I leverage a range of statistical and machine learning methods, including Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), distance-based Redundancy Analysis (dbRDA), and advanced linear modeling (GLMs and GLMMs), to analyze genomic and ecological data. Learn more about my interests by visiting [Research](/research).
+I leverage a range of statistical and machine learning methods, and linear modeling to analyze genomic and ecological data. Learn more about my interests by visiting [Research](/research).
 
-As a committed advocate for open, transparent, and reproducible science, I empower people around me to extract meaningful insights from data by sharing my knowledge on data visualization, data wrangling, and data analysis. Additionally, I collaborate with the [ESIP Data Stewardship Committee](https://www.esipfed.org/) to advance best practices in data management and stewardship. You can learn more about my teaching experience by visiting [Teaching](/teaching). 
+As a committed advocate for open, transparent, and reproducible science, I empower people around me to extract meaningful insights from data by sharing my knowledge on data visualization, data wrangling, and data analysis. Additionally, I collaborate with the [ESIP Data Stewardship Committee](https://www.esipfed.org/) to advance best practices in data management and stewardship. You can learn more about my teaching experience by visiting [Teaching](/cv/#teaching-experience).
+
+[**Get in touch!**](/contact)
 
 :::
 

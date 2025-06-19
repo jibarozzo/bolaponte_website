@@ -4,7 +4,8 @@
    height="1024"
    version="1.1"
    id="svg18"
-   sodipodi:docname="Firefly lapis azuli inspired logo for data analytics company. Focus in clean lines are shape.  18952.svg"
+   sodipodi:docname="lapisazuli_logo.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +18,16 @@
    inkscape:showpageshadow="2"
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
-   inkscape:deskcolor="#d1d1d1">
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.69726563"
+   inkscape:cx="512"
+   inkscape:cy="512"
+   inkscape:window-width="1920"
+   inkscape:window-height="1021"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg18">
   <inkscape:page
      x="0"
      y="0"
@@ -93,65 +103,63 @@
 </defs>
 <defs
    id="defs7" />
+
+
+/&gt;
+
+
+/&gt;
+
+
+/&gt;
 <path
-   d="m 1024,0 c 0,0 0,1024 0,1024 0,0 -1024,0 -1024,0 C 0,1024 0,0 0,0 Z M 213,508 c 0,0 -4,4.5 -4,4.5 0,0 79.5,79.5 79.5,79.5 26.987,-26.168 52.877,-53.487 79.5,-80 47.922,-47.724 95.916,-95.439 144,-143 47.566,48.422 95.843,96.169 144,144 26.633,26.453 51.813,54.65 80.5,79 0,0 78.5,-80 78.5,-80 0,0 -303,-303 -303,-303 z m 196,4 c 0,0 103,104 103,104 0,0 103,-104 103,-104 0,0 -103,-103 -103,-103 z m 103,303 c 0,0 203,-202.5 203,-202.5 0,0 -80.5,-79.5 -80.5,-79.5 0,0 -122.5,122 -122.5,122 0,0 -123.5,-123 -123.5,-123 0,0 -79.5,79.5 -79.5,79.5 z m -77.5,20 c 0,0 -1,4 -1,4 0,0 49.5,-2.5 49.5,-2.5 z"
-   fill="#fcfdfe"
-   id="path7"
-   style="stroke:none" />
-<path
-   d="m 512,369 c -48.084,47.561 -96.078,95.276 -144,143 0,0 -156.5,1 -156.5,1 0,0 1.5,-5 1.5,-5 0,0 299,-299 299,-299 z"
+   d="m 512,368 c -48.084,47.561 -96.078,95.276 -144,143 0,0 -156.5,1 -156.5,1 0,0 1.5,-5 1.5,-5 0,0 299,-299 299,-299 z"
    fill="url(#grad1)"
    id="path8"
-   style="fill:url(#grad1);stroke:none;stroke-opacity:1" />
-
-/&gt;
+   style="fill:#ff596c;fill-opacity:1;stroke:none;stroke-opacity:1" />
 <path
-   d="m 815,512 c 0,0 -159,1 -159,1 -48.157,-47.831 -96.434,-95.578 -144,-144 0,0 0,-160 0,-160 z"
+   d="m 815,511 c 0,0 -159,1 -159,1 -48.157,-47.831 -96.434,-95.578 -144,-144 0,0 0,-160 0,-160 z"
    fill="url(#grad2)"
    id="path9"
-   style="fill:url(#grad2);stroke:none;stroke-opacity:1" />
-
-/&gt;
+   style="fill:#ff596c;fill-opacity:1;stroke:none;stroke-opacity:1" />
 <path
-   d="m 512,512 c 0,0 -103,0 -103,0 0,0 103,-103 103,-103 z"
+   d="m 512,511 c 0,0 -103,0 -103,0 0,0 103,-103 103,-103 z"
    fill="rgb(16,129,207)"
    id="path10"
-   style="fill:#6104c6;fill-opacity:1" />
+   style="fill:#b8094e;fill-opacity:1" />
 <path
-   d="m 615,512 c 0,0 -103,0 -103,0 0,0 0,-103 0,-103 z"
+   d="m 615,511 c 0,0 -103,0 -103,0 0,0 0,-103 0,-103 z"
    fill="rgb(99,181,233)"
    id="path11"
-   style="fill:#930282;fill-opacity:1" />
+   style="fill:#ff596c;fill-opacity:1" />
 <path
-   d="m 368,512 c -26.623,26.513 -52.513,53.832 -79.5,80 0,0 -79.5,-79.5 -79.5,-79.5 0,0 4,-4.5 4,-4.5 0,0 -1.5,5 -1.5,5 z"
+   d="m 368,511 c -26.623,26.513 -52.513,53.832 -79.5,80 0,0 -79.5,-79.5 -79.5,-79.5 0,0 4,-4.5 4,-4.5 0,0 -1.5,5 -1.5,5 z"
    fill="rgb(12,67,158)"
    id="path12"
-   style="fill:#7a026e;fill-opacity:1;stroke:none;stroke-opacity:1" />
+   style="fill:#ff596c;fill-opacity:1;stroke:none;stroke-opacity:1" />
 <path
-   d="m 512,512 c 0,34.65 0,69.35 0,104 0,0 -103,-104 -103,-104 z"
+   d="m 512,511 c 0,34.65 0,69.35 0,104 0,0 -103,-104 -103,-104 z"
    fill="rgb(24,87,180)"
    id="path13"
-   style="fill:#3b017e;fill-opacity:1" />
+   style="fill:#ff596c;fill-opacity:1" />
 <path
-   d="m 615,512 c 0,0 -103,104 -103,104 0,-34.65 0,-69.35 0,-104 z"
+   d="m 615,511 c 0,0 -103,104 -103,104 0,-34.65 0,-69.35 0,-104 z"
    fill="rgb(30,137,211)"
    id="path14"
-   style="fill:#6104c6;fill-opacity:1" />
+   style="fill:#b8094e;fill-opacity:1" />
 <path
-   d="m 815,512 c 0,0 -78.5,80 -78.5,80 -28.687,-24.35 -53.867,-52.547 -80.5,-79 z"
+   d="m 815,511 c 0,0 -78.5,80 -78.5,80 -28.687,-24.35 -53.867,-52.547 -80.5,-79 z"
    fill="rgb(29,137,211)"
    id="path15"
-   style="fill:#7a026e;fill-opacity:1;stroke:none;stroke-opacity:1" />
+   style="fill:#ff596c;fill-opacity:1;stroke:none;stroke-opacity:1" />
 <path
-   d="m 512,655 c 0,0 0,160 0,160 0,0 -203,-203.5 -203,-203.5 0,0 79.5,-79.5 79.5,-79.5 z"
+   d="m 512,654 c 0,0 0,160 0,160 0,0 -203,-203.5 -203,-203.5 0,0 79.5,-79.5 79.5,-79.5 z"
    fill="rgb(11,67,158)"
    id="path16"
-   style="fill:#3b017e;fill-opacity:1" />
+   style="fill:#ff596c;fill-opacity:1" />
 <path
-   d="m 512,815 c 0,0 0,-160 0,-160 0,0 122.5,-122 122.5,-122 0,0 80.5,79.5 80.5,79.5 z"
+   d="m 512,814 c 0,0 0,-160 0,-160 0,0 122.5,-122 122.5,-122 0,0 80.5,79.5 80.5,79.5 z"
    fill="url(#grad10)"
    id="path17"
-   style="fill:url(#grad10)" />
-
-/&gt;
+   style="fill:#ff596c;fill-opacity:1" />
 </svg>

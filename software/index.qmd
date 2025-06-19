@@ -6,6 +6,6 @@ format: html
 I develop and maintain several R packages and analysis tools for the research community, including:
 
 - [**BRCore**](https://github.com/germs-lab/BRCore): An R package for core analysis workflows in microbial ecology.
-- [**interbrc-core-analysis**](https://github.com/germs-lab/interbrc-core-analysis): Analysis pipelines for the Bioenergy Research Centers shared research objective in feedstock microbiomes.
+- [**interbrc-core-analysis**](https://github.com/germs-lab/interbrc-core-analysis): Analysis pipelines for the Bioenergy Research Center's shared research objective to understand feedstock microbiomes.
 - [**esipDMP**](https://github.com/ESIPFed/esipDMP): A premier in data management planning and stewardship.
 - [**rateDMP**](https://github.com/jibarozzo/rateDMP): (Rust) An experimental tool for rating or evaluating Data Management Plans.

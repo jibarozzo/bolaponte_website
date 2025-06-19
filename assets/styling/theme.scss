@@ -1,5 +1,10 @@
 /*-- scss:defaults --*/
 
+
+// Quarto references:
+// Variables: https://github.com/quarto-dev/quarto-cli/src/resources/formats/html/bootstrap/_bootstrap-variables.scss
+// Rules: https://github.com/quarto-dev/quarto-cli/src/resources/formats/html/bootstrap/_bootstrap-rules.scss
+
 // Fonts
 // Old families
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
@@ -257,7 +262,9 @@ div.quarto-about-jolla .about-sep {
   background-color: transparent;
 }
 
-
+.about-entity .about-icon {
+  color: $accent
+}
 
 // Blog title block (banner)
 // style background image on posts
@@ -275,81 +282,6 @@ p.subtitle.lead {
   text-align: left;
 }
 
-// Cards and Buttons
-
-// Cards
-.card {
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  background: linear-gradient(to bottom right, $light, $terciary-light);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, $primary, $accent);
-}
-
-.card-img-top {
-  border-radius: 0;
-}
-
-// Buttons
-.btn {
-  border-radius: 0;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  opacity: 1 !important;
-  padding: 0.5em;
-}
-
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-}
-
-.btn-primary:hover {
-  background-color: darken($primary, 10%);
-  border-color: darken($primary, 10%);
-}
-
-.btn-secondary {
-  background-color: $secondary;
-  border-color: $secondary;
-}
-
-.btn-secondary:hover {
-  background-color: darken($secondary, 10%);
-  border-color: darken($secondary, 10%);
-}
-
-.btn-accent {
-  background-color: $accent;
-  border-color: $accent;
-  color: white;
-}
-
-.btn-accent:hover {
-  background-color: darken($accent, 10%);
-  border-color: darken($accent, 10%);
-  color: white;
-}
 
 // Add accents to sections
 .section-accent {
@@ -476,6 +408,7 @@ div.quarto-post .listing-categories .listing-category:hover, .quarto-category:ho
   background-color: $secondary;
 }
 
+
 // Slide iframes
 
 .slides {
@@ -532,57 +465,6 @@ pre.sourceCode {
 
 }
 
-
-// Diagonal section dividers
-.section-divider {
-  height: 5em;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-divider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, $primary 25%, transparent 25%) -50px 0,
-              linear-gradient(225deg, $primary 25%, transparent 25%) -50px 0,
-              linear-gradient(315deg, $primary 25%, transparent 25%),
-              linear-gradient(45deg, $primary 25%, transparent 25%);
-  background-size: 100px 100px;
-  background-color: $secondary;
-  opacity: 0.1;
-}
-
-
-
-// Progress bars
-.progress-tech {
-  height: 8px;
-  background-color: $terciary-light;
-  border-radius: 0;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  overflow: visible;
-  margin-bottom: 30px;
-}
-
-.progress-tech .progress-bar {
-  position: relative;
-  background: linear-gradient(90deg, $primary, $accent);
-  border-radius: 0;
-}
-
-.progress-tech .progress-bar::after {
-  content: attr(aria-valuenow) "%";
-  position: absolute;
-  right: 0;
-  top: -25px;
-  color: $primary;
-  font-family: $font-family-monospace;
-  font-weight: bold;
-}
 
 // Terminal-style blockquotes
 blockquote {

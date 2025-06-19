@@ -69,7 +69,7 @@ Using genetic sequencing, we examined how FEF communities change across three *M
 
 ::: {#fifth-column}
 
-![Common garden experiment in granite outcrop at Yosemite National PArk](../assets/img/ycn_site.jpg)
+![Common garden experiment in granite outcrop at Yosemite National Park](../assets/img/ycn_site.jpg)
 
 
 :::

@@ -12,9 +12,14 @@ about:
   links:
     - icon: github
       href: https://github.com/jibarozzo
-    - icon: linkedin
+      aria-label: "GitHub Profile"
+    - icon: linkedin  
       href: https://www.linkedin.com/in/bolivar-aponte/
-
+      aria-label: "LinkedIn Profile"
+    - text: "{{< iconify fa6-brands orcid >}}"
+      href: https://orcid.org/0000-0002-2544-4551
+      aria-label: "ORCID Profile"
+     
 toc: false
 anchor-sections: false
 
