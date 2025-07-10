@@ -31,8 +31,8 @@ $font-family-monospace: "Fira Code", "Dank Mono", SFMono-Regular, Menlo, Monaco,
 
 // Heading fonts                        
 $font-family-serif: "Baskervville SC", serif;
-$main-headings-font-family: Raleway;
-$secondary-headings-font-family: Raleway;
+$main-headings-font-family: $font-family-sans-serif;
+$secondary-headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 400;
 
 // Colors

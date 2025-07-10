@@ -1,6 +1,6 @@
 ---
 title: "Bolívar Aponte Rolón, Ph.D."
-subtitle: "Data scientist"
+#subtitle: "Data scientist"
 image: ../assets/img/boli_mimulus.jpg
 image-alt: "Smilling man with light-tan complexion and dark beard, holding a Mimulus flower the mountainous outdoors"
 
@@ -33,7 +33,7 @@ execute:
 ---
 
 ::: {#hero-heading}
-I am a data scientist, bioinformatician, and research software developer with a background in ecology and evolutionary biology. 
+I am a data scientist, bioinformatician, and research software engineer with a background in ecology and evolutionary biology. 
 
 [Learn more about me &rarr;](/about/index.html){.about-links .subtitle}
 
