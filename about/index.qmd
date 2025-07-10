@@ -2,7 +2,7 @@
 #pagetitle: "Bolívar Aponte Rolón | About"
 title: "Bolívar Aponte Rolón, PhD"
 subtitle: "Data Scientist | Bioinformatician | Research Software Developer"
-image: ../assets/img/boli_mimulus.jpg
+image: ../assets/img/bolaponte_2025.jpg
 image-alt: "Smilling man with light-tan complexion and dark beard, holding a Mimulus flower the mountainous outdoors"
 
 about:
