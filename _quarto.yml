@@ -33,7 +33,7 @@ website:
   navbar:
     pinned: false
     logo: assets/img/lapisazuli_logo.webp
-    # logo-alt: ""
+    logo-alt: "Bolívar Aponte Rolón Logo"
     right:
       - text: About
         icon: person-circle
