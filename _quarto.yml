@@ -17,13 +17,15 @@ website:
 
   open-graph:
     locale: en_EN
-    # image: assets/img/JR-logo-circle.webp
-    # image-alt: "Cat with tail shaped as the letter J next to last name initial R"
+
   page-navigation: true
   back-to-top-navigation: true
   google-analytics:
     tracking-id: "G-LEVV3VZT0E"
     anonymize-ip: true
+  
+  # To enable cookie consent, uncomment the following lines
+  # and add assets/styling/cookie-consent.scss to your format section below
   # cookie-consent:
   #   type: express
   #   prefs-text: "Change cookies 🍪"
@@ -31,7 +33,7 @@ website:
   navbar:
     pinned: false
     logo: assets/img/lapisazuli_logo.webp
-    # logo-alt: "Cat with tail shaped as the letter J next to last name initial R"
+    logo-alt: "Bolívar Aponte Rolón Logo"
     right:
       - text: About
         icon: person-circle
@@ -51,12 +53,6 @@ website:
       - text: Contact
         icon: envelope-fill
         href: contact/index.qmd
-      # - text: Talks
-      #   icon: mic-fill
-      #   href: talks/index.qmd
-      # - text: Projects
-      #   icon: puzzle-fill
-      #   href: projects/index.qmd
 
       - icon: github
         aria-label: GitHub
@@ -81,6 +77,7 @@ format:
     theme:
       - default
       - assets/styling/theme.scss
+      # - assets/styling/cookie-consent.scss  # Uncomment the line below when cookie consent is activated
     #   light:
     #     - flatly
     #     - assets/styling/theme.scss

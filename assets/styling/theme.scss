@@ -1,9 +1,13 @@
 /*-- scss:defaults --*/
 
-
 // Quarto references:
 // Variables: https://github.com/quarto-dev/quarto-cli/src/resources/formats/html/bootstrap/_bootstrap-variables.scss
 // Rules: https://github.com/quarto-dev/quarto-cli/src/resources/formats/html/bootstrap/_bootstrap-rules.scss
+
+
+/*==========================================================================
+   1. VARIABLES & IMPORTS
+  ==========================================================================*/
 
 // Fonts
 // Old families
@@ -14,12 +18,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 // Define font-family variables
 // stylelint-disable-next-line value-keyword-case
-
-// Body font-synthesis-style: ;
 $font-family-sans-serif: "Nunito Sans", Raleway, "Red Hat Text", "Source Sans Pro", -apple-system, 
                          BlinkMacSystemFont, "Segoe UI", Roboto, 
                          "Helvetica Neue", Arial, sans-serif, 
@@ -36,7 +36,6 @@ $secondary-headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 400;
 
 // Colors
-
 $white:  #fff;
 $gray-0: #f9f9f9;
 $gray-1: #eceeee;
@@ -74,9 +73,13 @@ $code-bg: $terciary-light; // inline code background color
 $code-color: $dark; // inline code text color
 
 // Contrast
-$min-contrast-ratio:   7;
+$min-contrast-ratio: 7;
 
 /*-- scss:rules --*/
+
+/*==========================================================================
+   2. BASE STYLES
+  ==========================================================================*/
 
 // Global styles
 body {
@@ -84,7 +87,6 @@ body {
   color: $primary;
   background-color: $light;
   position: relative;
-  
 }
 
 // Body background
@@ -100,6 +102,10 @@ body::before {
   background-position: 0 0, 30px 30px, 30px 30px;
   z-index: -1;
 }
+
+/*==========================================================================
+   3. TYPOGRAPHY
+  ==========================================================================*/
 
 // Heading styles
 h1, h2, h3, h4, h5, h6 {
@@ -146,7 +152,7 @@ a:hover {
   text-decoration: underline;
 }
 
-a:not(.nav-link):not(.navbar-brand):not(.btn):not(.figure-link):hover:after { //:not(.lightbox)
+a:not(.nav-link):not(.navbar-brand):not(.btn):not(.figure-link):hover:after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -161,10 +167,18 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   width: 100%;
 }
 
+/*==========================================================================
+   4. COMPONENTS
+  ==========================================================================*/
+
+/*------------------
+   4.1 Images & Figures
+  ------------------*/
+
 // Set up the positioning context
 .figure {
   position: relative;
-  display: inline-block; // igure container fits its content
+  display: inline-block; 
   padding: 10px;
 }
 
@@ -192,15 +206,23 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   z-index: 2;
 }
 
+.figure-img {
+  margin-bottom: 0;
+  line-height: 0;
+  border-radius: 5px;
+}
+
+/*------------------
+   4.2 Navigation
+  ------------------*/
 
 // Navbar and Footer
-// Put all the icons in a single row in the hamburger menu (thanks Andrew! https://github.com/andrewheiss/ath-quarto/blob/8bad8578379a83f9aaf6cadd3bc75cb227e76f1b/html/ath.scss#L137-L140)
+// Put all the icons in a single row in the hamburger menu
 .navbar {
   position: relative;
   font-family: $font-family-monospace;
   border-bottom: 3.5px solid;
   border-image: linear-gradient(to right, $primary, $accent) 1;
-  //background: linear-gradient(to right, $primary, $accent);
 }
 
 .navbar-title {
@@ -210,7 +232,7 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
 }
 
 .navbar-nav.navbar-nav-scroll.ms-auto {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .footer {
@@ -229,16 +251,9 @@ a:not(.nav-link):not(.navbar-brand):not(.btn):hover:after {
   background: linear-gradient(to right, $accent, $secondary);
 }
 
-
-// About
-// About box
-/*.about-entity { 
-  background: linear-gradient(to bottom right, $light, $terciary-light);
-  border-left: 4px solid $accent;
-  border-radius: 0;
-  padding: 2em !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-} */
+/*------------------
+   4.3 About Section
+  ------------------*/
 
 // adjust about separator
 div.quarto-about-jolla .about-sep {
@@ -266,11 +281,13 @@ div.quarto-about-jolla .about-sep {
   color: $accent
 }
 
+/*------------------
+   4.4 Blog & Content
+  ------------------*/
+
 // Blog title block (banner)
 // style background image on posts
 .featured-image {
-  // https://stackoverflow.com/a/24084708
-  // style = "background-image: url(featured.png), url(featured.jpg); background-size: cover; color: white; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.65);"
   background-size: cover; 
   background-position: center;
   color: $secondary-accent; 
@@ -281,7 +298,6 @@ p.subtitle.lead {
   font-size: 1em;
   text-align: left;
 }
-
 
 // Add accents to sections
 .section-accent {
@@ -319,9 +335,7 @@ p.subtitle.lead {
   opacity: 0.2;
 }
 
-
 // Appendix
-
 #quarto-appendix.default {
   background-color: $light;
   padding-top: 1em;
@@ -329,17 +343,121 @@ p.subtitle.lead {
   z-index: 998;
 }
 
+/*------------------
+   4.5 Listings & Buttons
+  ------------------*/
 
-// Images
-
-.figure-img {
-    margin-bottom: 0;
-    line-height: 0;
-    border-radius: 5px;
+// Listing buttons
+div.quarto-post .listing-categories .listing-category, .quarto-category {
+  opacity: 0.8 !important;
+  color: $secondary-accent;
+  border-color: $secondary-accent;
+  background-color: $light;
+  text-align: center;
+  border-style: solid;
+  text-decoration: none;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
+div.quarto-post .listing-categories .listing-category:hover, .quarto-category:hover {
+  background-color: $secondary;
+  color: $white;
+}
 
-// Specific classes
+.listing-btn-group {
+  display: inline-flex;
+  gap: 1em;
+}
+
+// Page buttons
+.page-link {
+  background-color: $secondary-light;
+  color: $accent;
+}
+
+.page-link:hover {
+  background-color: $accent;
+  color: white;
+}
+
+.page-item.active .page-link {
+  background-color: $secondary;
+}
+
+/*------------------
+   4.6 Code & Terminal Styling
+  ------------------*/
+
+// Terminal-style code blocks
+pre.sourceCode::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: $gray-7;
+  border-radius: 5px 5px 0 0;
+}
+
+pre.sourceCode::after {
+  content: ">";
+  position: absolute;
+  top: -28px;
+  left: 10px;
+  color: $accent;
+  font-size: 18px;
+}
+
+pre.sourceCode {
+  position: relative;
+  font-family: $font-family-monospace;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+  border-radius: 0 0 5px 5px
+}
+
+// Terminal-style blockquotes
+blockquote {
+  background-color: #202124;
+  color: $light;
+  border-left: 4px solid $accent;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  position: relative;
+  font-family: $font-family-monospace;
+}
+
+blockquote::before {
+  content: "> ";
+  color: $secondary;
+}
+
+/*------------------
+   4.7 Embedded Content
+  ------------------*/
+
+// Slide iframes
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-style: solid;
+  border-width: 1px;
+}
+
+// Embed iframe
+.mastodon-embed {
+  width: 100%;
+  height: 100;
+  overflow: scroll;
+}
+
+/*==========================================================================
+   5. UTILITY CLASSES
+  ==========================================================================*/
 
 .center-text {
   text-align: center;
@@ -365,123 +483,9 @@ p.subtitle.lead {
   color: $gray-5;
 }
 
-
-// Listing buttons
-
-div.quarto-post .listing-categories .listing-category, .quarto-category {
-  opacity: 0.8 !important;
-  color: $secondary-accent;
-  border-color: $secondary-accent;
-  background-color: $light;
-  text-align: center;
-  border-style: solid;
-  text-decoration: none;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-
-div.quarto-post .listing-categories .listing-category:hover, .quarto-category:hover {
-  background-color: $secondary;
-  color: $white;
-}
-
-.listing-btn-group {
-  display: inline-flex;
-  gap: 1em;
-}
-
-
-// Page buttons
-
-.page-link {
-  background-color: $secondary-light;
-  color: $accent;
-}
-
-.page-link:hover {
-  background-color: $accent;
-  color: white;
-}
-
-.page-item.active .page-link {
-  background-color: $secondary;
-}
-
-
-// Slide iframes
-
-.slides {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border-style: solid;
-  border-width: 1px;
-}
-
-
-// Embed iframe
-
-.mastodon-embed {
-  width: 100%;
-  height: 100;
-  overflow: scroll;
-}
-
-
-// Terminal-style code blocks
-pre.sourceCode::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 0;
-  height: 20px;
-  width: 100%;
-  background: $gray-7;
-  border-radius: 5px 5px 0 0;
-}
-
-pre.sourceCode::after {
-  content: ">";
-  position: absolute;
-  top: -28px;
-  left: 10px;
-  color: $accent;
-  font-size: 18px;
-}
-
-/* pre {
-  border-radius: 0 !important;
-  border-left: 4px solid $accent !important;
-} 
-*/
-
-pre.sourceCode {
-  position: relative;
-  font-family: $font-family-monospace;
-  margin: 1.5em 0;
-  font-size: 0.9em;
-  border-radius: 0 0 5px 5px
-
-}
-
-
-// Terminal-style blockquotes
-blockquote {
-  background-color: #202124;
-  color: $light;
-  border-left: 4px solid $accent;
-  padding: 1.5em;
-  margin: 1.5em 0;
-  position: relative;
-  font-family: $font-family-monospace;
-}
-
-blockquote::before {
-  content: "> ";
-  color: $secondary;
-}
-
+/*==========================================================================
+   6. RESPONSIVE STYLES
+  ==========================================================================*/
 
 // Media queries
 @media screen and (max-width: 991.98px) {
@@ -500,13 +504,11 @@ blockquote::before {
     padding-left: 0em;
   }
 
-
-// Nice footer rows
-// from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
-
+  // Nice footer rows
+  // from Silvia's blog source code: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme.scss
   .nav-footer {
       flex-direction: column;
-    }
+  }
 
   .nav-footer-center {
     order: 3 !important;
@@ -535,8 +537,9 @@ blockquote::before {
   }
 }
 
-
-// Cookies
+/*==========================================================================
+   COOKIE CONSENT STYLING
+  ==========================================================================*/
 
 div.cookie-consent-footer {
   font-family: $font-family-sans-serif;
