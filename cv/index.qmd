@@ -83,8 +83,8 @@ University of Puerto Rico – Rio Piedras
 
 `r knitr::knit_child(file.path(path, "docs/awards.md"))`
 
-## {{< fa users-cog >}} Communities and Organizations
+<!-- ## {{< fa users-cog >}} Communities and Organizations -->
 
-![](../assets/img/dsh.webp){width="60px" fig-alt="Data Science Hangout logo" style="padding-right:1em"} [Posit Data Science Hangout](https://posit.co/data-science-hangout/)
+<!-- ![](../assets/img/dsh.webp){width="60px" fig-alt="Data Science Hangout logo" style="padding-right:1em"} [Posit Data Science Hangout](https://posit.co/data-science-hangout/) -->
 
-![](../assets/img/r4ds.webp){width="60px" fig-alt="R4DS logo" style="padding-right:1em"} [R4DS Learning Community](https://rfordatasci.com/)
+<!-- ![](../assets/img/r4ds.webp){width="60px" fig-alt="R4DS logo" style="padding-right:1em"} [R4DS Learning Community](https://rfordatasci.com/) -->
