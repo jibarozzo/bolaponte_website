@@ -85,7 +85,7 @@ format:
     #     - darkly
     #css: assets/styling/hexagon.css
     toc: true
-    toc-depth: 4
+    toc-depth: 3
     pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"
     author-meta: "Bolívar Aponte Rolón"
     page-layout: article
