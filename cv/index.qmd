@@ -7,6 +7,11 @@ project:
 
 format: 
   html: default
+  pdf: default
+format-links:
+    text: Download CV
+    icon: file-pdf
+    href: aponte_bolivar_cv.pdf
 ---
 
 ```{r}
@@ -40,14 +45,17 @@ University of Puerto Rico – Rio Piedras
 
 `r knitr::knit_child(file.path(path, "docs/technical_skills.md"))`
 
-## {{< fa file >}} Peer-Reviewed Publications and Pre-prints
+## {{< fa file >}} Peer-Reviewed Publications and Pre-Prints
 
 `r knitr::knit_child(file.path(path, "docs/publications.md"))`
 
+## {{< fa code >}} Software & Data
+
+`r knitr::knit_child(file.path(path, "docs/html_software.md"))`
 
 ## {{< fa file >}} Other Publications
 
-`r knitr::knit_child(file.path(path, "docs/other_publications.md"))`
+`r knitr::knit_child(file.path(path, "docs/html_other_publications.md"))`
 
 ## {{< fa briefcase >}} Professional Experience
 
