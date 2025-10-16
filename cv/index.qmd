@@ -9,6 +9,8 @@ format:
   html: default
   pdf: default
 format-links:
+  - html
+  - format: pdf    
     text: Download CV
     icon: file-pdf
     href: aponte_bolivar_cv.pdf
