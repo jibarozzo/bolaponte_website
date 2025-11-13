@@ -41,39 +41,25 @@ execute:
 
 ## Thanks for visiting my website!
 
-My work centers on applying reproducible data pipelines in R (with a dash of Python) to amplicon and whole-genome sequencing datasets to unravel the complex interactions between microbial symbionts and their plant hosts—ranging from tropical trees to alpine yellow monkeyflowers, and most recently, bioenergy feedstocks 
 
-I leverage a range of statistical and machine learning methods, and linear modeling to analyze genomic and ecological data. Learn more about my interests by visiting [Research](/research).
 
-As a committed advocate for open, transparent, and reproducible science, I empower people around me to extract meaningful insights from data by sharing my knowledge on data visualization, data wrangling, and data analysis. Additionally, I collaborate with the [ESIP Data Stewardship Committee](https://www.esipfed.org/) to advance best practices in data management and stewardship. You can learn more about my teaching experience by visiting [Teaching](/cv/#teaching-experience).
+### TL;DR:
+**Data scientist ← c("ecologist", "evolutionary biologist")**
+
+**Broadly**, I apply statistical and machine learning methods, linear modeling, and modern workflow practices to genomic and ecological data. **Curious about what I’m working on? Explore recent projects and methods on my [Research](/research) page**.
+
+## About me
+
+I am a data scientist and bioinformatician that focuses on translating research insights into open, reproducible tools that others can build upon and use to do publishable science. 
+
+My scholarship sits at the intersection of statistical modeling, research software engineering, and microbial community ecology. 
+To that end, I develop reproducible analytical pipelines in R and Python to analyze amplicon and whole‑genome sequencing data, uncovering how microbial symbionts interact with their plant hosts, from tropical trees to alpine yellow monkeyflowers. I integrate sequencing outputs with ecological context, focusing on community assembly, host associations, and environmental drivers in high‑dimensional datasets. Most recently, I help build cross‑institutional workflows with containerized environments to standardize microbiome analyses across bioenergy feedstocks. ***My focus is translating complex datasets into clear, shareable results that others can reproduce, reuse, and build upon.***
+
+
+
+**Open**, **transparent**, and **reproducible** science guides my work. I prioritize community standards and reproducibility, whether developing [R packages for core‑microbiome analysis](/software) or contributing to [ESIP’s data stewardship initiatives](https://esipfed.github.io/esipDMP/) to advance best practices in data management. Additionally, I share practical skills in data visualization, wrangling, and analysis through [workshops and tutorials](/cv).
 
 [**Get in touch!**](/contact)
 
 :::
 
-## About me
-
-::: grid
-::: {#about-me-1 .g-col-6}
-**Data scientist \<- Ecologist and evolutionary biologist**
-
-My work bridges ecology, evolution, and computational biology—driven by curiosity about how complex systems function and how we can make insights from them accessible and reproducible.
-
-I bring a commitment to **community standards** and **scientific reproducibility** to every project. Whether I'm developing [R packages for core microbiome analysis](/software), contributing to [ESIP's data stewardship initiatives](https://www.esipfed.org/), or sharing [lab protocols on protocols.io](https://dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2), I prioritize transparent, reusable workflows that empower others to build on my work.
-
-From studying [foliar fungal symbionts in alpine monkeyflowers](/research) to building reproducible genomic pipelines for bioenergy feedstocks, I leverage R, Python, and modern data science tools to transform complex biological datasets into actionable insights. I'm passionate about open science, teaching computational skills, and creating software that serves the broader research community.
-:::
-
-::: {#about-me-2 .g-col-6}
-My research spans from studying ant communities in the tropics to microbial fungi in Yosemite. I focus on how communities assemble and interact with their environment, using R and Python to explore large genomic datasets.
-
-<ul class="fa-ul">
-   <li><i class="fa-solid fa-graduation-cap"></i>Ph.D. in Ecology and Evolutionary Biology ∙ Tulane University ∙ 2024</li>
-
-   <li><i class="fa-solid fa-graduation-cap"></i>M.Sc. in Natural Resources Management-Conservation Ecology ∙ University of Michigan ∙ 2018</li>
-
-   <li><i class="fa-solid fa-graduation-cap"></i>B.S. in Political Science ∙ University of Puerto Rico-Rio Piedras ∙ 2014</li>
-
-</ul>
-:::
-:::
