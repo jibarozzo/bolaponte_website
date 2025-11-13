@@ -57,19 +57,15 @@ As a committed advocate for open, transparent, and reproducible science, I empow
 ::: {#about-me-1 .g-col-6}
 **Data scientist \<- Ecologist and evolutionary biologist**
 
-I love learning, teaching and mentoring about R, Python, reproducible science and many things in ecology and evolutionary biology. That curiosity to learn about systems and how they work and how we can extract information and iterate to better and more efficient systems is what drives me. Some of the questions fuel this:
+My work bridges ecology, evolution, and computational biology—driven by curiosity about how complex systems function and how we can make insights from them accessible and reproducible.
 
--   How does it work?
+I bring a commitment to **community standards** and **scientific reproducibility** to every project. Whether I'm developing [R packages for core microbiome analysis](/software), contributing to [ESIP's data stewardship initiatives](https://www.esipfed.org/), or sharing [lab protocols on protocols.io](https://dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2), I prioritize transparent, reusable workflows that empower others to build on my work.
 
--   How can I make it so others understand it?
-
--   How can I make it better?
-
-I'm a big fan of open science and reproducibility, and I'm always looking for ways to make my work more transparent and accessible to others. Participating in open source project and reproducible science is a constant exercise that can always be improved. Exercising it gives back to the community and helps me learn and grow.
+From studying [foliar fungal symbionts in alpine monkeyflowers](/research) to building reproducible genomic pipelines for bioenergy feedstocks, I leverage R, Python, and modern data science tools to transform complex biological datasets into actionable insights. I'm passionate about open science, teaching computational skills, and creating software that serves the broader research community.
 :::
 
 ::: {#about-me-2 .g-col-6}
-My research spans from studying ant communities in the tropics to microbial fungi in Yosemite. I focus on how communities assemble and interact with their environment, using R and Python to create explore large genomic datasets.
+My research spans from studying ant communities in the tropics to microbial fungi in Yosemite. I focus on how communities assemble and interact with their environment, using R and Python to explore large genomic datasets.
 
 <ul class="fa-ul">
    <li><i class="fa-solid fa-graduation-cap"></i>Ph.D. in Ecology and Evolutionary Biology ∙ Tulane University ∙ 2024</li>
