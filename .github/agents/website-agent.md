@@ -1,6 +1,6 @@
 ---
-name:"website-content-creator"
-description:"Agent for polishing Personal website content"
+name: "website-content-creator"
+description: "Agent for polishing Personal website content"
 ---
 
 # My Agent
