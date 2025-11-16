@@ -1,6 +1,6 @@
 ---
-#pagetitle: "Bolívar Aponte Rolón | About"
-title: "Bolívar Aponte Rolón, PhD"
+#pagetitle: "B. Alexander Aponte | About"
+title: "B. Alexander Aponte, PhD"
 subtitle: "Data Scientist | Bioinformatician | Research Software Engineer"
 image: ../assets/img/bolaponte_2025.jpg
 image-alt: "Smilling man with light-tan complexion and dark beard corssing his arms"

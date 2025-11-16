@@ -6,7 +6,7 @@ execute:
     echo: false
     
 website:
-  title: "Bolívar Aponte Rolón"
+  title: "B. Alexander Aponte"
   description: "Data scientist at the intersection of ecology, evolution, and data literacy."
   favicon: assets/img/lapisazuli_logo.webp
   site-url: https://www.bolaponte.com
@@ -33,7 +33,7 @@ website:
   navbar:
     pinned: false
     logo: assets/img/lapisazuli_logo.webp
-    logo-alt: "Bolívar Aponte Rolón Logo"
+    logo-alt: "B. Alexander Aponte Logo"
     right:
       - text: About
         icon: person-circle
@@ -63,7 +63,7 @@ website:
 
   page-footer:
     border: true
-    left: "&#169; 2025 Bolívar Aponte Rolón | Made with [Quarto](https://quarto.org) "
+    left: "&#169; 2025 B. Alexander Aponte | Made with [Quarto](https://quarto.org) "
     right:
       - text: Code of conduct
         href: coc.qmd
@@ -86,8 +86,8 @@ format:
     #css: assets/styling/hexagon.css
     toc: true
     toc-depth: 3
-    pagetitle: "Bolívar Aponte Rolón | {{< meta title >}}"
-    author-meta: "Bolívar Aponte Rolón"
+    pagetitle: "B. Alexander Aponte | {{< meta title >}}"
+    author-meta: "B. Alexander Aponte"
     page-layout: article
     smooth-scroll: true
     link-external-newwindow: true
